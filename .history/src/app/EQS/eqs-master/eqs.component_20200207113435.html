@@ -1,0 +1,87 @@
+
+<div class="row">
+  <div class="col-lg-12">
+      <div class="card">
+          <div class="card-body">
+            <div class="d-flex no-block align-items-center">
+              <h4 class="card-title">Equipment Master</h4>
+              <div class="ml-auto mb-2">
+                  <a class="btn btn-info" [routerLink]="['addequipment']">  <i class="fas fa-plus" style="color: azure;"></i> add eqp </a>
+
+
+              </div>
+          </div>
+              <div class="table-responsive">
+                        <ejs-grid [dataSource]='data' [allowSelection]='true'  [allowSorting]='true'>
+                          <e-columns>
+                            <e-column type='checkbox' style="color: blue;" [allowFiltering]='false' [allowSorting]='false' width='60'></e-column>
+                            <e-column  headerText='Action' width='140'>
+                              <ng-template #template let-data>
+                                  <div class="loc">
+
+                                      <!-- <span id="ShipCountrytext">{{data.ShipCountry}}</span> -->
+                                  </div>
+                              </ng-template>
+                          </e-column>
+                              <e-column field='OrderID' headerText='Order ID' textAlign='Right' width=90></e-column>
+                              <e-column field='CustomerID' headerText='Customer ID' width=120></e-column>
+                              <e-column field='Freight' headerText='Freight' textAlign='Right' format='C2' width=90></e-column>
+                              <e-column field='OrderDate' headerText='Order Date' textAlign='Right' format='yMd' width=120></e-column>
+                          </e-columns>
+                          </ejs-grid>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-6">
+    <div class="card">
+        <div class="card-body">
+          <div class="control-section button-group-container">
+            <div class="button-group-section">
+                <div id="button-group-control">
+                    <div class="row">
+                        <p class="h5">Default</p>
+                        <div id="icon" class="e-btn-group">
+                            <button ejs-button iconCss="bg-icons e-btngrp-watch"></button>
+                            <button ejs-button iconCss="bg-icons e-btngrp-star"></button>
+                            <button ejs-button iconCss="bg-icons e-btngrp-download"></button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <p class="h5">Single selection</p>
+                        <div id="text" class="e-btn-group">
+                            <input type="radio" id="left" name="align" value="left" />
+                            <label class="e-btn" for="left">Left</label>
+                            <input type="radio" id="center" name="align" value="center" disabled />
+                            <label class="e-btn" for="center">Center</label>
+                            <input type="radio" id="right" name="align" value="right" />
+                            <label class="e-btn" for="right">Right</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <p class="h5">Multiple selection</p>
+                        <div id="iconandtext" class="e-btn-group">
+                            <input type="checkbox" id="bold" name="fontstyle" value="bold" checked />
+                            <label class="e-btn" for="bold">
+                                <span class="e-btn-icon bg-icons e-btngrp-bold e-icon-left"></span>Bold
+                            </label>
+                            <input type="checkbox" id="italic" name="fontstyle" value="italic" />
+                            <label class="e-btn" for="italic">
+                                <span class="e-btn-icon bg-icons e-btngrp-italic e-icon-left"></span>Italic
+                            </label>
+                            <input type="checkbox" id="underline" name="fontstyle" value="underline" />
+                            <label class="e-btn" for="underline">
+                                <span class="e-btn-icon bg-icons e-btngrp-underline e-icon-left"></span>Underline
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,49 @@
+
+<div class="row">
+  <div class="col-lg-12">
+      <div class="card">
+          <div class="card-body">
+            <div class="d-flex no-block align-items-center">
+              <h4 class="card-title">Equipment Master</h4>
+              <div class="ml-auto mb-2">
+                  <a class="btn btn-info" [routerLink]="['addequipment']">  <i class="fas fa-plus" style="color: azure;"></i> add eqp </a>
+              </div>
+          </div>
+              <div class="table-responsive">
+                        <ejs-grid [dataSource]='data' [allowSelection]='true'  [allowSorting]='true'>
+                          <e-columns>
+                            <e-column type='checkbox' style="color: blue;" [allowFiltering]='false' [allowSorting]='false' width='60'></e-column>
+                            <e-column  headerText='Action' width='140'>
+                              <ng-template #template let-data>
+                                  <div class="loc">
+                                    <button ejs-button iconCss="e-btn-sb-icon e-prev-icon">Previous</button>
+                                      <!-- <span id="ShipCountrytext">{{data.ShipCountry}}</span> -->
+                                  </div>
+                              </ng-template>
+                          </e-column>
+                              <e-column field='OrderID' headerText='Order ID' textAlign='Right' width=90></e-column>
+                              <e-column field='CustomerID' headerText='Customer ID' width=120></e-column>
+                              <e-column field='Freight' headerText='Freight' textAlign='Right' format='C2' width=90></e-column>
+                              <e-column field='OrderDate' headerText='Order Date' textAlign='Right' format='yMd' width=120></e-column>
+                          </e-columns>
+                          </ejs-grid>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-6">
+    <div class="card">
+        <div class="card-body">
+         <!-- To position the icon to the left of the text on a Button. -->
+         <button ejs-button iconCss="e-btn-sb-icon e-prev-icon">Previous</button>
+
+         <!-- To position the icon to the right of the text on a Button. -->
+         <button ejs-button iconCss= "e-btn-sb-icon e-stop-icon" iconPosition="Right">Stop</button>
+        </div>
+        </div>
+    </div>
+  </div>
+
