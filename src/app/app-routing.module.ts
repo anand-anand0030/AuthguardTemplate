@@ -53,6 +53,10 @@ export const Approutes: Routes = [
         loadChildren: './ICS/ics-calibrationmaster/ics-calibrationmaster.module#IcsCalibrationmasterModule'
       },
       {
+        path: 'ics-parameter',
+        loadChildren: './ICS/ics-parameter/ics-parameter.module#IcsParameterModule'
+      },
+      {
         path: 'ics-reports',
         loadChildren: './ICS/ics-reports/ics-reports.module#IcsReportsModule'
       },
@@ -60,6 +64,7 @@ export const Approutes: Routes = [
         path: 'ics-settings',
         loadChildren: './ICS/ics-settings/ics-settings.module#IcsSettingsModule'
       },
+
     ]
   },
   {

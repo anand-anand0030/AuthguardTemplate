@@ -26,6 +26,14 @@ export const ROUTES: RouteInfo[] = [
     submenu: []
   },
 
+  {
+    path: '/ics-parameter',
+    title: ' ics-parameter',
+    icon: 'mdi mdi-gauge',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
   // {
   //   path: '',
   //   title: 'UI Components',
