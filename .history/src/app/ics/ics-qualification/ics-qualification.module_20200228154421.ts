@@ -6,7 +6,7 @@ import { IcsQualificationComponent } from './ics-qualification.component';
 import { DropDownButtonModule } from '@syncfusion/ej2-angular-splitbuttons';
 import { GridModule, PageService, SortService, GroupService, FilterService } from '@syncfusion/ej2-angular-grids';
 import { DatePickerModule } from '@syncfusion/ej2-angular-calendars';
-import { UploaderModule } from '@syncfusion/ej2-angular-inputs';
+
 @NgModule({
   declarations: [IcsQualificationComponent],
   imports: [
@@ -14,8 +14,7 @@ import { UploaderModule } from '@syncfusion/ej2-angular-inputs';
     IcsQualificationRoutingModule,
     DropDownButtonModule,
     GridModule,
-    DatePickerModule,
-    UploaderModule
+    DatePickerModule
   ],
   providers: [PageService,
     SortService,

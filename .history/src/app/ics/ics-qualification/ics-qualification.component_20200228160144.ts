@@ -49,8 +49,7 @@ export class IcsQualificationComponent implements OnInit {
       // uploader
       public path: Object = {
         saveUrl: 'https://aspnetmvc.syncfusion.com/services/api/uploadbox/Save',
-        removeUrl: 'https://aspnetmvc.syncfusion.com/services/api/uploadbox/Remove'
-      };
+        removeUrl: 'https://aspnetmvc.syncfusion.com/services/api/uploadbox/Remove' };
         public onUploadSuccess(args: any): void  {
           if (args.operation === 'upload') {
               console.log('File uploaded successfully');
@@ -61,7 +60,6 @@ export class IcsQualificationComponent implements OnInit {
     console.log('File failed to upload');
     }
 
-    // tslint:disable-next-line:member-ordering
     public dropEle: HTMLElement;
         // tslint:disable-next-line:use-life-cycle-interface
         ngOnInit(): void {

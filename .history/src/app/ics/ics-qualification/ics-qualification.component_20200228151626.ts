@@ -10,8 +10,6 @@ import { ChangeEventArgs } from '@syncfusion/ej2-angular-buttons';
 })
 export class IcsQualificationComponent implements OnInit {
   closeResult: string;
-  public dateValue: Date = new Date();
-
   public items: ItemModel[] = [
     {
         text: 'Inst Id'
@@ -46,23 +44,6 @@ export class IcsQualificationComponent implements OnInit {
 // start of table field
       public data: object[];
 
-      // uploader
-      public path: Object = {
-        saveUrl: 'https://aspnetmvc.syncfusion.com/services/api/uploadbox/Save',
-        removeUrl: 'https://aspnetmvc.syncfusion.com/services/api/uploadbox/Remove'
-      };
-        public onUploadSuccess(args: any): void  {
-          if (args.operation === 'upload') {
-              console.log('File uploaded successfully');
-          }
-      }
-
-    public onUploadFailure(args: any): void  {
-    console.log('File failed to upload');
-    }
-
-    // tslint:disable-next-line:member-ordering
-    public dropEle: HTMLElement;
         // tslint:disable-next-line:use-life-cycle-interface
         ngOnInit(): void {
             this.data =
@@ -78,9 +59,6 @@ export class IcsQualificationComponent implements OnInit {
               //     ShipRegion: 'CJ', ShipPostalCode: '44087', ShipCountry: 'Germany', Freight: 11.61, Verified: !1
               // }
             ];
-
-            // uploader
-            this.dropEle = document.getElementById('droparea');
         }
 
 // Start of modal ( add parameter pop up)

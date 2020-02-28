@@ -49,8 +49,7 @@ export class IcsQualificationComponent implements OnInit {
       // uploader
       public path: Object = {
         saveUrl: 'https://aspnetmvc.syncfusion.com/services/api/uploadbox/Save',
-        removeUrl: 'https://aspnetmvc.syncfusion.com/services/api/uploadbox/Remove'
-      };
+        removeUrl: 'https://aspnetmvc.syncfusion.com/services/api/uploadbox/Remove' };
         public onUploadSuccess(args: any): void  {
           if (args.operation === 'upload') {
               console.log('File uploaded successfully');
