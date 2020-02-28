@@ -1,13 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ItemModel } from '@syncfusion/ej2-angular-splitbuttons';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
-import {
-  FormGroup,
-  FormBuilder,
-  Validators,
-  FormControl
-} from '@angular/forms';
-import { EmitType } from '@syncfusion/ej2-base';
 
 @Component({
   selector: 'app-ics-parameter',

@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject, ViewChild} from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ItemModel } from '@syncfusion/ej2-angular-splitbuttons';
-
+import { TextBoxComponent } from '@syncfusion/ej2-angular-inputs';
+import { ChangeEventArgs } from '@syncfusion/ej2-angular-buttons';
 @Component({
   selector: 'app-ics-qualification',
   templateUrl: './ics-qualification.component.html',
@@ -29,7 +30,16 @@ export class IcsQualificationComponent implements OnInit {
       {
           text: 'Inst Name'
       }];
-
+      public items2: ItemModel[] = [
+        {
+            text: 'IQ'
+        },
+        {
+            text: 'IQ'
+        },
+        {
+            text: 'IQ'
+        }];
     // End of 2 drop down
 // start of table field
       public data: object[];
@@ -60,8 +70,5 @@ constructor(private modalService: NgbModal) {}
 addqualification(content3) {
   this.modalService.open(content3, { centered: true });
 }
-
-
-
       }
 

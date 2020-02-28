@@ -30,7 +30,7 @@ constructor(private toastr: ToastrService) {}
 
   ngAfterViewInit() {}
 
-  editEquipment() {
+  editInstrument() {
    // alert('hi edit');
     this.toastr.success('Hi edit Toaster'); // msg,title,override previousToastMessage
     // console.log(this.toastr.success('Hi edit Toaster', 'dsadsadas'));

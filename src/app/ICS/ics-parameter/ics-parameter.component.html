@@ -8,10 +8,10 @@
   
             <hr>
   
-            <button ejs-dropdownbutton [items]='items' content='Inst Id' style="color: cadetblue;"></button>
-            <button ejs-dropdownbutton [items]='items1' content='Inst Name' style="color: cadetblue;"></button>
+            <button ejs-dropdownbutton [items]='items' content='Inst Id' style="color: rgba(54, 32, 252, 0.822);"></button>
+            <button ejs-dropdownbutton [items]='items1' content='Inst Name' style="color: rgba(54, 32, 252, 0.822);"></button>
             <!-- <a class="btn btn-warn" >  <i class="fas fa-plus-circle" style="color: cadetblue;"></i> Add Parameter</a> -->
-            <button class="btn btn-outline-primary mb-2 mr-2" (click)="addparameter(content3)">Add Parameter</button>
+            <button class="btn-btn-info" (click)="addparameter(content3)" style="color: rgba(54, 32, 252, 0.822);"> <i class="fas fa-plus-circle"></i>Add Parameter</button>
             <div class="col-md-12">
                 <div class="card">
                   <div class="card-body">
@@ -21,20 +21,44 @@
 
                       <div class="modal-header">
                         <h4 class="modal-title">Add Parameter</h4>
-                        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                        <button type="button" class="close" aria-label="close" (click)="modal.dismiss('Cross click')">
                           <span aria-hidden="true">&times;</span>
                         </button>
                       </div>
 
                       <div class="modal-body">
                         
-                          One fine body&hellip;
+                          <!-- One fine body&hellip; -->
+                          
+                          <form class="form-inline">
+                          <div class="form-group">
+                            <label for="parameter">Parameter :</label>
+                            <input type="parameter" class="form-control" id="parameter">
+                          </div>
+
+                          <div class="form-group">
+                            <label for="nvalue">Nominal Value :</label>
+                            <input type="nvalue" class="form-control" id="nvalue">
+                          </div>
+
+                          <div class="form-group">
+                            <label for="nurange">Nominal Upper Range:</label>
+                            <input type="nurange" class="form-control" id="nurange">
+                          </div>
+
+                          <div class="form-group">
+                            <label for="nlrange">Nominal Lower Range:</label>
+                            <input type="nlrange" class="form-control" id="nlrange">
+                          </div>
+
                         
+                        </form>
+                       
                       </div>
 
 
                       <div class="modal-footer">
-                        <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+                        <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Add Parameter</button>
                       </div>
                     </ng-template>
 
