@@ -1,14 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject, ViewChild} from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ItemModel } from '@syncfusion/ej2-angular-splitbuttons';
-import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
-
+import { TextBoxComponent } from '@syncfusion/ej2-angular-inputs';
+import { ChangeEventArgs } from '@syncfusion/ej2-angular-buttons';
 @Component({
-  selector: 'app-ics-parameter',
-  templateUrl: './ics-parameter.component.html',
-  styleUrls: ['./ics-parameter.component.css']
+  selector: 'app-ics-qualification',
+  templateUrl: './ics-qualification.component.html',
+  styleUrls: ['./ics-qualification.component.css']
 })
-export class IcsParameterComponent implements OnInit {
-  closeResult: string;
+export class IcsQualificationComponent implements OnInit {
+
   public items: ItemModel[] = [
     {
         text: 'Inst Id'
@@ -29,7 +30,16 @@ export class IcsParameterComponent implements OnInit {
       {
           text: 'Inst Name'
       }];
-
+      public items2: ItemModel[] = [
+        {
+            text: 'IQ'
+        },
+        {
+            text: 'IQ'
+        },
+        {
+            text: 'IQ'
+        }];
     // End of 2 drop down
 // start of table field
       public data: object[];
@@ -57,25 +67,8 @@ export class IcsParameterComponent implements OnInit {
 
 constructor(private modalService: NgbModal) {}
 
-  addparameter(content) {
-    // this.modalService.open(content, { centered: true, size: 'lg' });
-    this.modalService.open(content, { centered: true, size: 'lg' }).result.then(
-      result => {
-        this.closeResult = `Closed with: ${result}`;
-      },
-      reason => {
-       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-      }
-    );
-  }
-  private getDismissReason(reason: any): string {
-    if (reason === ModalDismissReasons.ESC) {
-      return 'by pressing ESC';
-    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-      return 'by clicking on a backdrop';
-    } else {
-      return `with: ${reason}`;
-    }
-  }
+addqualification(content3) {
+  this.modalService.open(content3, { centered: true });
 }
+      }
 

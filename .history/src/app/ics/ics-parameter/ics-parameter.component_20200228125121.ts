@@ -64,7 +64,7 @@ constructor(private modalService: NgbModal) {}
         this.closeResult = `Closed with: ${result}`;
       },
       reason => {
-       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+        this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
       }
     );
   }

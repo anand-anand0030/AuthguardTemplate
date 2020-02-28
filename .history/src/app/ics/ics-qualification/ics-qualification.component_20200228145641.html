@@ -65,22 +65,28 @@
           <div class="form-group row">
               <label for="lname" class="col-sm-3 control-label col-form-label">Note</label>
               <div class="col-sm-9">
-                  <textarea class="form-control cye-lf-tag" rows="5"></textarea>
+                  <input type="text" class="form-control" id="nominalValue" placeholder="">
               </div>
           </div>
           <div class="form-group row">
-              <label for="email1" class="col-sm-3 control-label col-form-label">Attachment</label>
+              <label for="email1" class="col-sm-3 control-label col-form-label">Nominal Upper range</label>
               <div class="col-sm-9">
                   <input type="email" class="form-control" id="nominalUpperRange" placeholder="">
-                  <small class="form-text text-danger">* multiple attachment</small>
+              </div>
+          </div>
+          <div class="form-group row">
+              <label for="cono1" class="col-sm-3 control-label col-form-label">Nominal Lower range</label>
+              <div class="col-sm-9">
+                  <input type="text" class="form-control" id="nominalLowerRange" placeholder="">
               </div>
           </div>
       </div>
     </form>
   </div>
+
+
   <div class="modal-footer">
-    <button type="button" class="btn btn-info waves-effect waves-light">Add</button>
-    <button type="button" class="btn btn-info waves-effect waves-light" (click)="modal.close('Close click')">Close</button>
+    <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
   </div>
 </ng-template>
 

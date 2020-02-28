@@ -59,12 +59,12 @@ constructor(private modalService: NgbModal) {}
 
   addparameter(content) {
     // this.modalService.open(content, { centered: true, size: 'lg' });
-    this.modalService.open(content, { centered: true, size: 'lg' }).result.then(
+    this.modalService.open(content).result.then(
       result => {
         this.closeResult = `Closed with: ${result}`;
       },
       reason => {
-       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+        this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
       }
     );
   }

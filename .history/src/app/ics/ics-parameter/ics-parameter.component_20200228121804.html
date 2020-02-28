@@ -1,0 +1,112 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+              <div class="d-flex no-block align-items-center">
+                <h4 class="card-title">Add Parameter</h4>
+            </div>
+
+            <hr>
+
+            <button ejs-dropdownbutton [items]='items' content='Inst Id' style="color: rgba(54, 32, 252, 0.822);"></button>
+            <button ejs-dropdownbutton [items]='items1' content='Inst Name' style="color: rgba(54, 32, 252, 0.822);"></button>
+            <!-- <a class="btn btn-warn" >  <i class="fas fa-plus-circle" style="color: cadetblue;"></i> Add Parameter</a> -->
+            <button class="btn-btn-info" (click)="addparameter(content3)" style="color: rgba(54, 32, 252, 0.822);"> <i class="fas fa-plus-circle"></i>Add Parameter</button>
+            <div class="col-md-12">
+                <div class="card">
+                  <div class="card-body">
+                    <ng-template #content3 let-modal>
+                        <div class="modal-header">
+                          <h4 class="modal-title">Add Parameter</h4>
+                          <button type="button" class="close" aria-label="close" (click)="modal.dismiss('Cross click')">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                              <label for="parameter">Parameter :</label>
+                              <input type="parameter" class="form-control" id="parameter">
+                            </div>
+
+                            <div class="form-group">
+                              <label for="nvalue">Nominal Value :</label>
+                              <input type="nvalue" class="form-control" id="nvalue">
+                            </div>
+
+                            <div class="form-group">
+                              <label for="nurange">Nominal Upper Range:</label>
+                              <input type="nurange" class="form-control" id="nurange">
+                            </div>
+
+                            <div class="form-group">
+                              <label for="nlrange">Nominal Lower Range:</label>
+                              <input type="nlrange" class="form-control" id="nlrange">
+                            </div>
+                          </form> -->
+                          <form class="form-horizontal">
+                            <div class="card-body">
+                                <div class="form-group row">
+                                    <label for="fname" class="col-sm-3 text-right control-label col-form-label">Parameter</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="parameter" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="lname" class="col-sm-3 text-right control-label col-form-label">Nominal Value</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="nominalValue" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="email1" class="col-sm-3 text-right control-label col-form-label">Nominal Upper range</label>
+                                    <div class="col-sm-9">
+                                        <input type="email" class="form-control" id="nominalUpperRange" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="cono1" class="col-sm-3 text-right control-label col-form-label">Nominal Lower range</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="nominalLowerRange" placeholder="">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-info waves-effect waves-light" (click)="modal.close('Close click')">Add Parameter</button>
+                        </div>
+                    </ng-template>
+
+                    <!-- <button class="btn btn-outline-primary mb-2 mr-2" (click)="addparameter(content3)">Add Parameter</button> -->
+                  </div>
+                </div>
+              </div>
+
+
+
+
+
+
+
+
+            <hr>
+
+            <div class="table-responsive">
+                <ejs-grid [dataSource]='data' [allowSelection]='true'  [enableHover]='false'  [allowSorting]='true' e-gridheader=''>
+                    <e-columns>
+                  <e-column field='Sr No' headerText='Sr No' textAlign='Right' width=90></e-column>
+                  <e-column field='Parameter' headerText='Parameter' width=150></e-column>
+                  <e-column field='Nominal Value' headerText='Nominal Value' textAlign='Right' format='C2' width=150></e-column>
+                  <e-column field='Upper Range' headerText='Upper Range' textAlign='Right' format='yMd' width=150></e-column>
+                  <e-column field='Lower Range' headerText='Lower Range' textAlign='Right' width=90></e-column>
+                  </e-columns>
+                  </ejs-grid>
+      </div>
+
+
+            </div>
+        </div>
+    </div>
+  </div>
+
+

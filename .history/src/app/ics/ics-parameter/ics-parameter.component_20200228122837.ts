@@ -8,7 +8,7 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./ics-parameter.component.css']
 })
 export class IcsParameterComponent implements OnInit {
-  closeResult: string;
+
   public items: ItemModel[] = [
     {
         text: 'Inst Id'
@@ -57,25 +57,8 @@ export class IcsParameterComponent implements OnInit {
 
 constructor(private modalService: NgbModal) {}
 
-  addparameter(content) {
-    // this.modalService.open(content, { centered: true, size: 'lg' });
-    this.modalService.open(content, { centered: true, size: 'lg' }).result.then(
-      result => {
-        this.closeResult = `Closed with: ${result}`;
-      },
-      reason => {
-       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-      }
-    );
-  }
-  private getDismissReason(reason: any): string {
-    if (reason === ModalDismissReasons.ESC) {
-      return 'by pressing ESC';
-    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-      return 'by clicking on a backdrop';
-    } else {
-      return `with: ${reason}`;
-    }
-  }
+addparameter(content3) {
+  this.modalService.open(content3, { centered: true, size: 'lg' });
 }
+      }
 
