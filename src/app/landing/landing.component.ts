@@ -12,7 +12,4 @@ export class LandingComponent implements OnInit {
 
   ngOnInit() {
   }
-loadICS() {
-  this.routes.navigate(['/icshome']);
-}
 }

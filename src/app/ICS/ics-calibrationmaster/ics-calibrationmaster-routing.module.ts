@@ -7,10 +7,10 @@ const routes: Routes = [
   {
     path: '',
     data: {
-      title: 'Calibrationmaster',
+      title: 'Calibration',
       urls: [
         { title: 'Dashboard', url: '/landing' },
-        { title: 'Calibrationmaster' }
+        { title: 'Calibration' }
       ]
     },
     component: IcsCalibrationmasterComponent

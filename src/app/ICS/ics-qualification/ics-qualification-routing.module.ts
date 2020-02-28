@@ -1,19 +1,19 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { IcsParameterComponent } from './ics-parameter.component';
+import { IcsQualificationComponent } from './ics-qualification.component';
 
 
 const routes: Routes = [
   {
     path: '',
     data: {
-      title: 'Add Parameter',
+      title: 'Qualification',
       urls: [
         { title: 'Dashboard', url: '/landing' },
-        { title: 'Add Parameter' }
+        { title: 'Qualification' }
       ]
     },
-    component: IcsParameterComponent
+    component: IcsQualificationComponent
   }
 ];
 
@@ -21,4 +21,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class IcsParameterRoutingModule { }
+export class IcsQualificationRoutingModule { }

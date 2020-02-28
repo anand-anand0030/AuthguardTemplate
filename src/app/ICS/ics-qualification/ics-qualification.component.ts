@@ -1,20 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ItemModel } from '@syncfusion/ej2-angular-splitbuttons';
-import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
-import {
-  FormGroup,
-  FormBuilder,
-  Validators,
-  FormControl
-} from '@angular/forms';
-import { EmitType } from '@syncfusion/ej2-base';
 
 @Component({
-  selector: 'app-ics-parameter',
-  templateUrl: './ics-parameter.component.html',
-  styleUrls: ['./ics-parameter.component.css']
+  selector: 'app-ics-qualification',
+  templateUrl: './ics-qualification.component.html',
+  styleUrls: ['./ics-qualification.component.css']
 })
-export class IcsParameterComponent implements OnInit {
+export class IcsQualificationComponent implements OnInit {
 
   public items: ItemModel[] = [
     {
@@ -64,9 +57,10 @@ export class IcsParameterComponent implements OnInit {
 
 constructor(private modalService: NgbModal) {}
 
-addparameter(content3) {
+addqualification(content3) {
   this.modalService.open(content3, { centered: true });
 }
+
 
 
       }

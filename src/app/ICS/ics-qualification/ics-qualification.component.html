@@ -3,7 +3,7 @@
         <div class="card">
             <div class="card-body">
               <div class="d-flex no-block align-items-center">
-                <h4 class="card-title">Calibration</h4>
+                <h4 class="card-title">Qualification</h4>
             </div>
   
             <hr>
@@ -11,7 +11,7 @@
             <button ejs-dropdownbutton [items]='items' content='Inst Id' style="color: cadetblue;"></button>
             <button ejs-dropdownbutton [items]='items1' content='Inst Name' style="color: cadetblue;"></button>
             <!-- <a class="btn btn-warn" >  <i class="fas fa-plus-circle" style="color: cadetblue;"></i> Add Parameter</a> -->
-            <button class="btn btn-outline-primary mb-2 mr-2" (click)="addcalibration(content3)">Add Calibration</button>
+            <button class="btn btn-outline-primary mb-2 mr-2" (click)="addqualification(content3)">Add Qualification</button>
             <div class="col-md-12">
                 <div class="card">
                   <div class="card-body">
@@ -20,14 +20,14 @@
                     <ng-template #content3 let-modal>
 
                       <div class="modal-header">
-                        <h4 class="modal-title">Add Calibration</h4>
+                        <h4 class="modal-title">Add Qualification</h4>
                         <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
                           <span aria-hidden="true">&times;</span>
                         </button>
                       </div>
 
                       <div class="modal-body">
-                        <p>One fine body&hellip;</p>
+                       
                       </div>
 
 
@@ -50,10 +50,11 @@
                   <e-column field='Sr No' headerText='Sr No' textAlign='Right' width=90></e-column>
                   <e-column field='Inst Id' headerText='Inst Id' width=150></e-column>
                   <e-column field='Inst Name' headerText='Inst Name' textAlign='Right' format='C2' width=150></e-column>
-                  <e-column field='Frequency Of Calibration' headerText='Frequency Of Calibration' textAlign='Right' format='yMd' width=200></e-column>
-                  <e-column field='Date Of Calibration' headerText='Date Of Calibration' textAlign='Right' width=170></e-column>
-                  <e-column field='Last Date Of Calibration' headerText='Last Date Of Calibration' textAlign='Right' width=190></e-column>
-                  <e-column field='Attachment' headerText='Attachment' width=170></e-column>
+                  <e-column field='Last Perform Date' headerText='Last Perform Date' textAlign='Right' format='yMd' width=200></e-column>
+                  <e-column field='Next Due Date' headerText='Next Due Date' textAlign='Right' width=170></e-column>
+                  <e-column field='Sate Of Qualification' headerText='Sate Of Qualification' textAlign='Right' width=170></e-column>
+                  <e-column field='Type Of Qualification' headerText='Type Of Qualification' width=170></e-column>
+                  <e-column field='Attachment' headerText='Attachment' textAlign='Right' format='C2' width=150></e-column>
                   <e-column field='Notes' headerText='Notes' textAlign='Right' format='yMd' width=120></e-column>
                   <e-column field='Edit' headerText='Edit' textAlign='Right' width=90></e-column>
                 </e-columns>
@@ -67,5 +68,4 @@
   </div>
   
   
-
 

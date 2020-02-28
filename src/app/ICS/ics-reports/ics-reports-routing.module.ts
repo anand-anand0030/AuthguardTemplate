@@ -3,10 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { InstrumentListComponent } from './instrument-list/instrument-list.component';
 import { InstrumentHistoryComponent } from './instrument-history/instrument-history.component';
 import { CalibrationReportComponent } from './calibration-report/calibration-report.component';
+// import { IcsReportsComponent } from './ics-reports/ics-reports.component';
 
 
 
 const routes: Routes = [
+
+
   {
     path: '',
     children: [
@@ -45,11 +48,22 @@ const routes: Routes = [
           ]
         }
       },
+      {
+        path: 'usagereport',
+        component: CalibrationReportComponent,
+        data: {
+          title: 'Usage Report',
+          urls: [
+            { title: 'Dashboard', url: '/landing' },
+            { title: 'ICS', url: '/icshome'  },
+            { title: 'Usage Report' }
+          ]
+        }
+      },
     ],
-  }
+  },
 ];
-
-@NgModule({
+  @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })

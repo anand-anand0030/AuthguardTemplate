@@ -36,6 +36,7 @@ import { GridModule } from '@syncfusion/ej2-angular-grids';
 import { ToastrModule } from 'ngx-toastr';
 import { FooterComponent } from './shared/footer/footer.component';
 
+
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
   wheelSpeed: 2,
@@ -57,7 +58,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     IcsfullComponent,
     LandingComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+
   ],
   imports: [
     CommonModule,

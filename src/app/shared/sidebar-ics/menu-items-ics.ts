@@ -17,6 +17,23 @@ export const ROUTES: RouteInfo[] = [
     extralink: false,
     submenu: []
   },
+  
+  {
+    path: '/ics-parameter',
+    title: 'Parameter',
+    icon: 'mdi mdi-gauge',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
+  {
+    path: '/ics-qualification',
+    title: 'Qualification',
+    icon: 'mdi mdi-gauge',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
   {
     path: '/callibrationmaster',
     title: ' Calibration Record Master',
@@ -25,15 +42,15 @@ export const ROUTES: RouteInfo[] = [
     extralink: false,
     submenu: []
   },
-
   {
-    path: '/ics-parameter',
-    title: ' ics-parameter',
+    path: '/ics-maintenance',
+    title: 'Maintenance',
     icon: 'mdi mdi-gauge',
     class: '',
     extralink: false,
     submenu: []
   },
+
   // {
   //   path: '',
   //   title: 'UI Components',
@@ -43,7 +60,7 @@ export const ROUTES: RouteInfo[] = [
   //   submenu: []
   // },
   {
-    path: '',
+    path: '/ics-reports',
     title: 'Reports',
     icon: 'mdi mdi-bullseye',
     class: 'has-arrow',
@@ -72,7 +89,15 @@ export const ROUTES: RouteInfo[] = [
         class: '',
     extralink: false,
         submenu: []
-      }
+      },
+      {
+        path: '/ics-reports/usagereport',
+        title: 'Usage Report',
+        icon: 'mdi mdi-adjust',
+        class: '',
+    extralink: false,
+        submenu: []
+      },
     ]
   },
   {
@@ -84,7 +109,7 @@ export const ROUTES: RouteInfo[] = [
     submenu: [
       {
         path: '/ics-settings/usersetting',
-        title: 'usersetting',
+        title: 'User Setting',
     icon: 'mdi mdi-adjust',
         class: '',
         extralink: false,
@@ -92,7 +117,7 @@ export const ROUTES: RouteInfo[] = [
       },
       {
         path: '/ics-settings/customheaderfield',
-        title: 'customheaderfield',
+        title: 'Custom Header Fields',
     icon: 'mdi mdi-adjust',
         class: '',
         extralink: false,
@@ -100,7 +125,7 @@ export const ROUTES: RouteInfo[] = [
       },
       {
         path: '/ics-settings/alertsetting',
-        title: 'alertsetting',
+        title: 'Alert Setting',
     icon: 'mdi mdi-adjust',
         class: '',
         extralink: false,

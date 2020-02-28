@@ -24,11 +24,11 @@ const routes: Routes = [
         path: 'customheaderfield',
         component: IcsCustomheaderfieldComponent,
         data: {
-          title: 'customheaderfield',
+          title: 'Custom Header Fields',
           urls: [
             { title: 'Dashboard', url: '/landing' },
             { title: 'ICS', url: '/icshome'  },
-            { title: 'customheaderfield' }
+            { title: 'Custom Header Fields' }
           ]
         }
       },
@@ -36,11 +36,11 @@ const routes: Routes = [
         path: 'alertsetting',
         component: IcsAlertsettingsComponent,
         data: {
-          title: 'alertsetting',
+          title: 'Alert Setting',
           urls: [
             { title: 'Dashboard', url: '/landing' },
             { title: 'ICS', url: '/icshome'  },
-            { title: 'alertsetting' }
+            { title: 'Alert Setting' }
           ]
         }
       },

@@ -1,18 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { IcsParameterRoutingModule } from './ics-parameter-routing.module';
-import { IcsParameterComponent } from './ics-parameter.component';
+import { IcsQualificationRoutingModule } from './ics-qualification-routing.module';
+import { IcsQualificationComponent } from './ics-qualification.component';
 import { DropDownButtonModule } from '@syncfusion/ej2-angular-splitbuttons';
 import { GridModule, PageService, SortService, GroupService, FilterService } from '@syncfusion/ej2-angular-grids';
 
 
-
 @NgModule({
-  declarations: [IcsParameterComponent],
+  declarations: [IcsQualificationComponent],
   imports: [
     CommonModule,
-    IcsParameterRoutingModule,
+    IcsQualificationRoutingModule,
     DropDownButtonModule,
     GridModule
   ],
@@ -21,4 +20,5 @@ import { GridModule, PageService, SortService, GroupService, FilterService } fro
     FilterService,
     GroupService]
 })
-export class IcsParameterModule { }
+
+export class IcsQualificationModule { }

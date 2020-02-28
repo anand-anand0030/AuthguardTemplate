@@ -57,6 +57,14 @@ export const Approutes: Routes = [
         loadChildren: './ICS/ics-parameter/ics-parameter.module#IcsParameterModule'
       },
       {
+        path: 'ics-qualification',
+        loadChildren: './ICS/ics-qualification/ics-qualification.module#IcsQualificationModule'
+      },
+      {
+        path: 'ics-maintenance',
+        loadChildren: './ICS/ics-maintenance/ics-maintenance.module#IcsMaintenanceModule'
+      },
+      {
         path: 'ics-reports',
         loadChildren: './ICS/ics-reports/ics-reports.module#IcsReportsModule'
       },

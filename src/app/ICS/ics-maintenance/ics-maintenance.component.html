@@ -3,7 +3,7 @@
         <div class="card">
             <div class="card-body">
               <div class="d-flex no-block align-items-center">
-                <h4 class="card-title">Calibration</h4>
+                <h4 class="card-title">Maintenance</h4>
             </div>
   
             <hr>
@@ -11,16 +11,13 @@
             <button ejs-dropdownbutton [items]='items' content='Inst Id' style="color: cadetblue;"></button>
             <button ejs-dropdownbutton [items]='items1' content='Inst Name' style="color: cadetblue;"></button>
             <!-- <a class="btn btn-warn" >  <i class="fas fa-plus-circle" style="color: cadetblue;"></i> Add Parameter</a> -->
-            <button class="btn btn-outline-primary mb-2 mr-2" (click)="addcalibration(content3)">Add Calibration</button>
+            <button class="btn btn-outline-primary mb-2 mr-2" (click)="adddetails(content3)">Add Details</button>
             <div class="col-md-12">
                 <div class="card">
                   <div class="card-body">
-                    <!-- <h3 class="card-title">Modal With Options</h3> -->
-                    <!-- <h6 class="card-subtitle">You can pass an existing component as content of the modal window.</h6> -->
                     <ng-template #content3 let-modal>
-
                       <div class="modal-header">
-                        <h4 class="modal-title">Add Calibration</h4>
+                        <h4 class="modal-title">Maintenance Details</h4>
                         <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
                           <span aria-hidden="true">&times;</span>
                         </button>
@@ -35,25 +32,22 @@
                         <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
                       </div>
                     </ng-template>
-
-                    <!-- <button class="btn btn-outline-primary mb-2 mr-2" (click)="addparameter(content3)">Add Parameter</button> -->
                   </div>
                 </div>
             </div>
 
-
             <hr>
-  
+            
             <div class="table-responsive">
                 <ejs-grid [dataSource]='data' [allowSelection]='true'  [enableHover]='false'  [allowSorting]='true' e-gridheader=''>
                     <e-columns>
                   <e-column field='Sr No' headerText='Sr No' textAlign='Right' width=90></e-column>
                   <e-column field='Inst Id' headerText='Inst Id' width=150></e-column>
                   <e-column field='Inst Name' headerText='Inst Name' textAlign='Right' format='C2' width=150></e-column>
-                  <e-column field='Frequency Of Calibration' headerText='Frequency Of Calibration' textAlign='Right' format='yMd' width=200></e-column>
-                  <e-column field='Date Of Calibration' headerText='Date Of Calibration' textAlign='Right' width=170></e-column>
-                  <e-column field='Last Date Of Calibration' headerText='Last Date Of Calibration' textAlign='Right' width=190></e-column>
-                  <e-column field='Attachment' headerText='Attachment' width=170></e-column>
+                  <e-column field='Last Occur Date' headerText='Last Occur Date' textAlign='Right' format='yMd' width=200></e-column>
+                  <e-column field='Next Due Date' headerText='Next Due Date' textAlign='Right' width=170></e-column>
+                  <e-column field='Type Of Breakdown' headerText='Type Of Breakdown' textAlign='Right' width=170></e-column>
+                  <e-column field='Attachment' headerText='Attachment' textAlign='Right' format='C2' width=150></e-column>
                   <e-column field='Notes' headerText='Notes' textAlign='Right' format='yMd' width=120></e-column>
                   <e-column field='Edit' headerText='Edit' textAlign='Right' width=90></e-column>
                 </e-columns>

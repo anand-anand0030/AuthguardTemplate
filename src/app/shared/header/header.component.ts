@@ -77,7 +77,8 @@ export class HeaderComponent implements OnInit {
     }
   }
 
-  toggleSidebarType() {debugger
+  // tslint:disable-next-line:no-debugger
+  toggleSidebarType() {debugger;
     switch (this.options.sidebartype) {
       case 'full':
       case 'iconbar':
