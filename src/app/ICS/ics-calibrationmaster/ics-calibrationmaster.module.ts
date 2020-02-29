@@ -5,6 +5,8 @@ import { IcsCalibrationmasterRoutingModule } from './ics-calibrationmaster-routi
 import { IcsCalibrationmasterComponent } from './ics-calibrationmaster.component';
 import { GridModule, PageService, SortService, FilterService, GroupService } from '@syncfusion/ej2-angular-grids';
 import { DropDownButtonModule } from '@syncfusion/ej2-angular-splitbuttons';
+import { UploaderModule } from '@syncfusion/ej2-angular-inputs';
+import { DatePickerModule } from '@syncfusion/ej2-angular-calendars';
 
 
 @NgModule({
@@ -13,7 +15,9 @@ import { DropDownButtonModule } from '@syncfusion/ej2-angular-splitbuttons';
     CommonModule,
     IcsCalibrationmasterRoutingModule,
     DropDownButtonModule,
-    GridModule
+    GridModule,
+    DatePickerModule,
+    UploaderModule
   ],
   providers: [PageService,
     SortService,

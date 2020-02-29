@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { ItemModel } from '@syncfusion/ej2-angular-splitbuttons';
 
 @Component({
@@ -8,6 +8,8 @@ import { ItemModel } from '@syncfusion/ej2-angular-splitbuttons';
   styleUrls: ['./ics-calibrationmaster.component.css']
 })
 export class IcsCalibrationmasterComponent implements OnInit {
+  closeResult: string;
+  public dateValue: Date = new Date();
 
   public items: ItemModel[] = [
     {
@@ -29,11 +31,37 @@ export class IcsCalibrationmasterComponent implements OnInit {
       {
           text: 'Inst Name'
       }];
-
+      public items2: ItemModel[] = [
+        {
+            text: 'IQ'
+        },
+        {
+            text: 'IQ'
+        },
+        {
+            text: 'IQ'
+        }];
     // End of 2 drop down
 // start of table field
       public data: object[];
 
+ // uploader
+      public path: Object = {
+        saveUrl: 'https://aspnetmvc.syncfusion.com/services/api/uploadbox/Save',
+        removeUrl: 'https://aspnetmvc.syncfusion.com/services/api/uploadbox/Remove'
+      };
+        public onUploadSuccess(args: any): void  {
+          if (args.operation === 'upload') {
+              console.log('File uploaded successfully');
+          }
+      }
+
+    public onUploadFailure(args: any): void  {
+    console.log('File failed to upload');
+    }
+
+    // tslint:disable-next-line:member-ordering
+    public dropEle: HTMLElement;
         // tslint:disable-next-line:use-life-cycle-interface
         ngOnInit(): void {
             this.data =
@@ -57,11 +85,24 @@ export class IcsCalibrationmasterComponent implements OnInit {
 
 constructor(private modalService: NgbModal) {}
 
-addcalibration(content3) {
-  this.modalService.open(content3, { centered: true });
+addcalibration(addCalibrationModal) {
+  this.modalService.open(addCalibrationModal, { centered: true, size: 'lg' }).result.then(
+    result => {
+      this.closeResult = `Closed with: ${result}`;
+    },
+    reason => {
+     this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    }
+  );
 }
-
-
-      }
-
+private getDismissReason(reason: any): string {
+  if (reason === ModalDismissReasons.ESC) {
+    return 'by pressing ESC';
+  } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+    return 'by clicking on a backdrop';
+  } else {
+    return `with: ${reason}`;
+  }
+}
+}
 

@@ -5,6 +5,8 @@ import { IcsMaintenanceRoutingModule } from './ics-maintenance-routing.module';
 import { IcsMaintenanceComponent } from './ics-maintenance.component';
 import { DropDownButtonModule } from '@syncfusion/ej2-angular-splitbuttons';
 import { GridModule, PageService, SortService, FilterService, GroupService } from '@syncfusion/ej2-angular-grids';
+import { UploaderModule } from '@syncfusion/ej2-angular-inputs';
+import { DatePickerModule } from '@syncfusion/ej2-angular-calendars';
 
 
 @NgModule({
@@ -13,7 +15,9 @@ import { GridModule, PageService, SortService, FilterService, GroupService } fro
     CommonModule,
     IcsMaintenanceRoutingModule,
     DropDownButtonModule,
-    GridModule
+    GridModule,
+    DatePickerModule,
+    UploaderModule
   ],
   providers: [PageService,
     SortService,

@@ -8,7 +8,7 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./ics-parameter.component.css']
 })
 export class IcsParameterComponent implements OnInit {
-  closeResult: string;
+   closeResult: string;
   public items: ItemModel[] = [
     {
         text: 'Inst Id'
