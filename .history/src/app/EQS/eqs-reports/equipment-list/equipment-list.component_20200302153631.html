@@ -6,8 +6,7 @@
                 <h4 class="card-title">List of Equipments</h4>
               </div>
             <hr>
-            <label class="">Equipment Name: </label>
-            <button class="mr-2 ml-2" ejs-dropdownbutton [items]='items' content='Select' style="color: rgba(54, 32, 252, 0.822);"></button>
+            <button class="mr-2" ejs-dropdownbutton [items]='items' content='Inst Id' style="color: rgba(54, 32, 252, 0.822);"></button>
             <button  class="btn-btn-info mr-2 float-right" style="color: rgba(54, 32, 252, 0.822);"><i class="ti-export"></i> Export</button>
             <hr>
             <div class="table-responsive">
@@ -20,6 +19,7 @@
                   <e-column field='EndDate' headerText='EndDate' textAlign='Right' format='yMd' width=200></e-column>
                   <e-column field='DueDate' headerText='DueDate' textAlign='Right' format='yMd' width=200></e-column>
                   <e-column field='Purpose' headerText='Purpose' textAlign='Right' width=170></e-column>
+                  <e-column field='Edit' headerText='Edit' textAlign='Right' width=90></e-column>
                 </e-columns>
                   </ejs-grid>
             </div>

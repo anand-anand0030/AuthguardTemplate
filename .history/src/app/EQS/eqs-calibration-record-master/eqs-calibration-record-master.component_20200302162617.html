@@ -11,6 +11,7 @@
           <!-- <a class="btn btn-warn" >  <i class="fas fa-plus-circle" style="color: cadetblue;"></i> Add Parameter</a> -->
           <button  class="btn-btn-info mr-2 float-right" style="color: rgba(54, 32, 252, 0.822);"><i class="ti-export"></i> Export</button>
           <button  class="btn-btn-info mr-2 float-right" (click)="openAddCalibrationModal(CalibrationModal)" style="color: rgba(54, 32, 252, 0.822);"><i class="fas fa-plus-circle"></i>Add Calibration</button>
+          <button  class="btn-btn-info mr-2 float-right" style="color: rgba(54, 32, 252, 0.822);"><i class="ti-export"></i> Export</button>
           <hr>
           <div class="table-responsive">
               <ejs-grid [dataSource]='data' [allowSelection]='true'  [enableHover]='false'  [allowSorting]='true' e-gridheader=''>
@@ -45,7 +46,7 @@
         <div class="col-sm-4">
             <input type="text" class="form-control" id="parameter" placeholder="">
         </div>
-        <label for="fname" class="col-sm-3 control-label col-form-label ml-auto offset-1 p-l-40">Calibration Type:</label>
+        <label for="fname" class="col-sm-3 control-label col-form-label ml-auto offset-1 p-l-40">Qualification Type :</label>
         <div class="col-sm-2 m-0 p-0">
           <button ejs-dropdownbutton [items]='items' content='IQ' style="color: cadetblue;"></button>
         </div>
@@ -54,7 +55,7 @@
     <form class="form-horizontal">
       <div class="card-body border">
           <div class="form-group row">
-              <label for="fname" class="col-sm-3 control-label col-form-label">Date of Calibration:</label>
+              <label for="fname" class="col-sm-3 control-label col-form-label">Date of Qualification :</label>
               <div class="col-sm-3">
                   <!-- <input type="text" class="form-control" id="parameter" placeholder=""> -->
                   <ejs-datepicker [value]='dateValue' placeholder='Enter date'></ejs-datepicker>

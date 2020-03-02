@@ -15,8 +15,7 @@ import { GridModule, PageService, SortService, GroupService, FilterService } fro
     CommonModule,
     EqsReportsRoutingModule,
     DropDownButtonModule,
-    GridModule
-  ],
-  providers: [PageService, SortService, GroupService, FilterService]
+    GridModule, PageService, SortService, GroupService, FilterService
+  ]
 })
 export class EqsReportsModule { }

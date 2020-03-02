@@ -25,12 +25,12 @@ export class EquipmentListComponent implements OnInit {
     [
       {
           EqipmentId: 10248, CustomerID: 'VINET', FrequencyOfCalibration: 5, StartDate: new Date(8364186e5),
-          EndDate: new Date(8364186e5), DueDate: new Date(8364186e5),
+          EndDate: new Date(8364186e5),DueDate: new Date(8364186e5),
           Purpose: 'Vins et alcools Chevalier', Remark: 'Reims'
       },
       {
         EqipmentId: 10248, CustomerID: 'VINET', FrequencyOfCalibration: 5, StartDate: new Date(8364186e5),
-        EndDate: new Date(8364186e5), DueDate: new Date(8364186e5),
+        EndDate: new Date(8364186e5),DueDate: new Date(8364186e5),
         Purpose: 'Vins et alcools Chevalier', Remark: 'Reims'
       }
     ];

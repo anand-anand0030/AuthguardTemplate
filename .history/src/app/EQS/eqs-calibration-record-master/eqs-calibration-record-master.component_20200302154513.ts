@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { ItemModel } from '@syncfusion/ej2-splitbuttons';
 
 @Component({
-  selector: 'app-equipment-list',
-  templateUrl: './equipment-list.component.html',
-  styleUrls: ['./equipment-list.component.css']
+  selector: 'app-eqs-calibration-record-master',
+  templateUrl: './eqs-calibration-record-master.component.html',
+  styleUrls: ['./eqs-calibration-record-master.component.css']
 })
-export class EquipmentListComponent implements OnInit {
+export class EqsCalibrationRecordMasterComponent implements OnInit {
   public items: ItemModel[] = [
     {
         text: 'All'

@@ -6,20 +6,24 @@
                 <h4 class="card-title">List of Equipments</h4>
               </div>
             <hr>
-            <label class="">Equipment Name: </label>
-            <button class="mr-2 ml-2" ejs-dropdownbutton [items]='items' content='Select' style="color: rgba(54, 32, 252, 0.822);"></button>
+            <button class="mr-2" ejs-dropdownbutton [items]='items' content='Inst Id' style="color: rgba(54, 32, 252, 0.822);"></button>
             <button  class="btn-btn-info mr-2 float-right" style="color: rgba(54, 32, 252, 0.822);"><i class="ti-export"></i> Export</button>
             <hr>
             <div class="table-responsive">
                 <ejs-grid [dataSource]='data' [allowSelection]='true'  [enableHover]='false'  [allowSorting]='true' e-gridheader=''>
                     <e-columns>
                   <e-column field='Sr No' headerText='Sr No' textAlign='Right' width=90></e-column>
-                  <e-column field='CustomerID' headerText='CustomerID' width=150></e-column>
+                  <e-column field='Inst Id' headerText='Inst Id' width=150></e-column>
                   <e-column field='FrequencyOfCalibration' headerText='Inst Name' textAlign='Right' format='C2' width=150></e-column>
                   <e-column field='StartDate' headerText='StartDate' textAlign='Right' format='yMd' width=200></e-column>
                   <e-column field='EndDate' headerText='EndDate' textAlign='Right' format='yMd' width=200></e-column>
                   <e-column field='DueDate' headerText='DueDate' textAlign='Right' format='yMd' width=200></e-column>
-                  <e-column field='Purpose' headerText='Purpose' textAlign='Right' width=170></e-column>
+                  <e-column field='Next Due Date' headerText='Next Due Date' textAlign='Right' width=170></e-column>
+                  <e-column field='Sate Of Qualification' headerText='Sate Of Qualification' textAlign='Right' width=170></e-column>
+                  <e-column field='Type Of Qualification' headerText='Type Of Qualification' width=170></e-column>
+                  <e-column field='Attachment' headerText='Attachment' textAlign='Right' format='C2' width=150></e-column>
+                  <e-column field='Notes' headerText='Notes' textAlign='Right' format='yMd' width=120></e-column>
+                  <e-column field='Edit' headerText='Edit' textAlign='Right' width=90></e-column>
                 </e-columns>
                   </ejs-grid>
             </div>

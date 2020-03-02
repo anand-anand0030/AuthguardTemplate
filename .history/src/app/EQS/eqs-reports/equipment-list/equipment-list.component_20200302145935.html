@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+              <div class="d-flex no-block align-items-center">
+                <h4 class="card-title">List of Equipments</h4>
+              </div>
+            <hr>
+            <button class="mr-2" ejs-dropdownbutton [items]='items' content='Inst Id' style="color: rgba(54, 32, 252, 0.822);"></button>
+            <button  class="btn-btn-info mr-2 float-right" (click)="openAddQualificationModal(qualificationModal)" style="color: rgba(54, 32, 252, 0.822);"><i class="fas fa-plus-circle"></i>Add Qualification</button>
+            <hr>
+            <div class="table-responsive">
+                <ejs-grid [dataSource]='data' [allowSelection]='true'  [enableHover]='false'  [allowSorting]='true' e-gridheader=''>
+                    <e-columns>
+                  <e-column field='Sr No' headerText='Sr No' textAlign='Right' width=90></e-column>
+                  <e-column field='Inst Id' headerText='Inst Id' width=150></e-column>
+                  <e-column field='Inst Name' headerText='Inst Name' textAlign='Right' format='C2' width=150></e-column>
+                  <e-column field='Last Perform Date' headerText='Last Perform Date' textAlign='Right' format='yMd' width=200></e-column>
+                  <e-column field='Next Due Date' headerText='Next Due Date' textAlign='Right' width=170></e-column>
+                  <e-column field='Sate Of Qualification' headerText='Sate Of Qualification' textAlign='Right' width=170></e-column>
+                  <e-column field='Type Of Qualification' headerText='Type Of Qualification' width=170></e-column>
+                  <e-column field='Attachment' headerText='Attachment' textAlign='Right' format='C2' width=150></e-column>
+                  <e-column field='Notes' headerText='Notes' textAlign='Right' format='yMd' width=120></e-column>
+                  <e-column field='Edit' headerText='Edit' textAlign='Right' width=90></e-column>
+                </e-columns>
+                  </ejs-grid>
+            </div>
+            </div>
+        </div>
+    </div>
+  </div>

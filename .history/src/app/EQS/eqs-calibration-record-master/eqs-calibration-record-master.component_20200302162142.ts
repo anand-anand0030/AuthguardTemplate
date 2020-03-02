@@ -8,8 +8,6 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./eqs-calibration-record-master.component.css']
 })
 export class EqsCalibrationRecordMasterComponent implements OnInit {
-  public dropEle: HTMLElement;
-  public dateValue: Date = new Date();
   public items: ItemModel[] = [
     {
         text: 'All'
@@ -23,24 +21,8 @@ export class EqsCalibrationRecordMasterComponent implements OnInit {
     closeResult: string;
   data: object[];
   constructor(private modalService: NgbModal) { }
-  // uploader
-  public path: Object = {
-    saveUrl: 'https://aspnetmvc.syncfusion.com/services/api/uploadbox/Save',
-    removeUrl: 'https://aspnetmvc.syncfusion.com/services/api/uploadbox/Remove'
-  };
-    public onUploadSuccess(args: any): void  {
-      if (args.operation === 'upload') {
-          console.log('File uploaded successfully');
-      }
-  }
 
-public onUploadFailure(args: any): void  {
-console.log('File failed to upload');
-}
   ngOnInit() {
-
-     // uploader
-     this.dropEle = document.getElementById('droparea');
     this.data =
     [
       {

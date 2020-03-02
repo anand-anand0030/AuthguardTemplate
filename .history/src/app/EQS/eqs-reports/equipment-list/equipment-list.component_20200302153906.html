@@ -6,12 +6,11 @@
                 <h4 class="card-title">List of Equipments</h4>
               </div>
             <hr>
-            <label class="">Equipment Name: </label>
-            <button class="mr-2 ml-2" ejs-dropdownbutton [items]='items' content='Select' style="color: rgba(54, 32, 252, 0.822);"></button>
+            <button class="mr-2" ejs-dropdownbutton [items]='items' content='Inst Id' style="color: rgba(54, 32, 252, 0.822);"></button>
             <button  class="btn-btn-info mr-2 float-right" style="color: rgba(54, 32, 252, 0.822);"><i class="ti-export"></i> Export</button>
             <hr>
             <div class="table-responsive">
-                <ejs-grid [dataSource]='data' [allowSelection]='true'  [enableHover]='false'  [allowSorting]='true' e-gridheader=''>
+                <ejs-grid [dataSource]='data' [allowSelection]='true'  [enableHover]='false'  [allowSorting]='true' e-gridheader='qwerty'>
                     <e-columns>
                   <e-column field='Sr No' headerText='Sr No' textAlign='Right' width=90></e-column>
                   <e-column field='CustomerID' headerText='CustomerID' width=150></e-column>

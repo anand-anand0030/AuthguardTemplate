@@ -6,7 +6,6 @@ import { EquipmentListComponent } from './equipment-list/equipment-list.componen
 import { EquipmentHistoryComponent } from './equipment-history/equipment-history.component';
 import { EqsCalibrationReportComponent } from './eqs-calibration-report/eqs-calibration-report.component';
 import { DropDownButtonModule } from '@syncfusion/ej2-angular-splitbuttons';
-import { GridModule, PageService, SortService, GroupService, FilterService } from '@syncfusion/ej2-angular-grids';
 
 
 @NgModule({
@@ -14,9 +13,7 @@ import { GridModule, PageService, SortService, GroupService, FilterService } fro
   imports: [
     CommonModule,
     EqsReportsRoutingModule,
-    DropDownButtonModule,
-    GridModule
-  ],
-  providers: [PageService, SortService, GroupService, FilterService]
+    DropDownButtonModule
+  ]
 })
 export class EqsReportsModule { }

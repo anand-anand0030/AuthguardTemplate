@@ -15,7 +15,7 @@ import { UploaderModule } from '@syncfusion/ej2-angular-inputs';
     CommonModule,
     EqsCalibrationRecordMasterRoutingModule,
     GridModule, DropDownButtonModule,
-    DatePickerModule, UploaderModule
+    DatePickerModule ,UploaderModule
   ],
   providers: [PageService, SortService, GroupService, FilterService ]
 })
