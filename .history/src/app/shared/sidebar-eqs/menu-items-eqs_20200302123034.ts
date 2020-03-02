@@ -52,11 +52,11 @@ export const ROUTES: RouteInfo[] = [
     submenu: []
   },
   {
-    path: '/eqsmaintenance',
+    path: 'eqsmaintenance',
     title: 'Maintainance',
     icon: 'mdi mdi-gauge',
     class: '',
-    extralink: false,
+    extralink: true,
     submenu: []
   },
   {

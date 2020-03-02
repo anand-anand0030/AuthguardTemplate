@@ -28,19 +28,23 @@ export const Approutes: Routes = [
       {
         path: 'qualification',
         loadChildren: './EQS/eqs-qualification/eqs-qualification.module#EqsQualificationModule'
+        // loadChildren: () => import('./EQS/eqs-dashboard/eqs-dashboard.module').then(m => m.EqsDashboardModule)
       },
       {
         path: 'eqsparameter',
         loadChildren: './EQS/eqs-parameter/eqs-parameter.module#EqsParameterModule'
+        // loadChildren: () => import('./EQS/eqs-dashboard/eqs-dashboard.module').then(m => m.EqsDashboardModule)
       },
       {
         path: 'eqscalibrationmaster',
         loadChildren: './EQS/eqs-calibration-record-master/eqs-calibration-record-master.module#EqsCalibrationRecordMasterModule'
+        // loadChildren: () => import('./EQS/eqs-dashboard/eqs-dashboard.module').then(m => m.EqsDashboardModule)
       },
-      {
-        path: 'eqsmaintenance',
-        loadChildren: './EQS/eqs-maintenance/eqs-maintenance.module#EqsMaintenanceModule'
-      },
+      // {
+      //   path: 'eqsmaintenance',
+      //   loadChildren: './EQS/eqs-maintenance/eqs-maintenance.module#EqsMaintenanceModule'
+      //   // loadChildren: () => import('./EQS/eqs-dashboard/eqs-dashboard.module').then(m => m.EqsDashboardModule)
+      // },
       {
         path: 'component',
         loadChildren: './component/component.module#ComponentsModule'

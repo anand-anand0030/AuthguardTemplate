@@ -22,11 +22,11 @@ export const ROUTES: RouteInfo[] = [
     path: '/',
     title: 'Parameter',
     icon: 'mdi mdi-gauge',
-    class: 'has-arrow',
+    class: '',
     extralink: false,
     submenu: [
       {
-        path: '/eqsparameter',
+        path: '/eqshome',
         title: 'Add Parameter',
         icon: 'mdi mdi-adjust',
         class: '',
@@ -52,22 +52,22 @@ export const ROUTES: RouteInfo[] = [
     submenu: []
   },
   {
-    path: '/eqsmaintenance',
+    path: '',
     title: 'Maintainance',
     icon: 'mdi mdi-gauge',
     class: '',
-    extralink: false,
+    // extralink: false,
+    extralink: true,
     submenu: []
   },
-  {
-    path: '/eqscalibrationmaster',
-    title: 'CalibrationMaster',
-    icon: 'mdi mdi-gauge',
-    class: '',
-    extralink: false,
-    submenu: []
-  },
-
+  // {
+  //   path: '',
+  //   title: 'UI Components',
+  //   icon: 'mdi mdi-dots-horizontal',
+  //   class: 'nav-small-cap',
+  //   extralink: true,
+  //   submenu: []
+  // },
   {
     path: '',
     title: 'Reports',
@@ -80,7 +80,7 @@ export const ROUTES: RouteInfo[] = [
         title: 'Accordion',
         icon: 'mdi mdi-adjust',
         class: '',
-        extralink: true,  //false
+    extralink: true,  //false
         submenu: []
       }
     ]

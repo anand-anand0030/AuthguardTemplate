@@ -66,7 +66,6 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
-    NgbModule,
     GridModule ,
     RouterModule.forRoot(Approutes),
     PerfectScrollbarModule,

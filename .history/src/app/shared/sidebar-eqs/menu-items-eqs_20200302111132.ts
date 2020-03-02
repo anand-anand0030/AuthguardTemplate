@@ -52,11 +52,12 @@ export const ROUTES: RouteInfo[] = [
     submenu: []
   },
   {
-    path: '/eqsmaintenance',
+    path: '',
     title: 'Maintainance',
     icon: 'mdi mdi-gauge',
     class: '',
-    extralink: false,
+    // extralink: false,
+    extralink: true,
     submenu: []
   },
   {
@@ -67,7 +68,6 @@ export const ROUTES: RouteInfo[] = [
     extralink: false,
     submenu: []
   },
-
   {
     path: '',
     title: 'Reports',
@@ -80,7 +80,7 @@ export const ROUTES: RouteInfo[] = [
         title: 'Accordion',
         icon: 'mdi mdi-adjust',
         class: '',
-        extralink: true,  //false
+    extralink: true,  //false
         submenu: []
       }
     ]

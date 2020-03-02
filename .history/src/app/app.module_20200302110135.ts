@@ -35,6 +35,7 @@ import { GridModule } from '@syncfusion/ej2-angular-grids';
 // import { PageService, SortService, FilterService, GroupService } from '@syncfusion/ej2-angular-grids';
 import { ToastrModule } from 'ngx-toastr';
 import { FooterComponent } from './shared/footer/footer.component';
+import { EqsCalibrationRecordMasterComponent } from './EQS/eqs-calibration-record-master/eqs-calibration-record-master.component';
 
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
@@ -59,6 +60,9 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     LandingComponent,
     HeaderComponent,
     FooterComponent,
+    EsqCalibrationRecordMasterComponent,
+    EqsCalibrationRecordMasterComponent,
+
   ],
   imports: [
     CommonModule,

@@ -59,6 +59,9 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     LandingComponent,
     HeaderComponent,
     FooterComponent,
+    EqsMaintenaneComponent,
+    // EqsCalibrationRecordMasterComponent,
+
   ],
   imports: [
     CommonModule,
@@ -66,7 +69,6 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
-    NgbModule,
     GridModule ,
     RouterModule.forRoot(Approutes),
     PerfectScrollbarModule,
