@@ -30,7 +30,7 @@ export const ROUTES: RouteInfo[] = [
         title: 'Add Parameter',
         icon: 'mdi mdi-adjust',
         class: '',
-        extralink: false,  // false
+        extralink: false,  //false
         submenu: []
       },
       {
@@ -38,7 +38,7 @@ export const ROUTES: RouteInfo[] = [
         title: 'Dashboard',
         icon: 'mdi mdi-adjust',
         class: '',
-        extralink: false,  // false
+        extralink: false,  //false
         submenu: []
       }
     ]
@@ -67,35 +67,20 @@ export const ROUTES: RouteInfo[] = [
     extralink: false,
     submenu: []
   },
+
   {
-    path: '/eqs-reports',
+    path: '',
     title: 'Reports',
     icon: 'mdi mdi-bullseye',
     class: 'has-arrow',
     extralink: false,
     submenu: [
       {
-        path: '/eqs-reports/equipmentList',
-        title: 'List of equipment',
+        path: '/component/accordion',
+        title: 'Accordion',
         icon: 'mdi mdi-adjust',
         class: '',
-    extralink: false,
-        submenu: []
-      },
-      {
-        path: '/eqs-reports/equipmentHistory',
-        title: 'History of equipment',
-        icon: 'mdi mdi-adjust',
-        class: '',
-    extralink: false,
-        submenu: []
-      },
-      {
-        path: '/eqs-reports/calibrationReport',
-        title: 'Calibration Report',
-        icon: 'mdi mdi-adjust',
-        class: '',
-    extralink: false,
+        extralink: true,  //false
         submenu: []
       }
     ]
@@ -112,7 +97,7 @@ export const ROUTES: RouteInfo[] = [
         title: 'Accordion',
     icon: 'mdi mdi-adjust',
         class: '',
-        extralink: true, // set false to display the submenu
+        extralink: true, //set false to display the submenu
         submenu: []
       }
     ]

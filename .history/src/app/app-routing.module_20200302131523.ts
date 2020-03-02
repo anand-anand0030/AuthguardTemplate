@@ -43,7 +43,7 @@ export const Approutes: Routes = [
       },
       {
         path: 'eqs-reports',
-        loadChildren: './EQS/eqs-reports/eqs-reports.module#EqsReportsModule'
+        loadChildren: './EQS/eqs-maintenance/eqs-maintenance.module#EqsMaintenanceModule'
       },
       {
         path: 'component',

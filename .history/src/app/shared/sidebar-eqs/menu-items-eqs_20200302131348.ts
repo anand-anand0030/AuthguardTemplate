@@ -1,4 +1,4 @@
-import { RouteInfo } from '../sidebar-eqs/sidebar.metadata';
+import { RouteInfo } from './sidebar.metadata';
 
 export const ROUTES: RouteInfo[] = [
   // {
@@ -10,23 +10,41 @@ export const ROUTES: RouteInfo[] = [
   //   submenu: []
   // },
   {
-    path: '/icshome',
-    title: 'Instrument Master',
+    path: '/eqshome',
+    title: 'EQS-Master',
     icon: 'mdi mdi-gauge',
     class: '',
     extralink: false,
-    submenu: []
+    submenu: [
+    ]
   },
   {
-    path: '/ics-parameter',
+    path: '/',
     title: 'Parameter',
     icon: 'mdi mdi-gauge',
-    class: '',
+    class: 'has-arrow',
     extralink: false,
-    submenu: []
+    submenu: [
+      {
+        path: '/eqsparameter',
+        title: 'Add Parameter',
+        icon: 'mdi mdi-adjust',
+        class: '',
+        extralink: false,  // false
+        submenu: []
+      },
+      {
+        path: '/dashboard',
+        title: 'Dashboard',
+        icon: 'mdi mdi-adjust',
+        class: '',
+        extralink: false,  // false
+        submenu: []
+      }
+    ]
   },
   {
-    path: '/ics-qualification',
+    path: '/qualification',
     title: 'Qualification',
     icon: 'mdi mdi-gauge',
     class: '',
@@ -34,69 +52,53 @@ export const ROUTES: RouteInfo[] = [
     submenu: []
   },
   {
-    path: '/callibrationmaster',
-    title: ' Calibration Record Master',
+    path: '/eqsmaintenance',
+    title: 'Maintainance',
     icon: 'mdi mdi-gauge',
     class: '',
     extralink: false,
     submenu: []
   },
   {
-    path: '/ics-maintenance',
-    title: 'Maintenance',
+    path: '/eqscalibrationmaster',
+    title: 'CalibrationMaster',
     icon: 'mdi mdi-gauge',
     class: '',
     extralink: false,
     submenu: []
   },
 
-  // {
-  //   path: '',
-  //   title: 'UI Components',
-  //   icon: 'mdi mdi-dots-horizontal',
-  //   class: 'nav-small-cap',
-  //   extralink: true,
-  //   submenu: []
-  // },
   {
-    path: '/ics-reports',
+    path: '/eqs-reports',
     title: 'Reports',
     icon: 'mdi mdi-bullseye',
     class: 'has-arrow',
     extralink: false,
     submenu: [
       {
-        path: '/ics-reports/instrumentsList',
-        title: 'List of Instruments',
+        path: '/eqs-reports/equipmentList',
+        title: 'List of equipment',
         icon: 'mdi mdi-adjust',
         class: '',
     extralink: false,
         submenu: []
       },
       {
-        path: '/ics-reports/instrumentsHistory',
-        title: 'History of Instrument',
+        path: '/eqs-reports/equipmentHistory',
+        title: 'History of equipment',
         icon: 'mdi mdi-adjust',
         class: '',
     extralink: false,
         submenu: []
       },
       {
-        path: '/ics-reports/calibrationReport',
+        path: '/eqs-reports/calibrationReport',
         title: 'Calibration Report',
         icon: 'mdi mdi-adjust',
         class: '',
     extralink: false,
         submenu: []
-      },
-      {
-        path: '/ics-reports/usagereport',
-        title: 'Usage Report',
-        icon: 'mdi mdi-adjust',
-        class: '',
-    extralink: false,
-        submenu: []
-      },
+      }
     ]
   },
   {
@@ -107,35 +109,18 @@ export const ROUTES: RouteInfo[] = [
     extralink: false,
     submenu: [
       {
-        path: '/ics-settings/usersetting',
-        title: 'User Setting',
+        path: '/component/accordion',
+        title: 'Accordion',
     icon: 'mdi mdi-adjust',
         class: '',
-        extralink: false,
-        submenu: []
-      },
-      {
-        path: '/ics-settings/customheaderfield',
-        title: 'Custom Header Fields',
-    icon: 'mdi mdi-adjust',
-        class: '',
-        extralink: false,
-        submenu: []
-      },
-      {
-        path: '/ics-settings/alertsetting',
-        title: 'Alert Setting',
-    icon: 'mdi mdi-adjust',
-        class: '',
-        extralink: false,
+        extralink: true, // set false to display the submenu
         submenu: []
       }
-
     ]
   },
   {
     path: '',
-    title: 'Template Components',
+    title: 'Template components',
     icon: 'mdi mdi-bullseye',
     class: 'has-arrow',
     extralink: false,
