@@ -6,13 +6,16 @@ import { EqsQualificationComponent } from './eqs-qualification.component';
 import { DropDownButtonModule } from '@syncfusion/ej2-angular-splitbuttons';
 import { PageService, SortService, FilterService, GroupService, GridModule} from '@syncfusion/ej2-angular-grids';
 import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
+import { UploaderModule } from '@syncfusion/ej2-angular-inputs';
+import { DatePickerModule } from '@syncfusion/ej2-angular-calendars';
 
 @NgModule({
   declarations: [EqsQualificationComponent],
   imports: [
     CommonModule,
     EqsQualificationRoutingModule,
-    DropDownButtonModule, GridModule, ButtonModule
+    DropDownButtonModule, GridModule, ButtonModule, DatePickerModule,
+    UploaderModule
   ],
   providers: [PageService, SortService, FilterService, GroupService]
 })
