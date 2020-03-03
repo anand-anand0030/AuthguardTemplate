@@ -16,12 +16,14 @@
               <ejs-grid [dataSource]='data' [allowSelection]='true'  [enableHover]='false'  [allowSorting]='true' e-gridheader=''>
                   <e-columns>
                 <e-column field='Sr No' headerText='Sr No' textAlign='Right' width=90></e-column>
-                <e-column field='CustomerID' headerText='CustomerID' width=150></e-column>
-                <e-column field='FrequencyOfCalibration' headerText='Inst Name' textAlign='Right' format='C2' width=150></e-column>
-                <e-column field='StartDate' headerText='StartDate' textAlign='Right' format='yMd' width=200></e-column>
-                <e-column field='EndDate' headerText='EndDate' textAlign='Right' format='yMd' width=200></e-column>
-                <e-column field='DueDate' headerText='DueDate' textAlign='Right' format='yMd' width=200></e-column>
-                <e-column field='Purpose' headerText='Purpose' textAlign='Right' width=170></e-column>
+                <e-column field='Eqp Id' headerText='Eqp Id' width=150></e-column>
+                <e-column field='Eqp Name' headerText='Eqp Name' textAlign='Right' format='C2' width=150></e-column>
+                <e-column field='Frequency Of Calibration' headerText='Frequency Of Calibration' textAlign='Right' format='yMd' width=200></e-column>
+                <e-column field='Date Of Calibration' headerText='Date Of Calibration' textAlign='Right' format='yMd' width=200></e-column>
+                <e-column field='Last Date Of Calibration' headerText='Last Date Of Calibration' textAlign='Right' format='yMd' width=200></e-column>
+                <e-column field='Attachment' headerText='Attachment' textAlign='Right' width=170></e-column>
+                <e-column field='Notes' headerText='Notes' textAlign='Right' width=170></e-column>
+                <e-column field='Edit' headerText='Edit' textAlign='Right' width=170></e-column>
               </e-columns>
                 </ejs-grid>
           </div>
@@ -47,7 +49,7 @@
         </div>
         <label for="fname" class="col-sm-3 control-label col-form-label ml-auto offset-1 p-l-40">Calibration Type:</label>
         <div class="col-sm-2 m-0 p-0">
-          <button ejs-dropdownbutton [items]='items' content='IQ' style="color: cadetblue;"></button>
+          <button ejs-dropdownbutton [items]='items' content='IQ' style="color: rgba(54, 32, 252, 0.822);"></button>
         </div>
   </div>
     <hr color="black">
@@ -78,6 +80,6 @@
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-info waves-effect waves-light">Add</button>
-    <button type="button" class="btn btn-info waves-effect waves-light" (click)="modal.close('Close click')">Close</button>
+    <button type="button" class="btn btn-info waves-effect waves-light" (click)="modal.close('Close click')">Cancel</button>
   </div>
 </ng-template>

@@ -8,14 +8,24 @@ import { ItemModel, MenuEventArgs } from '@syncfusion/ej2-angular-splitbuttons';
 export class EqsDashboardComponent  {
   public items: ItemModel[] = [
     {
-        text: 'Cut'
+        text: 'Eqp1'
     },
     {
-        text: 'Copy'
+        text: 'Eqp2'
     },
     {
-        text: 'Paste'
+        text: 'Eqp3'
     }];
+    public items1: ItemModel[] = [
+      {
+          text: 'Parameter1'
+      },
+      {
+          text: 'Parameter2'
+      },
+      {
+          text: 'Parameter3'
+      }];
 
     // chart data
 

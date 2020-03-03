@@ -15,23 +15,23 @@ export class EqsQualificationComponent implements OnInit {
 
   public items: ItemModel[] = [
     {
-        text: 'Inst Id'
+        text: 'Eqp Id'
     },
     {
-        text: 'Inst Id'
+        text: 'Eqp Id'
     },
     {
-        text: 'Inst Id'
+        text: 'Eqp Id'
     }];
     public items1: ItemModel[] = [
       {
-          text: 'Inst Name'
+          text: 'Eqp Name'
       },
       {
-          text: 'Inst Name'
+          text: 'Eqp Name'
       },
       {
-          text: 'Inst Name'
+          text: 'Eqp Name'
       }];
       public items2: ItemModel[] = [
         {
@@ -99,7 +99,8 @@ constructor(private modalService: NgbModal) {}
 
   openAddQualificationModal(content) {
     // this.modalService.open(content, { centered: true, size: 'lg' });
-    this.modalService.open(content, { centered: true, size: 'lg' }).result.then(
+    this.modalService.open(content, { centered: true, size: 'lg', backdrop  : 'static',
+    keyboard  : false }).result.then(
       result => {
         this.closeResult = `Closed with: ${result}`;
       },

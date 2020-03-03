@@ -52,16 +52,16 @@ export const ROUTES: RouteInfo[] = [
     submenu: []
   },
   {
-    path: '/eqsmaintenance',
-    title: 'Maintainance',
+    path: '/eqscalibrationmaster',
+    title: 'Calibration Record Master',
     icon: 'mdi mdi-gauge',
     class: '',
     extralink: false,
     submenu: []
   },
   {
-    path: '/eqscalibrationmaster',
-    title: 'CalibrationMaster',
+    path: '/eqsmaintenance',
+    title: 'Maintainance',
     icon: 'mdi mdi-gauge',
     class: '',
     extralink: false,
