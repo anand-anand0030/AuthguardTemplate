@@ -86,15 +86,16 @@ export class IcsCalibrationmasterComponent implements OnInit {
 constructor(private modalService: NgbModal) {}
 
 addcalibration(addCalibrationModal) {
-  this.modalService.open(addCalibrationModal, { centered: true, size: 'lg' }).result.then(
-    result => {
-      this.closeResult = `Closed with: ${result}`;
-    },
-    reason => {
-     this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-    }
-  );
-}
+  this.modalService.open(addCalibrationModal, { centered: true, size: 'lg', backdrop  : 'static',
+    keyboard  : false }).result.then(
+      result => {
+        this.closeResult = `Closed with: ${result}`;
+      },
+      reason => {
+       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+      }
+    );
+  }
 private getDismissReason(reason: any): string {
   if (reason === ModalDismissReasons.ESC) {
     return 'by pressing ESC';

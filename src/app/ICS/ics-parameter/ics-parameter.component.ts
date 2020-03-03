@@ -59,7 +59,8 @@ constructor(private modalService: NgbModal) {}
 
   addparameter(content) {
     // this.modalService.open(content, { centered: true, size: 'lg' });
-    this.modalService.open(content, { centered: true, size: 'lg' }).result.then(
+    this.modalService.open(content, { centered: true, size: 'lg', backdrop  : 'static',
+    keyboard  : false }).result.then(
       result => {
         this.closeResult = `Closed with: ${result}`;
       },
