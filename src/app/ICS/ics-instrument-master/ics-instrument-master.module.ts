@@ -6,6 +6,9 @@ import { IcsComponent } from './ics-instrument-master.component';
 import { AddInstrumentComponent } from './add-instrument/add-instrument.component';
 import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
 import { GridModule, PageService, SortService, FilterService, GroupService } from '@syncfusion/ej2-angular-grids';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { UploaderModule } from '@syncfusion/ej2-angular-inputs';
+import { DatePickerModule } from '@syncfusion/ej2-angular-calendars';
 
 
 @NgModule({
@@ -13,7 +16,10 @@ import { GridModule, PageService, SortService, FilterService, GroupService } fro
   imports: [
     CommonModule,
     ICSRoutingModule,
-    GridModule, ButtonModule
+    GridModule, ButtonModule,
+    NgbModule,
+    UploaderModule,
+    DatePickerModule,
   ],
   providers: [PageService,
     SortService,
