@@ -7,6 +7,8 @@ import { DropDownButtonModule } from '@syncfusion/ej2-angular-splitbuttons';
 import { GridModule, PageService, SortService, GroupService, FilterService } from '@syncfusion/ej2-angular-grids';
 import { DatePickerModule } from '@syncfusion/ej2-angular-calendars';
 import { UploaderModule } from '@syncfusion/ej2-angular-inputs';
+import { HttpModule, JsonpModule } from '@angular/http';
+import { FileManagerModule , NavigationPaneService, ToolbarService, DetailsViewService } from '@syncfusion/ej2-angular-filemanager';
 @NgModule({
   declarations: [IcsQualificationComponent],
   imports: [
@@ -15,12 +17,16 @@ import { UploaderModule } from '@syncfusion/ej2-angular-inputs';
     DropDownButtonModule,
     GridModule,
     DatePickerModule,
-    UploaderModule
+    UploaderModule,
+    FileManagerModule , HttpModule, JsonpModule
+
   ],
   providers: [PageService,
     SortService,
     FilterService,
-    GroupService]
+    GroupService,
+    NavigationPaneService, ToolbarService, DetailsViewService
+   ]
 })
 
 export class IcsQualificationModule { }

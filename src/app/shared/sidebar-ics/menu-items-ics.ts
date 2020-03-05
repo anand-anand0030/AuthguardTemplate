@@ -133,21 +133,5 @@ export const ROUTES: RouteInfo[] = [
 
     ]
   },
-  {
-    path: '',
-    title: 'Template Components',
-    icon: 'mdi mdi-bullseye',
-    class: 'has-arrow',
-    extralink: false,
-    submenu: [
-      {
-        path: '/component/accordion',
-        title: 'Accordion',
-    icon: 'mdi mdi-adjust',
-        class: '',
-        extralink: false,
-        submenu: []
-      }
-    ]
-  }
+
 ];

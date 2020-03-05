@@ -47,23 +47,28 @@ export class IcsQualificationComponent implements OnInit {
       public data: object[];
 
       // uploader
-      public path: Object = {
-        saveUrl: 'https://aspnetmvc.syncfusion.com/services/api/uploadbox/Save',
-        removeUrl: 'https://aspnetmvc.syncfusion.com/services/api/uploadbox/Remove'
-      };
-        public onUploadSuccess(args: any): void  {
-          if (args.operation === 'upload') {
-              console.log('File uploaded successfully');
-          }
-      }
+    //   public path: Object = {
+    //     saveUrl: 'https://aspnetmvc.syncfusion.com/services/api/uploadbox/Save',
+    //     removeUrl: 'https://aspnetmvc.syncfusion.com/services/api/uploadbox/Remove'
+    //   };
+    //     public onUploadSuccess(args: any): void  {
+    //       if (args.operation === 'upload') {
+    //           console.log('File uploaded successfully');
+    //       }
+    //   }
 
-    public onUploadFailure(args: any): void  {
-    console.log('File failed to upload');
-    }
+    // public onUploadFailure(args: any): void  {
+    // console.log('File failed to upload');
+    // }
 
     // tslint:disable-next-line:member-ordering
     public dropEle: HTMLElement;
         // tslint:disable-next-line:use-life-cycle-interface
+
+        // folder manager
+        public ajaxSettings: object;
+        public view: string;
+        public hostUrl = 'https://ej2-aspcore-service.azurewebsites.net/'; // replace with or api to read and upload files
         ngOnInit(): void {
             this.data =
             [
@@ -81,8 +86,20 @@ export class IcsQualificationComponent implements OnInit {
 
             // uploader
             this.dropEle = document.getElementById('droparea');
+            // folder manager
+            this.ajaxSettings = {
+              url: this.hostUrl + 'api/FileManager/FileOperations',
+              getImageUrl: this.hostUrl + 'api/FileManager/GetImage',
+              uploadUrl: this.hostUrl + 'api/FileManager/Upload',
+              downloadUrl: this.hostUrl + 'api/FileManager/Download'
+          };
+          // Initial view of File Manager is set to details view
+          this.view = 'Details';
         }
-
+ // File Manager's created event function
+ onCreate(args: any) {
+  console.log('File Manager has been created successfully');
+}
 // Start of modal ( add parameter pop up)
 
 // tslint:disable-next-line:member-ordering
@@ -114,5 +131,8 @@ constructor(private modalService: NgbModal) {}
       return `with: ${reason}`;
     }
   }
+
+
+
 }
 
