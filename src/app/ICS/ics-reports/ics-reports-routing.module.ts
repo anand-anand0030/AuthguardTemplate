@@ -16,9 +16,9 @@ const routes: Routes = [
       {
         path: 'instrumentsList',
         data: {
-          title: 'Instrument List',
+          // title: 'Instrument List',
           urls: [
-            { title: 'Dashboard', url: '/landing' },
+            { title: 'Home', url: '/landing' },
             { title: 'Instrument List' }
           ]
         },
@@ -28,9 +28,9 @@ const routes: Routes = [
         path: 'instrumentsHistory',
         component: InstrumentHistoryComponent,
         data: {
-          title: 'instrumentsHistory',
+          // title: 'instrumentsHistory',
           urls: [
-            { title: 'Dashboard', url: '/landing' },
+            { title: 'Home', url: '/landing' },
             { title: 'ICS', url: '/icshome'  },
             { title: 'instrumentsHistory' }
           ]
@@ -40,9 +40,9 @@ const routes: Routes = [
         path: 'calibrationReport',
         component: CalibrationReportComponent,
         data: {
-          title: 'calibrationReport',
+          // title: 'calibrationReport',
           urls: [
-            { title: 'Dashboard', url: '/landing' },
+            { title: 'Home', url: '/landing' },
             { title: 'ICS', url: '/icshome'  },
             { title: 'calibrationReport' }
           ]
@@ -52,9 +52,9 @@ const routes: Routes = [
         path: 'usagereport',
         component: CalibrationReportComponent,
         data: {
-          title: 'Usage Report',
+          // title: 'Usage Report',
           urls: [
-            { title: 'Dashboard', url: '/landing' },
+            { title: 'Home', url: '/landing' },
             { title: 'ICS', url: '/icshome'  },
             { title: 'Usage Report' }
           ]

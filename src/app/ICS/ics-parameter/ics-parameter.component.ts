@@ -39,9 +39,12 @@ export class IcsParameterComponent implements OnInit {
             this.data =
             [
               // {
-              //     OrderID: 10248, CustomerID: 'VINET', EmployeeID: 5, OrderDate: new Date(8364186e5),
-              //     ShipName: 'Vins et alcools Chevalier', ShipCity: 'Reims', ShipAddress: '59 rue de l Abbaye',
-              //     ShipRegion: 'CJ', ShipPostalCode: '51100', ShipCountry: 'France', Freight: 32.38, Verified: !0
+                // SrNo:,
+                // Parameter:,
+                // NominalValue:,
+                // UpperRange:,
+                // LowerRange:
+              //   
               // },
               // {
               //     OrderID: 10249, CustomerID: 'TOMSP', EmployeeID: 6, OrderDate: new Date(836505e6),

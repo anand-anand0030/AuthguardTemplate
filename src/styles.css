@@ -24,3 +24,29 @@
    #toast-container > div {
     opacity: 1;
   }
+   .c_header{                              /* style for each menu header */
+    background-color: rgb(63,152,235);
+    padding-top:10px; height: 40px;
+
+}
+.c_header h4{
+  margin-left:10px;
+  color : white;
+}
+.modal_header{                               /* style for each popup modal header */
+  background-color: rgb(63,152,235);
+  padding-top:10px 0px; height: 40px;
+}
+.modal_header h6{
+  margin-left:10px;
+  color : white;
+  margin-top: 8px;
+  /* line-height: 1.5px; */
+}
+.btn_style{
+  color: rgba(10, 118, 190, 0.822);
+
+}
+.dropdown_style{
+  color: rgba(10, 118, 190, 0.822);
+}

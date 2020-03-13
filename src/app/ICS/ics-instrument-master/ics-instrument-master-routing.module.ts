@@ -9,10 +9,10 @@ const routes: Routes = [
   {
     path: '',
     data: {
-      title: 'Instrument Master',
+      // title: 'Instrument Master',
       urls: [
-        { title: 'Dashboard', url: '/landing' },
-        { title: 'Inst Master' }
+        { title: 'Home', url: '/landing' },
+        { title: 'Instrument Master' }
       ]
     },
     component: IcsComponent
@@ -21,9 +21,9 @@ const routes: Routes = [
     path: 'addinstrument',
     component: AddInstrumentComponent,
     data: {
-      title: 'Add Instrument',
+      // title: 'Add Instrument',
       urls: [
-        { title: 'Dashboard', url: '/landing' },
+        { title: 'Home', url: '/landing' },
         { title: 'ICS', url: '/icshome'  },
         { title: 'Add Instrument' }
       ]

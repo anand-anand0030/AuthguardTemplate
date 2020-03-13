@@ -3,8 +3,12 @@
                     <div class="row">
                       <div class="col-md-12">
                           <div class="card">
+                            <div class="c_header">
+                              <h4>Add Instrument</h4>
+                                              </div>
                               <div class="card-body">
-                                  <h3 class="card-title">Add Instrument</h3>
+                                  
+                                  
                                   <ngb-tabset #t="ngbTabset">
 
                                     <ngb-tab id="tab-selectbyid1" title="Master">
@@ -13,11 +17,11 @@
                                         <form class="form-horizontal">
                                           <div class="card-body">
                                               <div class="form-group row">
-                                                  <label for="Equipment ID" class="col-sm-2 control-label col-form-label">Equipment ID:</label>
+                                                  <label for="Instrument ID" class="col-sm-2 control-label col-form-label">Instrument ID:</label>
                                                   <div class="col-sm-4">
                                                       <input type="text" class="form-control" id="parameter" placeholder="">
                                                   </div>
-                                                  <label for="Equipment Name" class="col-sm-2 control-label col-form-label">Equipment Name:</label>
+                                                  <label for="Instrument Name" class="col-sm-2 control-label col-form-label">Instrument Name:</label>
                                                   <div class="col-sm-4">
                                                       <input type="text" class="form-control" id="nominalValue" placeholder="">
                                                   </div>
@@ -44,12 +48,14 @@
                                             </div>
                                            
                                           <div class="form-group row">
-                                            <label for="URS No. and Link" class="col-sm-2 control-label col-form-label">URS No. and Link:</label>
+                                            <label for="URS No and Link" class="col-sm-2 control-label col-form-label">URS No & Link</label>
                                             <div class="col-sm-4">
+                                              <input type="text" class="form-control" id="nominalLowerRange" placeholder=""> <br>
                                               <ejs-uploader #defaultupload [autoUpload]='false' [dropArea]='dropEle' [asyncSettings]='path' (success)="onUploadSuccess($event)" (failure)="onUploadFailure($event)"></ejs-uploader>
                                             </div>
                                             <label for="PO No. and Link" class="col-sm-2 control-label col-form-label">PO No. and Link:</label>
                                           <div class="col-sm-4">
+                                            <input type="text" class="form-control" id="nominalLowerRange" placeholder=""> <br>
                                             <ejs-uploader #defaultupload [autoUpload]='false' [dropArea]='dropEle' [asyncSettings]='path' (success)="onUploadSuccess($event)" (failure)="onUploadFailure($event)"></ejs-uploader>
                                           </div>
                                         </div>
@@ -93,7 +99,7 @@
                                     <ngb-tab id="tab-selectbyid2">
                                       <ng-template ngbTabTitle>Qualification</ng-template>
                                       <ng-template ngbTabContent>
-                                        <form class="form-horizontal">
+                                        <!-- <form class="form-horizontal">
                                           <div class="card-body">
                                         <div class="form-group row">
                                           <label for="Date Of Installation" class="col-sm-2 control-label col-form-label">Date Of Installation:</label>
@@ -118,7 +124,23 @@
                                       </div>
                                       </div>
                                       
-                                      </form>
+                                      </form> -->
+
+                                       <div class="table-responsive">
+                                        <ejs-grid [dataSource]='data' [allowSelection]='true'  [enableHover]='false'  [allowSorting]='true' e-gridheader=''>
+                                          <e-columns>
+                                        
+                                          <e-column field='SrNo' headerText='Sr No' textAlign='Left' width=30></e-column>
+                                          <e-column field='QualificationType' headerText='Qualification Type' width=130></e-column>
+                                          <e-column field='Description' headerText='Description' textAlign='Left' format='C2' width=90></e-column>
+                                          <e-column field='Date' headerText='Date' textAlign='Left' format='yMd' width=30></e-column>
+                                          <e-column field='Link' headerText='Link' textAlign='Left' width=30></e-column>
+            
+                                      </e-columns>
+                                          </ejs-grid>
+                              </div> 
+
+                          
                                       </ng-template>
                                     </ngb-tab>
 
@@ -130,23 +152,27 @@
                                         <div class="form-group row">
                                          
                                           <div class="custom-control custom-radio">
+                                            <h6>Calibration Required?</h6>
                                             <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
-                                            <label class="custom-control-label" for="customRadio1">Calibration Radio</label>
+                                            <label class="custom-control-label" for="customRadio1">Yes</label>
+<br>
+                                            <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                                            <label class="custom-control-label" for="customRadio2">No</label>
                                         </div>
-                                          <label for="Annual Calibration date" class="col-sm-2 control-label col-form-label">Annual Calibration date:</label>
-                                          <div class="col-sm-4">
-                                            <ejs-datepicker [value]='dateValue' placeholder='Enter date'></ejs-datepicker>
-                                          </div>
+                                         
                                       </div>
                                      
-                                      <div class="form-group row">
-                                          <label for="Calibration report link" class="col-sm-2 control-label col-form-label">Calibration report link:</label>
-                                          <div class="col-sm-4">
+                                      <!-- <div class="form-group row"> -->
+                                          <!-- <label for="Calibration report link" class="col-sm-2 control-label col-form-label">Calibration report link:</label> -->
+                                          <!-- <div class="col-sm-4">
                                             <ejs-uploader #defaultupload [autoUpload]='false' [dropArea]='dropEle' [asyncSettings]='path' (success)="onUploadSuccess($event)" (failure)="onUploadFailure($event)"></ejs-uploader>
-                                          </div>
-                                          
+                                          </div> -->
+                                          <!-- <label for="Annual Calibration date" class="col-sm-2 control-label col-form-label">Annual Calibration date:</label> -->
+                                          <!-- <div class="col-sm-4">
+                                            <ejs-datepicker [value]='dateValue' placeholder='Enter date'></ejs-datepicker>
+                                          </div> -->
                                       </div>
-                                      </div>
+                                      <!-- </div> -->
                                       
                                       </form>
                                       </ng-template>
@@ -155,7 +181,7 @@
                                     <ngb-tab id="tab-selectbyid4">
                                       <ng-template ngbTabTitle>Maintenance</ng-template>
                                       <ng-template ngbTabContent>
-                                        <form class="form-horizontal">
+                                        <!-- <form class="form-horizontal">
                                           <div class="card-body">
                                         <div class="form-group row">
                                           <label for="Warranty Due date" class="col-sm-2 control-label col-form-label">Warranty Due date:</label>
@@ -183,16 +209,16 @@
                                       <div class="form-group row">
                                         <label for=">AMC, CMC, PM and WO link" class="col-sm-2 control-label col-form-label">AMC, CMC, PM and WO link:</label>
                                         <div class="col-sm-4">
-                                          <ejs-datepicker [value]='dateValue' placeholder='Enter date'></ejs-datepicker>
+                                          <ejs-uploader #defaultupload [autoUpload]='false' [dropArea]='dropEle' [asyncSettings]='path' (success)="onUploadSuccess($event)" (failure)="onUploadFailure($event)"></ejs-uploader>
                                         </div>
                                         <label for="Service report:" class="col-sm-2 control-label col-form-label">Service report::</label>
                                         <div class="col-sm-4">
-                                          <ejs-datepicker [value]='dateValue' placeholder='Enter date'></ejs-datepicker>
+                                          <ejs-uploader #defaultupload [autoUpload]='false' [dropArea]='dropEle' [asyncSettings]='path' (success)="onUploadSuccess($event)" (failure)="onUploadFailure($event)"></ejs-uploader>
                                         </div>
                                     </div>
                                 
    
-                                      </form>
+                                      </form> -->
                                       </ng-template>
                                     </ngb-tab>
 
@@ -233,6 +259,7 @@
 
 
                                   </ngb-tabset>
+                                
                                   </div>
                                   </div>
                                   </div>
@@ -244,9 +271,9 @@
                             <div class="d-flex no-block align-items-center">
                               <div class="ml-auto">
                                 <div class="custom-control custom-checkbox">
-                                  <button type="submit" class="btn btn-danger" (click)="gotoIcsMaster()">
-                                    <i class="fa fa-pencil"></i> Submit</button>
-                                <button type="button" class="btn btn-dark" (click)="gotoIcsMaster()">Cancel</button>
+                                  <button type="submit" class="btn btn-cyan" (click)="gotoIcsMaster()">  
+                                    <i class="ti-save"></i>  Submit </button>
+                                <button type="button" class="btn btn-dark" (click)="gotoIcsMaster()"> <i class="ti-close"></i> Cancel</button>
                               </div>
                               </div>
                           </div>

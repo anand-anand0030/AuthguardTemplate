@@ -10,7 +10,31 @@ import { Router } from '@angular/router';
 export class AddInstrumentComponent implements OnInit {
   public dateValue: Date = new Date();
   constructor(private routes: Router) { }
-  ngOnInit() {
+  public data: object[];
+
+  ngOnInit(): void {
+    this.data =
+    [
+      {
+         SrNo: 1,
+         QualificationType: 'Installation Qualification'
+      },
+      {
+        SrNo: 2,
+        QualificationType: 'Performance Qualification'
+      },
+      {
+        SrNo: 3,
+        QualificationType: 'Operation Qualification'
+     },
+     {
+      SrNo: 4,
+      QualificationType: 'Installation Operation'
+   },
+   {
+    SrNo: 5,
+    QualificationType: 'Operation Performance'
+    } ];
 }
   gotoIcsMaster() {
    this.routes.navigate(['/icshome']);
