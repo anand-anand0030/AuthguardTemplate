@@ -19,22 +19,22 @@
                                               <div class="form-group row">
                                                   <label for="Instrument ID" class="col-sm-2 control-label col-form-label">Instrument ID:</label>
                                                   <div class="col-sm-4">
-                                                      <input type="text" class="form-control" id="parameter" placeholder="">
+                                                      <input type="text" class="form_control" id="Instrument ID" placeholder="">
                                                   </div>
                                                   <label for="Instrument Name" class="col-sm-2 control-label col-form-label">Instrument Name:</label>
                                                   <div class="col-sm-4">
-                                                      <input type="text" class="form-control" id="nominalValue" placeholder="">
+                                                      <input type="text" class="form-control" id="Instrument Name" placeholder="">
                                                   </div>
                                               </div>
                                              
                                               <div class="form-group row">
                                                   <label for="Make" class="col-sm-2 control-label col-form-label">Make:</label>
                                                   <div class="col-sm-4">
-                                                      <input type="email" class="form-control" id="nominalUpperRange" placeholder="">
+                                                      <input type="text" class="form-control" id="Make" placeholder="">
                                                   </div>
                                                   <label for="Model" class="col-sm-2 control-label col-form-label">Model:</label>
                                                   <div class="col-sm-4">
-                                                      <input type="text" class="form-control" id="nominalLowerRange" placeholder="">
+                                                      <input type="text" class="form-control" id="Model" placeholder="">
                                                   </div>
                                               </div>
                                              
@@ -50,12 +50,12 @@
                                           <div class="form-group row">
                                             <label for="URS No and Link" class="col-sm-2 control-label col-form-label">URS No & Link</label>
                                             <div class="col-sm-4">
-                                              <input type="text" class="form-control" id="nominalLowerRange" placeholder=""> <br>
+                                              <input type="text" class="form_control" id="URS No and Link" placeholder=""> <br>
                                               <ejs-uploader #defaultupload [autoUpload]='false' [dropArea]='dropEle' [asyncSettings]='path' (success)="onUploadSuccess($event)" (failure)="onUploadFailure($event)"></ejs-uploader>
                                             </div>
                                             <label for="PO No. and Link" class="col-sm-2 control-label col-form-label">PO No. and Link:</label>
                                           <div class="col-sm-4">
-                                            <input type="text" class="form-control" id="nominalLowerRange" placeholder=""> <br>
+                                            <input type="text" class="form_control" id="nominalLowerRange" placeholder=""> <br>
                                             <ejs-uploader #defaultupload [autoUpload]='false' [dropArea]='dropEle' [asyncSettings]='path' (success)="onUploadSuccess($event)" (failure)="onUploadFailure($event)"></ejs-uploader>
                                           </div>
                                         </div>
@@ -67,29 +67,29 @@
                                         </div>
                                         <label for="Manufacturer’s Sr. No." class="col-sm-2 control-label col-form-label">Manufacturer’s Sr. No.:</label>
                                       <div class="col-sm-4">
-                                          <input type="text" class="form-control" id="parameter" placeholder="">
+                                          <input type="text" class="form_control" id="Manufacturer’s" placeholder="">
                                       </div>
                                     </div>
                                     
                                   <div class="form-group row">
                                     <label for="Criticality Level" class="col-sm-2 control-label col-form-label">Criticality Level:</label>
                                     <div class="col-sm-4">
-                                        <input type="text" class="form-control" id="parameter" placeholder="">
+                                        <input type="text" class="form_control" id="Criticality Level" placeholder="">
                                     </div>
                                     <label for="Equipment in charge" class="col-sm-2 control-label col-form-label">Equipment in charge:</label>
                                   <div class="col-sm-4">
-                                      <input type="text" class="form-control" id="parameter" placeholder="">
+                                      <input type="text" class="form_control" id="Equipment in charge" placeholder="">
                                   </div>
                                 </div>
                               
                               <div class="form-group row">
                                 <label for="Backup in charge" class="col-sm-2 control-label col-form-label">Backup in charge:</label>
                                 <div class="col-sm-4">
-                                    <input type="text" class="form-control" id="parameter" placeholder="">
+                                    <input type="text" class="form_control" id="Backup in charge" placeholder="">
                                 </div>
                                 <label for="Service Engineer contact" class="col-sm-2 control-label col-form-label">Service Engineer contact:</label>
                                 <div class="col-sm-4">
-                                    <input type="text" class="form-control" id="parameter" placeholder="">
+                                    <input type="text" class="form_control" id="Service Engineer contact" placeholder="">
                                 </div>
                             </div>
                              </div>
@@ -99,48 +99,16 @@
                                     <ngb-tab id="tab-selectbyid2">
                                       <ng-template ngbTabTitle>Qualification</ng-template>
                                       <ng-template ngbTabContent>
-                                        <!-- <form class="form-horizontal">
-                                          <div class="card-body">
-                                        <div class="form-group row">
-                                          <label for="Date Of Installation" class="col-sm-2 control-label col-form-label">Date Of Installation:</label>
-                                          <div class="col-sm-4">
-                                            <ejs-datepicker [value]='dateValue' placeholder='Enter date'></ejs-datepicker>
-                                          </div>
-                                          <label for="Qualification Date - PV" class="col-sm-2 control-label col-form-label">Qualification Date - PV:</label>
-                                          <div class="col-sm-4">
-                                            <ejs-datepicker [value]='dateValue' placeholder='Enter date'></ejs-datepicker>
-                                          </div>
-                                      </div>
-                                     
-                                      <div class="form-group row">
-                                          <label for="IQ/OQ/PQ/IO/OP attachments" class="col-sm-2 control-label col-form-label">IQ/OQ/PQ/IO/OP attachments:</label>
-                                          <div class="col-sm-4">
-                                            <ejs-uploader #defaultupload [autoUpload]='false' [dropArea]='dropEle' [asyncSettings]='path' (success)="onUploadSuccess($event)" (failure)="onUploadFailure($event)"></ejs-uploader>
-                                          </div>
-                                          <label for="Annual PV link" class="col-sm-2 control-label col-form-label">Annual PV link:</label>
-                                          <div class="col-sm-4">
-                                            <ejs-uploader #defaultupload [autoUpload]='false' [dropArea]='dropEle' [asyncSettings]='path' (success)="onUploadSuccess($event)" (failure)="onUploadFailure($event)"></ejs-uploader>
-                                          </div>
-                                      </div>
-                                      </div>
-                                      
-                                      </form> -->
-
-                                       <div class="table-responsive">
-                                        <ejs-grid [dataSource]='data' [allowSelection]='true'  [enableHover]='false'  [allowSorting]='true' e-gridheader=''>
-                                          <e-columns>
-                                        
-                                          <e-column field='SrNo' headerText='Sr No' textAlign='Left' width=30></e-column>
-                                          <e-column field='QualificationType' headerText='Qualification Type' width=130></e-column>
-                                          <e-column field='Description' headerText='Description' textAlign='Left' format='C2' width=90></e-column>
-                                          <e-column field='Date' headerText='Date' textAlign='Left' format='yMd' width=30></e-column>
-                                          <e-column field='Link' headerText='Link' textAlign='Left' width=30></e-column>
-            
-                                      </e-columns>
-                                          </ejs-grid>
-                              </div> 
-
-                          
+                                       
+                        <ejs-grid  [editSettings]='editSettings'  [toolbar]='toolbar' height='273px'>
+                          <e-columns>
+                              <e-column field='SrNo' headerText='SrNO' textAlign='Left' isPrimaryKey='true' width=50></e-column>
+                              <e-column field='QualificationType' headerText='Qualification Type' isPrimaryKey='true' width=120></e-column>
+                              <e-column field='Date' headerText='Date' editType= 'datepickeredit' [edit]='dpParams' width=150></e-column>
+                              <e-column field='Description' headerText='Description' textAlign= 'Left' width=80 format= 'C2'></e-column>
+                              <e-column field='Link' headerText='Link' textAlign= 'Left' width=80 format= 'C2'></e-column>
+                          </e-columns>
+                          </ejs-grid>
                                       </ng-template>
                                     </ngb-tab>
 
@@ -219,6 +187,16 @@
                                 
    
                                       </form> -->
+
+                                                       
+                        <ejs-grid  [editSettings]='editSettings' [toolbar]='toolbar' height='273px'>
+                          <e-columns>
+                              <e-column field='SrNo' headerText='SrNO' textAlign='Left' isPrimaryKey='true' width=50></e-column>
+                              <e-column field='MaintainanceType' headerText='Maintainance Type' isPrimaryKey='true' width=120></e-column>
+                
+                              <e-column field='Frequency' headerText='Frequency ( In Month)' textAlign= 'Left' width=80 format= 'C2'></e-column>
+                          </e-columns>
+                          </ejs-grid>
                                       </ng-template>
                                     </ngb-tab>
 

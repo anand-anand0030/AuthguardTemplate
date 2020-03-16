@@ -1,13 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, AfterViewInit} from '@angular/core';
 import { ItemModel } from '@syncfusion/ej2-angular-splitbuttons';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { ToastrService } from 'ngx-toastr';
+import { GridLine } from '@syncfusion/ej2-angular-grids';
 
 @Component({
   selector: 'app-ics-parameter',
   templateUrl: './ics-parameter.component.html',
   styleUrls: ['./ics-parameter.component.css']
 })
-export class IcsParameterComponent implements OnInit {
+export class IcsParameterComponent implements AfterViewInit {
    closeResult: string;
   public items: ItemModel[] = [
     {
@@ -32,7 +34,9 @@ export class IcsParameterComponent implements OnInit {
 
     // End of 2 drop down
 // start of table field
+        // constructor(private toastr: ToastrService) {}
       public data: object[];
+      public lines: GridLine;
 
         // tslint:disable-next-line:use-life-cycle-interface
         ngOnInit(): void {
@@ -44,25 +48,34 @@ export class IcsParameterComponent implements OnInit {
                 // NominalValue:,
                 // UpperRange:,
                 // LowerRange:
-              //   
               // },
-              // {
-              //     OrderID: 10249, CustomerID: 'TOMSP', EmployeeID: 6, OrderDate: new Date(836505e6),
-              //     ShipName: 'Toms Spezialitäten', ShipCity: 'Münster', ShipAddress: 'Luisenstr. 48',
-              //     ShipRegion: 'CJ', ShipPostalCode: '44087', ShipCountry: 'Germany', Freight: 11.61, Verified: !1
-              // }
+              {
+                   OrderID: 10249, CustomerID: 'TOMSP', EmployeeID: 6, OrderDate: new Date(836505e6),
+               ShipName: 'Toms Spezialitäten', ShipCity: 'Münster', ShipAddress: 'Luisenstr. 48',
+                  ShipRegion: 'CJ', ShipPostalCode: '44087', ShipCountry: 'Germany', Freight: 11.61, Verified: !1
+               }
             ];
+            this.lines = 'Both';
+        }
+        ngAfterViewInit() {}
+
+        editParameter() {
+         // alert('hi edit');
+          this.toastr.success('Hi edit Toaster'); // msg,title,override previousToastMessage
+          // console.log(this.toastr.success('Hi edit Toaster', 'dsadsadas'));
+         this.toastr.warning('Deleted successfully');
+         this.toastr.error('Deleted successfully');
         }
 
 // Start of modal ( add parameter pop up)
 
 // tslint:disable-next-line:member-ordering
 
-constructor(private modalService: NgbModal) {}
+constructor(private modalService: NgbModal , private toastr: ToastrService) {}
 
   addparameter(content) {
     // this.modalService.open(content, { centered: true, size: 'lg' });
-    this.modalService.open(content, { centered: true, size: 'lg', backdrop  : 'static',
+    this.modalService.open(content, { centered: true, size: 'sm', backdrop  : 'static',
     keyboard  : false }).result.then(
       result => {
         this.closeResult = `Closed with: ${result}`;

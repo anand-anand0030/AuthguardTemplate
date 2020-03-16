@@ -50,3 +50,25 @@
 .dropdown_style{
   color: rgba(10, 118, 190, 0.822);
 }
+/* .modal_footer{
+ padding: ;
+ display: flex;
+ flex-wrap: wrap;
+ align-items: center; 
+ justify-content: flex-end; 
+}  */
+
+.form_control{
+  display: block;
+    width: 20%;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #4f5467;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #e9ecef;
+    border-radius: 2px;
+    -webkit-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}

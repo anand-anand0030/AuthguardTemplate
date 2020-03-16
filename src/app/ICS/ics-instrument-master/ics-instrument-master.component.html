@@ -16,7 +16,7 @@
                 </div>
             </div>
                      <div class="table-responsive">
-                          <ejs-grid [dataSource]='data' [allowSelection]='true'  [enableHover]='false'  [allowSorting]='true' e-gridheader=''>
+                          <ejs-grid [dataSource]='data' [allowSelection]='true' [gridLines]="lines"  [enableHover]='false'  [allowSorting]='true' e-gridheader=''>
                             <e-columns>
                                 <e-column  headerText='Action' width='100'>
                                 <ng-template #template let-data>

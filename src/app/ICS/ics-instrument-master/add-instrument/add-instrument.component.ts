@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { EditSettingsModel, ToolbarItems } from '@syncfusion/ej2-angular-grids';
+import { DatePicker } from '@syncfusion/ej2-calendars';
 
 @Component({
   selector: 'app-add-instrument',
@@ -10,32 +12,40 @@ import { Router } from '@angular/router';
 export class AddInstrumentComponent implements OnInit {
   public dateValue: Date = new Date();
   constructor(private routes: Router) { }
+  // public data: object[];
   public data: object[];
-
-  ngOnInit(): void {
-    this.data =
-    [
-      {
-         SrNo: 1,
-         QualificationType: 'Installation Qualification'
-      },
-      {
-        SrNo: 2,
-        QualificationType: 'Performance Qualification'
-      },
-      {
-        SrNo: 3,
-        QualificationType: 'Operation Qualification'
-     },
-     {
-      SrNo: 4,
-      QualificationType: 'Installation Operation'
-   },
-   {
-    SrNo: 5,
-    QualificationType: 'Operation Performance'
-    } ];
+  public editSettings: EditSettingsModel;
+  public toolbar: ToolbarItems[];
+  public dpParams: DatePicker[];
+   ngOnInit(): void {
+    this.editSettings = { allowEditing: true, allowAdding: true, allowDeleting: true };
+    this.toolbar = ['Add', 'Edit', 'Delete', 'Update', 'Cancel'];
 }
+
+
+  //   this.data =
+  //   [
+  //     {
+  //        SrNo: 1,
+  //        QualificationType: 'Installation Qualification'
+  //     },
+  //     {
+  //       SrNo: 2,
+  //       QualificationType: 'Performance Qualification'
+  //     },
+  //     {
+  //       SrNo: 3,
+  //       QualificationType: 'Operation Qualification'
+  //    },
+  //    {
+  //     SrNo: 4,
+  //     QualificationType: 'Installation Operation'
+  //  },
+  //  {
+  //   SrNo: 5,
+  //   QualificationType: 'Operation Performance'
+  //   } ];
+// }
   gotoIcsMaster() {
    this.routes.navigate(['/icshome']);
   }

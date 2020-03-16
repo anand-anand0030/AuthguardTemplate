@@ -36,7 +36,7 @@ export class IcsMaintenanceComponent implements OnInit {
             text: 'AM'
         },
         {
-            text: 'PV'
+            text: 'PM'
         },
         {
             text: 'Breakdown'

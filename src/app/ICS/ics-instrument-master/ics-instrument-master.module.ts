@@ -5,7 +5,8 @@ import { ICSRoutingModule } from './ics-instrument-master-routing.module';
 import { IcsComponent } from './ics-instrument-master.component';
 import { AddInstrumentComponent } from './add-instrument/add-instrument.component';
 import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
-import { GridModule, PageService, SortService, FilterService, GroupService } from '@syncfusion/ej2-angular-grids';
+// tslint:disable-next-line:max-line-length
+import { GridModule, PageService, SortService, FilterService, GroupService, EditService, ToolbarService  } from '@syncfusion/ej2-angular-grids';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { UploaderModule } from '@syncfusion/ej2-angular-inputs';
 import { DatePickerModule } from '@syncfusion/ej2-angular-calendars';
@@ -24,6 +25,8 @@ import { DatePickerModule } from '@syncfusion/ej2-angular-calendars';
   providers: [PageService,
     SortService,
     FilterService,
-    GroupService]
+    GroupService,
+    EditService, ToolbarService
+  ]
 })
 export class ICSModule { }

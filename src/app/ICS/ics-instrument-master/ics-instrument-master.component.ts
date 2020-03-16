@@ -1,5 +1,6 @@
 import { Component, AfterViewInit} from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
+import { GridLine } from '@syncfusion/ej2-angular-grids';
 
 @Component({
   selector: 'app-ics',
@@ -8,6 +9,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class IcsComponent implements AfterViewInit {
    public data: object[];
+   public lines: GridLine;
 
 constructor(private toastr: ToastrService) {}
 
@@ -34,6 +36,7 @@ constructor(private toastr: ToastrService) {}
             ShipName: 'Toms Spezialitäten', ShipCity: 'Münster', ShipAddress: 'Luisenstr. 48',
             ShipRegion: 'CJ', ShipPostalCode: '44087', ShipCountry: 'Germany', Freight: 11.61, Verified: !1
         }];
+        this.lines = 'Both';
   }
 
 
