@@ -2,34 +2,44 @@
 <div class="row">
     <div class="col-lg-12">
         <div class="card">
+            <div class="c_header">
+                <h4>Instrument Master</h4>
+                                </div>
             <div class="card-body">
+                
               <div class="d-flex no-block align-items-center">
-                <h4 class="card-title"> Instrument Master</h4>
+                <h4 class="card-title"> </h4>
                 <div class="ml-auto mb-2">
-                    <a class="btn btn-info" [routerLink]="['addinstrument']">  <i class="fas fa-plus-circle" style="color: azure;"></i> add inst </a>
+                    <button class="btn-btn-info btn_style"[routerLink]="['addinstrument']"> <i class="fas fa-plus-circle"></i>Add Instrument</button>
+                    <!-- <a class="btn btn-info" role="button" [routerLink]="['addinstrument']" > <i class="fas fa-plus-circle"></i> Add Instrument </a> -->
+                    <!-- <a class="btn btn-info" [routerLink]="['addinstrument']">  <i class="fas fa-plus-circle"></i><i style="color: rgba(6, 48, 88, 0.856);"></i> Add Instrument </a> -->
                 </div>
             </div>
                      <div class="table-responsive">
-                          <ejs-grid [dataSource]='data' [allowSelection]='true'  [enableHover]='false'  [allowSorting]='true' e-gridheader=''>
+                          <ejs-grid [dataSource]='data' [allowSelection]='true' [gridLines]="lines"  [enableHover]='false'  [allowSorting]='true' e-gridheader=''>
                             <e-columns>
-                                <e-column  headerText='Action' width='90'>
+                                <e-column  headerText='Action' width='100'>
                                 <ng-template #template let-data>
                                     <div class="loc">
-                                      <button cssClass='small'  ejs-button (click)="editInstrument()">  <span class="e-icons e-pencil"></span></button>
+                                      <button cssClass='small'  ejs-button (click)="editInstrument()">  <span class="e-icons e-edit"></span></button>
                                     </div>
                                 </ng-template>
                             </e-column>
-                            <e-column field='Sr No' headerText='Sr No' textAlign='Right' width=90></e-column>
+                            <e-column field='SrNo' headerText='Sr No' textAlign='Right' width=90></e-column>
                             <e-column field='Edit Instrument' headerText='Edit Instrument' width=150></e-column>
-                            <e-column field='Instrument Id' headerText='Instrument Id' textAlign='Right' format='C2' width=150></e-column>
-                            <e-column field='Instrument Name' headerText='Instrument Name' textAlign='Right' format='yMd' width=150></e-column>
+                            <e-column field='InstrumentId' headerText='Instrument Id' textAlign='Right' format='C2' width=150></e-column>
+                            <e-column field='InstrumentName' headerText='Instrument Name' textAlign='Right' format='yMd' width=170></e-column>
                             <e-column field='Make' headerText='Make' textAlign='Right' width=90></e-column>
                             <e-column field='Model' headerText='Model' width=120></e-column>
-                            <e-column field='Avaibility' headerText='Avaibility' textAlign='Right' format='C2' width=120></e-column>
-                            <e-column field='URS No. & Link' headerText='URS No. & Link' textAlign='Right' format='yMd' width=150></e-column>
-                            <e-column field='PO No. & Link' headerText='PO No. & Link' textAlign='Right' width=150></e-column>
-                            <e-column field='Delivery Date' headerText='Delivery Date' width=150></e-column>
-                            <e-column field='Manudacturers Sr.No'   headerText='Manudacturers Sr.No' textAlign='Right' format='C2' width=200></e-column>
+                             <e-column  headerText='Qualification' width='150'>
+                    
+                            </e-column> 
+
+                            <e-column field='Availability' headerText='Availability' textAlign='Right' format='C2' width=120></e-column>
+                            <e-column field='URSNoLink' headerText='URS No. & Link' textAlign='Right' format='yMd' width=150></e-column>
+                            <e-column field='PONoLink' headerText='PO No. & Link' textAlign='Right' width=150></e-column>
+                            <e-column field='DeliveryDate' headerText='Delivery Date' width=150></e-column>
+                            <e-column field='ManufacturersSrNo'   headerText='Manufacturers Sr.No' textAlign='Right' format='C2' width=200></e-column>
                             </e-columns>
                             </ejs-grid>
                 </div>

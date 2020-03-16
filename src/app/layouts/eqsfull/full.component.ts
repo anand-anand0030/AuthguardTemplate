@@ -31,9 +31,9 @@ export class FullComponent implements OnInit {
     sidebarpos: 'fixed',
     headerpos: 'fixed',
     boxed: 'full',
-    navbarbg: 'skin6',
-    sidebarbg: 'skin1',
-    logobg: 'skin1'
+    navbarbg: 'skin3',
+    sidebarbg: 'skin6',
+    logobg: 'skin6'
   };
 
   Logo() {

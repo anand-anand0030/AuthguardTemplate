@@ -31,7 +31,7 @@ export class HeaderComponent implements OnInit {
     sidebarpos: 'fixed',
     headerpos: 'fixed',
     boxed: 'full',
-    navbarbg: 'skin6',
+    navbarbg: 'skin5',
     sidebarbg: 'skin1',
     logobg: 'skin1'
   };
@@ -59,7 +59,7 @@ export class HeaderComponent implements OnInit {
       case 'full':
       case 'iconbar':
         if (this.innerWidth < 1170) {
-          this.options.sidebartype = 'mini-sidebar';
+          this.options.sidebartype = 'iconbar';
         } else {
           this.options.sidebartype = this.defaultSidebar;
         }

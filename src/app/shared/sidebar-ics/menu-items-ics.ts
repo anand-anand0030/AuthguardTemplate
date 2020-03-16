@@ -12,7 +12,7 @@ export const ROUTES: RouteInfo[] = [
   {
     path: '/icshome',
     title: 'Instrument Master',
-    icon: 'mdi mdi-gauge',
+    icon: 'mdi mdi-account-edit',
     class: '',
     extralink: false,
     submenu: []
@@ -20,7 +20,7 @@ export const ROUTES: RouteInfo[] = [
   {
     path: '/ics-parameter',
     title: 'Parameter',
-    icon: 'mdi mdi-gauge',
+    icon: 'mdi mdi-account-edit',
     class: '',
     extralink: false,
     submenu: []
@@ -28,15 +28,15 @@ export const ROUTES: RouteInfo[] = [
   {
     path: '/ics-qualification',
     title: 'Qualification',
-    icon: 'mdi mdi-gauge',
+    icon: 'mdi mdi-account-edit',
     class: '',
     extralink: false,
     submenu: []
   },
   {
     path: '/callibrationmaster',
-    title: ' Calibration Record Master',
-    icon: 'mdi mdi-gauge',
+    title: 'Calibration Record Master',
+    icon: 'mdi mdi-account-edit',
     class: '',
     extralink: false,
     submenu: []
@@ -44,7 +44,7 @@ export const ROUTES: RouteInfo[] = [
   {
     path: '/ics-maintenance',
     title: 'Maintenance',
-    icon: 'mdi mdi-gauge',
+    icon: 'mdi mdi-account-edit',
     class: '',
     extralink: false,
     submenu: []
@@ -61,14 +61,14 @@ export const ROUTES: RouteInfo[] = [
   {
     path: '/ics-reports',
     title: 'Reports',
-    icon: 'mdi mdi-bullseye',
+    icon: 'mdi mdi-account-edit',
     class: 'has-arrow',
     extralink: false,
     submenu: [
       {
         path: '/ics-reports/instrumentsList',
         title: 'List of Instruments',
-        icon: 'mdi mdi-adjust',
+        icon: 'mdi mdi-account-edit',
         class: '',
     extralink: false,
         submenu: []
@@ -76,7 +76,7 @@ export const ROUTES: RouteInfo[] = [
       {
         path: '/ics-reports/instrumentsHistory',
         title: 'History of Instrument',
-        icon: 'mdi mdi-adjust',
+        icon: 'mdi mdi-account-edit',
         class: '',
     extralink: false,
         submenu: []
@@ -84,7 +84,7 @@ export const ROUTES: RouteInfo[] = [
       {
         path: '/ics-reports/calibrationReport',
         title: 'Calibration Report',
-        icon: 'mdi mdi-adjust',
+        icon: 'mdi mdi-account-edit',
         class: '',
     extralink: false,
         submenu: []
@@ -92,7 +92,7 @@ export const ROUTES: RouteInfo[] = [
       {
         path: '/ics-reports/usagereport',
         title: 'Usage Report',
-        icon: 'mdi mdi-adjust',
+        icon: 'mdi mdi-account-edit',
         class: '',
     extralink: false,
         submenu: []
@@ -102,14 +102,14 @@ export const ROUTES: RouteInfo[] = [
   {
     path: '',
     title: 'Settings',
-    icon: 'mdi mdi-bullseye',
+    icon: 'mdi mdi-account-edit',
     class: 'has-arrow',
     extralink: false,
     submenu: [
       {
         path: '/ics-settings/usersetting',
         title: 'User Setting',
-    icon: 'mdi mdi-adjust',
+    icon: 'mdi mdi-account-edit',
         class: '',
         extralink: false,
         submenu: []
@@ -117,7 +117,7 @@ export const ROUTES: RouteInfo[] = [
       {
         path: '/ics-settings/customheaderfield',
         title: 'Custom Header Fields',
-    icon: 'mdi mdi-adjust',
+    icon: 'mdi mdi-account-edit',
         class: '',
         extralink: false,
         submenu: []
@@ -125,7 +125,7 @@ export const ROUTES: RouteInfo[] = [
       {
         path: '/ics-settings/alertsetting',
         title: 'Alert Setting',
-    icon: 'mdi mdi-adjust',
+    icon: 'mdi mdi-account-edit',
         class: '',
         extralink: false,
         submenu: []

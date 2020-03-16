@@ -23,80 +23,82 @@ export class IcsfullComponent implements OnInit {
   public showMobileMenu = false;
   public expandLogo = false;
 
-  options = {
-    theme: 'light',
-    dir: 'ltr',
-    layout: 'vertical',
-    sidebartype: 'full',
-    sidebarpos: 'fixed',
-    headerpos: 'fixed',
-    boxed: 'full',
-    navbarbg: 'skin6',
-    sidebarbg: 'skin1',
-    logobg: 'skin1'
-  };
 
-  Logo() {
-    this.expandLogo = !this.expandLogo;
+options = {
+  theme: 'light',
+  dir: 'ltr',
+  layout: 'vertical',
+  sidebartype: 'full',
+  sidebarpos: 'fixed',
+  headerpos: 'fixed',
+  boxed: 'full',
+  navbarbg: 'skin3',
+  sidebarbg: 'skin6',
+  logobg: 'skin6'
+};
+
+Logo() {
+  this.expandLogo = !this.expandLogo;
+}
+
+ngOnInit() {
+  if (this.router.url === '/') {
+    this.router.navigate(['/starter']);
   }
+  this.defaultSidebar = this.options.sidebartype;
+  this.handleSidebar();
+  this.toggleSidebarType();
+}
 
-  ngOnInit() {
-    if (this.router.url === '/') {
-      this.router.navigate(['/starter']);
-    }
-    this.defaultSidebar = this.options.sidebartype;
-    this.handleSidebar();
-  }
+@HostListener('window:resize', ['$event'])
+onResize(event) {
+  this.handleSidebar();
+}
 
-  @HostListener('window:resize', ['$event'])
-  onResize(event) {
-    this.handleSidebar();
-  }
-
-  handleSidebar() {
-    this.innerWidth = window.innerWidth;
-    switch (this.defaultSidebar) {
-      case 'full':
-      case 'iconbar':
-        if (this.innerWidth < 1170) {
-          this.options.sidebartype = 'mini-sidebar';
-        } else {
-          this.options.sidebartype = this.defaultSidebar;
-        }
-        break;
-
-      case 'overlay':
-        if (this.innerWidth < 767) {
-          this.options.sidebartype = 'mini-sidebar';
-        } else {
-          this.options.sidebartype = this.defaultSidebar;
-        }
-        break;
-
-      default:
-    }
-  }
-
-  toggleSidebarType() { debugger
-    switch (this.options.sidebartype) {
-      case 'full':
-      case 'iconbar':
+handleSidebar() {
+  this.innerWidth = window.innerWidth;
+  switch (this.defaultSidebar) {
+    case 'full':
+    case 'iconbar':
+      if (this.innerWidth < 1170) {
         this.options.sidebartype = 'mini-sidebar';
-        break;
+      } else {
+        this.options.sidebartype = this.defaultSidebar;
+      }
+      break;
 
-      case 'overlay':
-        this.showMobileMenu = !this.showMobileMenu;
-        break;
+    case 'overlay':
+      if (this.innerWidth < 767) {
+        this.options.sidebartype = 'mini-sidebar';
+      } else {
+        this.options.sidebartype = this.defaultSidebar;
+      }
+      break;
 
-      case 'mini-sidebar':
-        if (this.defaultSidebar === 'mini-sidebar') {
-          this.options.sidebartype = 'full';
-        } else {
-          this.options.sidebartype = this.defaultSidebar;
-        }
-        break;
-
-      default:
-    }
+    default:
   }
+}
+
+toggleSidebarType() {
+  switch (this.options.sidebartype) {
+    case 'full':
+    case 'iconbar':
+      this.options.sidebartype = 'mini-sidebar';
+      break;
+
+    case 'overlay':
+      this.showMobileMenu = !this.showMobileMenu;
+      break;
+
+    case 'mini-sidebar':
+      if (this.defaultSidebar === 'mini-sidebar') {
+        this.options.sidebartype = 'full';
+      } else {
+        this.options.sidebartype = this.defaultSidebar;
+      }
+      break;
+
+    default:
+  }
+}
 }

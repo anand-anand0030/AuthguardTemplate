@@ -7,9 +7,9 @@ const routes: Routes = [
   {
     path: '',
     data: {
-      title: 'Calibration',
+      // title: 'Calibration',
       urls: [
-        { title: 'Dashboard', url: '/landing' },
+        { title: 'Home', url: '/landing' },
         { title: 'Calibration' }
       ]
     },

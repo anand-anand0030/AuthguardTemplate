@@ -12,9 +12,9 @@ const routes: Routes = [
       {
         path: 'usersetting',
         data: {
-          title: 'User Setting',
+          // title: 'User Setting',
           urls: [
-            { title: 'Dashboard', url: '/landing' },
+            { title: 'Home', url: '/landing' },
             { title: 'User Setting' }
           ]
         },
@@ -24,9 +24,9 @@ const routes: Routes = [
         path: 'customheaderfield',
         component: IcsCustomheaderfieldComponent,
         data: {
-          title: 'Custom Header Fields',
+          // title: 'Custom Header Fields',
           urls: [
-            { title: 'Dashboard', url: '/landing' },
+            { title: 'Home', url: '/landing' },
             { title: 'ICS', url: '/icshome'  },
             { title: 'Custom Header Fields' }
           ]
@@ -36,9 +36,9 @@ const routes: Routes = [
         path: 'alertsetting',
         component: IcsAlertsettingsComponent,
         data: {
-          title: 'Alert Setting',
+          // title: 'Alert Setting',
           urls: [
-            { title: 'Dashboard', url: '/landing' },
+            { title: 'Home', url: '/landing' },
             { title: 'ICS', url: '/icshome'  },
             { title: 'Alert Setting' }
           ]

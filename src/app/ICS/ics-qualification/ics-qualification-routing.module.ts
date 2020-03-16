@@ -7,9 +7,9 @@ const routes: Routes = [
   {
     path: '',
     data: {
-      title: 'Qualification',
+      // title: 'Qualification',
       urls: [
-        { title: 'Dashboard', url: '/landing' },
+        { title: 'Home', url: '/landing' },
         { title: 'Qualification' }
       ]
     },

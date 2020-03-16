@@ -3,6 +3,7 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { ItemModel } from '@syncfusion/ej2-angular-splitbuttons';
 import { TextBoxComponent } from '@syncfusion/ej2-angular-inputs';
 import { ChangeEventArgs } from '@syncfusion/ej2-angular-buttons';
+import { Edit } from '@syncfusion/ej2-angular-grids';
 @Component({
   selector: 'app-ics-qualification',
   templateUrl: './ics-qualification.component.html',
@@ -37,10 +38,16 @@ export class IcsQualificationComponent implements OnInit {
             text: 'IQ'
         },
         {
-            text: 'IQ'
+            text: 'IO'
         },
         {
-            text: 'IQ'
+          text: 'OP'
+      },
+      {
+        text: 'PQ'
+    },
+        {
+            text: 'OQ'
         }];
     // End of 2 drop down
 // start of table field
@@ -73,9 +80,16 @@ export class IcsQualificationComponent implements OnInit {
             this.data =
             [
               // {
-              //     OrderID: 10248, CustomerID: 'VINET', EmployeeID: 5, OrderDate: new Date(8364186e5),
-              //     ShipName: 'Vins et alcools Chevalier', ShipCity: 'Reims', ShipAddress: '59 rue de l Abbaye',
-              //     ShipRegion: 'CJ', ShipPostalCode: '51100', ShipCountry: 'France', Freight: 32.38, Verified: !0
+                  //  SrNo:,
+                  //  InstId:,
+                  //  InstName:, 
+                  //  LastPerformDate:,
+                  //  NextDueDate:,
+                  //  SateOfQualification:,
+                  //  TypeOfQualification:,
+                  //  Attachment:, 
+                  //  Notes:,
+                // Edit:
               // },
               // {
               //     OrderID: 10249, CustomerID: 'TOMSP', EmployeeID: 6, OrderDate: new Date(836505e6),
