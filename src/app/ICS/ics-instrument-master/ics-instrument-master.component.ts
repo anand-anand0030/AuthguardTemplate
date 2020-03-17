@@ -11,31 +11,33 @@ export class IcsComponent implements AfterViewInit {
    public data: object[];
    public lines: GridLine;
 
+
 constructor(private toastr: ToastrService) {}
 
   // tslint:disable-next-line:use-life-cycle-interface
   ngOnInit(): void {
       this.data =
       [
-        // {
-        //   SrNo:,
-        //   InstrumentId:,
-        //   InstrumentName:,
-        //   Make:,
-        //   Model:,
-        //   Qualification:,
-        //   Availability:,
-        //   URSNoLink:,
-        //   PONoLink:,
-        //   DeliveryDate:,
-        //   ManufacturersSrNo:
+         {
+           SrNo: '01',
+          InstrumentId: 'Gx121345678',
+           InstrumentName: 'HPLC',
+          Make: 'Thermofisher',
+          Model: 'Ultimate 3000',
+          //  Qualification:,
+           Availability: 'Yes/No',
+          //  URSNoLink:,
+          //  PONoLink:,
+          DeliveryDate: '28/02/2020',
+          ManufacturersSrNo: '6784538'
 
-        // },
-        {
-            OrderID: 10249, CustomerID: 'TOMSP', EmployeeID: 6, OrderDate: new Date(836505e6),
-            ShipName: 'Toms Spezialitäten', ShipCity: 'Münster', ShipAddress: 'Luisenstr. 48',
-            ShipRegion: 'CJ', ShipPostalCode: '44087', ShipCountry: 'Germany', Freight: 11.61, Verified: !1
-        }];
+         },
+        // {
+        //     OrderID: 10249, CustomerID: 'TOMSP', EmployeeID: 6, OrderDate: new Date(836505e6),
+        //     ShipName: 'Toms Spezialitäten', ShipCity: 'Münster', ShipAddress: 'Luisenstr. 48',
+        //     ShipRegion: 'CJ', ShipPostalCode: '44087', ShipCountry: 'Germany', Freight: 11.61, Verified: !1
+        // }
+      ];
         this.lines = 'Both';
   }
 
@@ -50,6 +52,5 @@ constructor(private toastr: ToastrService) {}
    this.toastr.error('Deleted successfully');
 
   }
-
 }
 

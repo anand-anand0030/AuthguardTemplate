@@ -1,15 +1,16 @@
-import { Component, OnInit, Inject, ViewChild} from '@angular/core';
+import { Component, OnInit, Inject, ViewChild, AfterViewInit} from '@angular/core';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { ItemModel } from '@syncfusion/ej2-angular-splitbuttons';
 import { TextBoxComponent } from '@syncfusion/ej2-angular-inputs';
 import { ChangeEventArgs } from '@syncfusion/ej2-angular-buttons';
-import { Edit } from '@syncfusion/ej2-angular-grids';
+import { Edit, GridLine } from '@syncfusion/ej2-angular-grids';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-ics-qualification',
   templateUrl: './ics-qualification.component.html',
   styleUrls: ['./ics-qualification.component.css']
 })
-export class IcsQualificationComponent implements OnInit {
+export class IcsQualificationComponent implements AfterViewInit {
   closeResult: string;
   public dateValue: Date = new Date();
 
@@ -49,9 +50,21 @@ export class IcsQualificationComponent implements OnInit {
         {
             text: 'OQ'
         }];
+        public items3: ItemModel[] = [
+          // {
+          //     text: 'Inst Name'
+          // },
+          // {
+          //     text: 'Inst Name'
+          // },
+          // {
+          //     text: 'Inst Name'
+          // }
+        ];
     // End of 2 drop down
 // start of table field
       public data: object[];
+      public lines: GridLine;
 
       // uploader
     //   public path: Object = {
@@ -76,28 +89,27 @@ export class IcsQualificationComponent implements OnInit {
         public ajaxSettings: object;
         public view: string;
         public hostUrl = 'https://ej2-aspcore-service.azurewebsites.net/'; // replace with or api to read and upload files
+        // tslint:disable-next-line:use-life-cycle-interface
         ngOnInit(): void {
             this.data =
             [
-              // {
-                  //  SrNo:,
-                  //  InstId:,
-                  //  InstName:, 
-                  //  LastPerformDate:,
-                  //  NextDueDate:,
-                  //  SateOfQualification:,
-                  //  TypeOfQualification:,
-                  //  Attachment:, 
-                  //  Notes:,
-                // Edit:
-              // },
-              // {
+               {
+                   SrNo: '01',
+                    InstId: 'Gx121345678',
+                    InstName: 'HPLC',
+                    DateOfQualification: '03/03/2020',
+                   TypeOfQualification: 'IQ', 
+                    PerformedBy: 'Shruti'
+                    // Notes:,
+                //  Edit:
+               },
+              //  {
               //     OrderID: 10249, CustomerID: 'TOMSP', EmployeeID: 6, OrderDate: new Date(836505e6),
               //     ShipName: 'Toms Spezialitäten', ShipCity: 'Münster', ShipAddress: 'Luisenstr. 48',
-              //     ShipRegion: 'CJ', ShipPostalCode: '44087', ShipCountry: 'Germany', Freight: 11.61, Verified: !1
-              // }
-            ];
-
+              //   ShipRegion: 'CJ', ShipPostalCode: '44087', ShipCountry: 'Germany', Freight: 11.61, Verified: !1
+              //  }
+          ];
+            this.lines = 'Both';
             // uploader
             this.dropEle = document.getElementById('droparea');
             // folder manager
@@ -118,7 +130,7 @@ export class IcsQualificationComponent implements OnInit {
 
 // tslint:disable-next-line:member-ordering
 
-constructor(private modalService: NgbModal) {}
+constructor(private modalService: NgbModal , private toastr: ToastrService) {}
 
   // addqualification(content3) {
   //   this.modalService.open(content3, { centered: true });
@@ -147,6 +159,16 @@ constructor(private modalService: NgbModal) {}
   }
 
 
+  ngAfterViewInit() {}
+
+  editQualification() {
+   // alert('hi edit');
+    this.toastr.success('Hi edit Toaster'); // msg,title,override previousToastMessage
+    // console.log(this.toastr.success('Hi edit Toaster', 'dsadsadas'));
+   this.toastr.warning('Deleted successfully');
+   this.toastr.error('Deleted successfully');
+
+  }
 
 }
 

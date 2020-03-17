@@ -1,13 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { ItemModel } from '@syncfusion/ej2-angular-splitbuttons';
+import { GridLine } from '@syncfusion/ej2-angular-grids';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-ics-calibrationmaster',
   templateUrl: './ics-calibrationmaster.component.html',
   styleUrls: ['./ics-calibrationmaster.component.css']
 })
-export class IcsCalibrationmasterComponent implements OnInit {
+export class IcsCalibrationmasterComponent implements AfterViewInit {
   closeResult: string;
   public dateValue: Date = new Date();
 
@@ -44,7 +46,8 @@ export class IcsCalibrationmasterComponent implements OnInit {
     // End of 2 drop down
 // start of table field
       public data: object[];
-
+      public lines: GridLine;
+     
  // uploader
       public path: Object = {
         saveUrl: 'https://aspnetmvc.syncfusion.com/services/api/uploadbox/Save',
@@ -66,30 +69,31 @@ export class IcsCalibrationmasterComponent implements OnInit {
         ngOnInit(): void {
             this.data =
             [
-              // {
-              //    SrNo:,
-              //    InstId:,
-              //    InstName:,
-              //    FrequencyOfCalibration:,
-              //    DateOfCalibration:,
-              //    LastDateOfCalibration:,
-              //    Attachment:,
-              //    Notes:,
-              //    Edit:
-              // },
+               {
+                 SrNo: '01',
+                 InstId: 'Gx121345678',
+                 InstName: 'HPLC',
+                 FrequencyOfCalibration: '180 Days',
+                 DateOfCalibration: '04/09/2020',
+                 LastDateOfCalibration: '04/03/2020',
+                 // Attachment:,
+                // Notes:,
+              //   Edit:
+               },
               // {
               //     OrderID: 10249, CustomerID: 'TOMSP', EmployeeID: 6, OrderDate: new Date(836505e6),
               //     ShipName: 'Toms Spezialitäten', ShipCity: 'Münster', ShipAddress: 'Luisenstr. 48',
               //     ShipRegion: 'CJ', ShipPostalCode: '44087', ShipCountry: 'Germany', Freight: 11.61, Verified: !1
               // }
             ];
+            this.lines = 'Both';
         }
 
 // Start of modal ( add parameter pop up)
 
 // tslint:disable-next-line:member-ordering
 
-constructor(private modalService: NgbModal) {}
+constructor(private modalService: NgbModal , private toastr: ToastrService) {}
 
 addcalibration(addCalibrationModal) {
   this.modalService.open(addCalibrationModal, { centered: true, size: 'lg', backdrop  : 'static',
@@ -111,5 +115,15 @@ private getDismissReason(reason: any): string {
     return `with: ${reason}`;
   }
 }
+ngAfterViewInit() {}
+
+  editCalibration() {
+   // alert('hi edit');
+    this.toastr.success('Hi edit Toaster'); // msg,title,override previousToastMessage
+    // console.log(this.toastr.success('Hi edit Toaster', 'dsadsadas'));
+   this.toastr.warning('Deleted successfully');
+   this.toastr.error('Deleted successfully');
+
+  }
 }
 
