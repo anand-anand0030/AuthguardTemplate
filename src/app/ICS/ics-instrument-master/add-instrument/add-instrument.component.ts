@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { EditSettingsModel, ToolbarItems } from '@syncfusion/ej2-angular-grids';
+import { EditSettingsModel, ToolbarItems, GridLine } from '@syncfusion/ej2-angular-grids';
 import { DatePicker } from '@syncfusion/ej2-calendars';
+
 
 @Component({
   selector: 'app-add-instrument',
@@ -12,16 +13,24 @@ import { DatePicker } from '@syncfusion/ej2-calendars';
 export class AddInstrumentComponent implements OnInit {
   public dateValue: Date = new Date();
   constructor(private routes: Router) { }
-  // public data: object[];
-  public data: object[];
+   public data: object[];
+   public lines: GridLine;
   public editSettings: EditSettingsModel;
   public toolbar: ToolbarItems[];
   public dpParams: DatePicker[];
    ngOnInit(): void {
     this.editSettings = { allowEditing: true, allowAdding: true, allowDeleting: true };
     this.toolbar = ['Add', 'Edit', 'Delete', 'Update', 'Cancel'];
+    this.data =
+    [
+      // {
+      //     OrderID: 10249, CustomerID: 'TOMSP', EmployeeID: 6, OrderDate: new Date(836505e6),
+      //     ShipName: 'Toms Spezialitäten', ShipCity: 'Münster', ShipAddress: 'Luisenstr. 48',
+      //     ShipRegion: 'CJ', ShipPostalCode: '44087', ShipCountry: 'Germany', Freight: 11.61, Verified: !1
+      // }
+    ];
+    this.lines = 'Both';
 }
-
 
   //   this.data =
   //   [
@@ -46,6 +55,8 @@ export class AddInstrumentComponent implements OnInit {
   //   QualificationType: 'Operation Performance'
   //   } ];
 // }
+// tslint:disable-next-line:member-ordering
+
   gotoIcsMaster() {
    this.routes.navigate(['/icshome']);
   }

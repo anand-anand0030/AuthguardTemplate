@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { ItemModel } from '@syncfusion/ej2-angular-splitbuttons';
+import { GridLine } from '@syncfusion/ej2-angular-grids';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-ics-maintenance',
@@ -46,8 +48,7 @@ export class IcsMaintenanceComponent implements OnInit {
     // End of 2 drop down
 // start of table field
       public data: object[];
-
-      
+      public lines: GridLine;
  // uploader
  public path: Object = {
   saveUrl: 'https://aspnetmvc.syncfusion.com/services/api/uploadbox/Save',
@@ -70,30 +71,32 @@ public dropEle: HTMLElement;
         ngOnInit(): void {
             this.data =
             [
-              // {
-               // SrNo:,
-                //  InstId:,
-                //  InstName:, 
-                //  TypeOfAction:,
-                // PerformanceDate:,
-                //  NextDueDate:,
-                //  Attachment:, 
+              {
+                SrNo: '01',
+                  InstId: 'Gx121345678',
+                 InstName: 'HPLC', 
+                  TypeOfAction: 'AM',
+                 PerformedDate: '04/03/2020',
+                  NextDueDate: '04/03/2021',
+                // Attachment:, 
                 //  Notes:,
               // Edit:
-              // },
+               },
               // {
               //     OrderID: 10249, CustomerID: 'TOMSP', EmployeeID: 6, OrderDate: new Date(836505e6),
               //     ShipName: 'Toms Spezialitäten', ShipCity: 'Münster', ShipAddress: 'Luisenstr. 48',
               //     ShipRegion: 'CJ', ShipPostalCode: '44087', ShipCountry: 'Germany', Freight: 11.61, Verified: !1
               // }
             ];
+            this.lines = 'Both';
+
         }
 
 // Start of modal ( add parameter pop up)
 
 // tslint:disable-next-line:member-ordering
 
-constructor(private modalService: NgbModal) {}
+constructor(private modalService: NgbModal , private toastr: ToastrService) {}
 
 adddetails(content3) {
   // this.modalService.open(content3, { centered: true });
@@ -118,5 +121,13 @@ private getDismissReason(reason: any): string {
     return `with: ${reason}`;
   }
 }
+editMaintenance() {
+  // alert('hi edit');
+   this.toastr.success('Hi edit Toaster'); // msg,title,override previousToastMessage
+   // console.log(this.toastr.success('Hi edit Toaster', 'dsadsadas'));
+  this.toastr.warning('Deleted successfully');
+  this.toastr.error('Deleted successfully');
+
+ }
 }
 

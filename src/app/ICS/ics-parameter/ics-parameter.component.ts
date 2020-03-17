@@ -42,18 +42,18 @@ export class IcsParameterComponent implements AfterViewInit {
         ngOnInit(): void {
             this.data =
             [
+               {
+              SrNo: '01',
+                 Parameter: 'Column temperature',
+                 NominalValue: '15°C' ,
+                 UpperRange: '20°C',
+                LowerRange: '10°C'
+               },
               // {
-                // SrNo:,
-                // Parameter:,
-                // NominalValue:,
-                // UpperRange:,
-                // LowerRange:
-              // },
-              {
-                   OrderID: 10249, CustomerID: 'TOMSP', EmployeeID: 6, OrderDate: new Date(836505e6),
-               ShipName: 'Toms Spezialitäten', ShipCity: 'Münster', ShipAddress: 'Luisenstr. 48',
-                  ShipRegion: 'CJ', ShipPostalCode: '44087', ShipCountry: 'Germany', Freight: 11.61, Verified: !1
-               }
+              //      OrderID: 10249, CustomerID: 'TOMSP', EmployeeID: 6, OrderDate: new Date(836505e6),
+              //  ShipName: 'Toms Spezialitäten', ShipCity: 'Münster', ShipAddress: 'Luisenstr. 48',
+              //     ShipRegion: 'CJ', ShipPostalCode: '44087', ShipCountry: 'Germany', Freight: 11.61, Verified: !1
+              //  }
             ];
             this.lines = 'Both';
         }

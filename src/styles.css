@@ -72,3 +72,13 @@
     -webkit-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
+
+/* Custom icons */
+.openFolder
+{
+    display: inline-block;
+    /* height: 17px; */
+    width: 18px;
+    zoom: 1;
+}
+/* End of Custom icons */

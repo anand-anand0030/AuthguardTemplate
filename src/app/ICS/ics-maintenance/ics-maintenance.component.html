@@ -18,17 +18,31 @@
             <button class="btn-btn-info mr-2 float-right btn_style" (click)="adddetails(content3)"><i class="fas fa-plus-circle"></i>Add Details</button>
            <hr>
             <div class="table-responsive">
-              <ejs-grid [dataSource]='data' [allowSelection]='true'  [enableHover]='false'  [allowSorting]='true' e-gridheader=''>
+              <ejs-grid [dataSource]='data' [allowSelection]='true' [gridLines]="lines"  [enableHover]='false'  [allowSorting]='true' e-gridheader=''>
                   <e-columns>
+                    <e-column  headerText='Action' width='100'>
+                      <ng-template #template let-data>
+                          <div class="loc">
+                            <button cssClass='small'  ejs-button (click)="editMainteinance()">  <span class="e-icons e-edit"></span></button>
+                          </div>
+                      </ng-template>
+                  </e-column>
                 <e-column field='SrNo' headerText='Sr No' textAlign='Left' width=90></e-column>
                 <e-column field='InstId' headerText='Inst Id' width=150></e-column>
                 <e-column field='InstName' headerText='Inst Name' textAlign='Left' format='C2' width=150></e-column>
                 <e-column field='TypeOfAction' headerText='Type Of Action' textAlign='Left' width=170></e-column>
-                <e-column field='PerformanceDate' headerText='Performance Date' textAlign='Left' format='yMd' width=200></e-column>
+                <e-column field='PerformedDate' headerText='Performed Date' textAlign='Left' format='yMd' width=200></e-column>
                 <e-column field='NextDueDate' headerText='Next Due Date' textAlign='Left' width=170></e-column>
-                <e-column field='Attachment' headerText='Attachment' textAlign='Left' format='C2' width=150></e-column>
+                <!-- <e-column field='Attachment' headerText='Attachment' textAlign='Left' format='C2' width=150></e-column> -->
+                <e-column  headerText='Attachment' width='150'>
+                  <ng-template #template let-data>
+                      <div class="loc">
+                      <button cssClass='small'  ejs-button (click)="editMainteinance()">  <span><img src="assets/images/openfolder.png"  class="dark-logo openFolder" /></span></button>
+                      </div>
+                  </ng-template>
+              </e-column>
                 <e-column field='Notes' headerText='Notes' textAlign='Left' format='yMd' width=120></e-column>
-                <e-column field='Edit' headerText='Edit' textAlign='Left' width=90></e-column>
+                <!-- <e-column field='Edit' headerText='Edit' textAlign='Left' width=90></e-column> -->
               </e-columns>
                 </ejs-grid>
     </div>

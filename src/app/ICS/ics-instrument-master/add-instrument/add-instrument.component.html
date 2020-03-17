@@ -30,11 +30,11 @@
                                               <div class="form-group row">
                                                   <label for="Make" class="col-sm-2 control-label col-form-label">Make:</label>
                                                   <div class="col-sm-4">
-                                                      <input type="text" class="form-control" id="Make" placeholder="">
+                                                      <input type="text" class="form_control" id="Make" placeholder="">
                                                   </div>
                                                   <label for="Model" class="col-sm-2 control-label col-form-label">Model:</label>
                                                   <div class="col-sm-4">
-                                                      <input type="text" class="form-control" id="Model" placeholder="">
+                                                      <input type="text" class="form_control" id="Model" placeholder="">
                                                   </div>
                                               </div>
                                              
@@ -43,6 +43,10 @@
                                                 <label for="Image" class="col-sm-2 control-label col-form-label">Image:</label>
                                                 <div class="col-sm-4">
                                                   <ejs-uploader #defaultupload [autoUpload]='false' [dropArea]='dropEle' [asyncSettings]='path' (success)="onUploadSuccess($event)" (failure)="onUploadFailure($event)"></ejs-uploader>
+                                                </div>
+                                                <label for="CalibrationFreq" class="col-sm-2 control-label col-form-label">Calibration Frequency:</label>
+                                                <div class="col-sm-4">
+                                                    <input type="text" class="form_control" id="CalibrationFreq" placeholder="">
                                                 </div>
                                                
                                             </div>
@@ -74,7 +78,12 @@
                                   <div class="form-group row">
                                     <label for="Criticality Level" class="col-sm-2 control-label col-form-label">Criticality Level:</label>
                                     <div class="col-sm-4">
-                                        <input type="text" class="form_control" id="Criticality Level" placeholder="">
+                                      <select id="level">
+                                        <option value="option1">1</option>
+                                        <option value="option2">2</option>
+                                        <option value="option3">3</option>
+                                        <option value="option4">4</option>
+                                      </select>
                                     </div>
                                     <label for="Equipment in charge" class="col-sm-2 control-label col-form-label">Equipment in charge:</label>
                                   <div class="col-sm-4">
@@ -93,23 +102,53 @@
                                 </div>
                             </div>
                              </div>
-                            </form>    </ng-template>
+                            </form> 
+                            <div class="form-actions">
+                              <div class="card-body">
+                                  <div class="d-flex no-block align-items-center">
+                                    <div class="ml-auto">
+                                      <div class="custom-control custom-checkbox">
+                                        <button type="submit" class="btn btn-cyan" (click)="gotoIcsMaster()">  
+                                          <i class="ti-save"></i>  Save </button>
+                                      <button type="button" class="btn btn-dark" (click)="gotoIcsMaster()"> <i class="ti-close"></i> Cancel</button>
+                                    </div>
+                                    </div>
+                                </div>
+                              </div>
+                          </div>  
+                           </ng-template>
                                     </ngb-tab>
                                     
                                     <ngb-tab id="tab-selectbyid2">
                                       <ng-template ngbTabTitle>Qualification</ng-template>
+                                   
                                       <ng-template ngbTabContent>
-                                       
-                        <ejs-grid  [editSettings]='editSettings'  [toolbar]='toolbar' height='273px'>
+                                        <br>
+                                        <h6>*These are the initial qualification dates </h6>
+                        <ejs-grid  [editSettings]='editSettings'  [toolbar]='toolbar' height='273px' [dataSource]='data' [allowSelection]='true' [gridLines]="lines"  [enableHover]='false'  [allowSorting]='true' e-gridheader=''>
                           <e-columns>
-                              <e-column field='SrNo' headerText='SrNO' textAlign='Left' isPrimaryKey='true' width=50></e-column>
+                          
                               <e-column field='QualificationType' headerText='Qualification Type' isPrimaryKey='true' width=120></e-column>
                               <e-column field='Date' headerText='Date' editType= 'datepickeredit' [edit]='dpParams' width=150></e-column>
                               <e-column field='Description' headerText='Description' textAlign= 'Left' width=80 format= 'C2'></e-column>
                               <e-column field='Link' headerText='Link' textAlign= 'Left' width=80 format= 'C2'></e-column>
                           </e-columns>
                           </ejs-grid>
+                          <div class="form-actions">
+                            <div class="card-body">
+                                <div class="d-flex no-block align-items-center">
+                                  <div class="ml-auto">
+                                    <div class="custom-control custom-checkbox">
+                                      <button type="submit" class="btn btn-cyan" (click)="gotoIcsMaster()">  
+                                        <i class="ti-save"></i>  Save </button>
+                                    <button type="button" class="btn btn-dark" (click)="gotoIcsMaster()"> <i class="ti-close"></i> Cancel</button>
+                                  </div>
+                                  </div>
+                              </div>
+                            </div>
+                        </div>
                                       </ng-template>
+                                      
                                     </ngb-tab>
 
                                     <ngb-tab id="tab-selectbyid3">
@@ -143,6 +182,19 @@
                                       <!-- </div> -->
                                       
                                       </form>
+                                      <div class="form-actions">
+                                        <div class="card-body">
+                                            <div class="d-flex no-block align-items-center">
+                                              <div class="ml-auto">
+                                                <div class="custom-control custom-checkbox">
+                                                  <button type="submit" class="btn btn-cyan" (click)="gotoIcsMaster()">  
+                                                    <i class="ti-save"></i>  Save </button>
+                                                <button type="button" class="btn btn-dark" (click)="gotoIcsMaster()"> <i class="ti-close"></i> Cancel</button>
+                                              </div>
+                                              </div>
+                                          </div>
+                                        </div>
+                                    </div>
                                       </ng-template>
                                     </ngb-tab>
 
@@ -189,14 +241,27 @@
                                       </form> -->
 
                                                        
-                        <ejs-grid  [editSettings]='editSettings' [toolbar]='toolbar' height='273px'>
+                        <ejs-grid  [editSettings]='editSettings' [toolbar]='toolbar' height='273px' [dataSource]='data' [allowSelection]='true' [gridLines]="lines"  [enableHover]='false'  [allowSorting]='true' e-gridheader=''>
                           <e-columns>
-                              <e-column field='SrNo' headerText='SrNO' textAlign='Left' isPrimaryKey='true' width=50></e-column>
-                              <e-column field='MaintainanceType' headerText='Maintainance Type' isPrimaryKey='true' width=120></e-column>
+                              <!-- <e-column field='SrNo' headerText='SrNO' textAlign='Left' isPrimaryKey='true' width=50></e-column> -->
+                              <e-column field='MaintenanceType' headerText='Maintenance Type' isPrimaryKey='true' width=120></e-column>
                 
                               <e-column field='Frequency' headerText='Frequency ( In Month)' textAlign= 'Left' width=80 format= 'C2'></e-column>
                           </e-columns>
                           </ejs-grid>
+                          <div class="form-actions">
+                            <div class="card-body">
+                                <div class="d-flex no-block align-items-center">
+                                  <div class="ml-auto">
+                                    <div class="custom-control custom-checkbox">
+                                      <button type="submit" class="btn btn-cyan" (click)="gotoIcsMaster()">  
+                                        <i class="ti-save"></i>  Save </button>
+                                    <button type="button" class="btn btn-dark" (click)="gotoIcsMaster()"> <i class="ti-close"></i> Cancel</button>
+                                  </div>
+                                  </div>
+                              </div>
+                            </div>
+                        </div>
                                       </ng-template>
                                     </ngb-tab>
 
@@ -226,7 +291,21 @@
                                       </div>
                                       </div>
                                     
-                                      
+                                       <div class="form-actions">
+                                        <div class="card-body">
+                                            <div class="d-flex no-block align-items-center">
+                                              <div class="ml-auto">
+                                                <div class="custom-control custom-checkbox">
+                                                  <button type="submit" class="btn btn-cyan" (click)="gotoIcsMaster()">  
+                                                    <i class="ti-save"></i>  Save & Submit</button>
+                                                
+                                                  <button type="button" class="btn btn-dark" (click)="gotoIcsMaster()"> <i class="ti-close"></i> Cancel</button> 
+                                             
+                                                </div>
+                                              </div>
+                                          </div>
+                                        </div>
+                                    </div> 
                                       
                                       </form>
 
@@ -244,19 +323,19 @@
                     </div>
 
 
-                    <div class="form-actions">
+                    <!-- <div class="form-actions">
                         <div class="card-body">
                             <div class="d-flex no-block align-items-center">
                               <div class="ml-auto">
                                 <div class="custom-control custom-checkbox">
                                   <button type="submit" class="btn btn-cyan" (click)="gotoIcsMaster()">  
-                                    <i class="ti-save"></i>  Submit </button>
+                                    <i class="ti-save"></i>  Save </button>
                                 <button type="button" class="btn btn-dark" (click)="gotoIcsMaster()"> <i class="ti-close"></i> Cancel</button>
                               </div>
                               </div>
                           </div>
                         </div>
-                    </div>
+                    </div> -->
                 <!-- </div>
             </form>
         </div>
