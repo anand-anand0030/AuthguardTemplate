@@ -24,15 +24,23 @@
    #toast-container > div {
     opacity: 1;
   }
-   .c_header{                              /* style for each menu header */
-    background-color: rgb(63,152,235);
-    padding-top:10px; height: 40px;
+
+   
+
+.c_header{                              /* style for each menu header */
+  background-color: rgb(63,152,235);
+  padding-top:10px; height: 40px;
 
 }
 .c_header h4{
   margin-left:10px;
   color : white;
 }
+
+.form-group label{
+  text-align: right;
+}
+
 .modal_header{                               /* style for each popup modal header */
   background-color: rgb(63,152,235);
   padding-top:10px 0px; height: 40px;
@@ -40,14 +48,20 @@
 .modal_header h6{
   margin-left:10px;
   color : white;
-  margin-top: 8px;
-  /* line-height: 1.5px; */
+  margin-top: 20px;
+  line-height: 1.5px; 
 }
-.btn_style{
+.modal_header{
+  height: 40px;
+}
+button.close{
+  margin-right: 15px;
+}
+.btn_style{                                         /* style for each button*/
   color: rgba(10, 118, 190, 0.822);
-
+  /* background-color: #86cf94; */
 }
-.dropdown_style{
+.dropdown_style{                                   /* style for each dropdown*/
   color: rgba(10, 118, 190, 0.822);
 }
 /* .modal_footer{

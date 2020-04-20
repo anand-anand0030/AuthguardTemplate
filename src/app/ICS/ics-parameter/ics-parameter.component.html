@@ -5,32 +5,40 @@
             <h4>Add Parameter</h4>
                             </div>
             <div class="card-body">
-              <div class="d-flex no-block align-items-center">
+              <!-- <div class="d-flex no-block align-items-center">
                 <h4 class="card-title"></h4>
             </div>
             
             <button class="mr-2 dropdown_style" ejs-dropdownbutton [items]='items' content='Instrument Id' ></button>
             <button class="mr-2 dropdown_style" ejs-dropdownbutton [items]='items1' content='Instrument Name'></button>
-            <!-- <a class="btn btn-warn" >  <i class="fas fa-plus-circle" style="color: cadetblue;"></i> Add Parameter</a> -->
-            <button  class="btn-btn-info mr-2 float-right btn_style"><i class="ti-export"></i> Export</button>
+             <a class="btn btn-warn" >  <i class="fas fa-plus-circle" style="color: cadetblue;"></i> Add Parameter</a> -->
+            <!-- <button  class="btn-btn-info mr-2 float-right btn_style"><i class="ti-export"></i> Export</button>
             <button  class="btn-btn-info mr-2 float-right btn_style" (click)="addparameter(addParameterModal)"><i class="fas fa-plus-circle"></i>Add Parameter</button>
             
-            <hr>
+            <hr> --> 
+            <div class="d-flex no-block align-items-center">
+                <h4 class="card-title"> </h4>
+                <div class="ml-auto mb-2">
+                    <button  class="btn-btn-info mr-2 float-right btn_style"><i class="ti-export"></i> Export</button>
+                    <button class="btn-btn-info mr-2 float-right btn_style" (click)="addparameter(addParameterModal)"><i class="fas fa-plus-circle"></i>  Add Parameter</button>
+                    <!-- style="background-color: #83b3cf;border:none;color:white;"style="background-color: #86cf94;border:none;color:white;" -->
+                </div>
+            </div>
             <div class="table-responsive">
-                <ejs-grid [dataSource]='data' [allowSelection]='true' [gridLines]="lines"  [enableHover]='false'  [allowSorting]='true' e-gridheader=''>
+                <ejs-grid [dataSource]='data' [allowSelection]='true' allowFiltering='true'[filterSettings]='filterOptions' [gridLines]="lines"  [enableHover]='false'  [allowSorting]='true' e-gridheader=''height='350px'>
                     <e-columns>
-                      <e-column  headerText='Action' width='100'>
+                      <e-column  headerText='Action' textAlign='center' width='70'>
                         <ng-template #template let-data>
                             <div class="loc">
                               <button cssClass='small'  ejs-button (click)="editParameter()">  <span class="e-icons e-edit"></span></button>
                             </div>
                         </ng-template>
                     </e-column>
-                  <e-column field='SrNo' headerText='Sr No' textAlign='Left' width=60></e-column>
-                  <e-column field='Parameter' headerText='Parameter' width=120></e-column>
-                  <e-column field='NominalValue' headerText='Nominal Value' textAlign='Left' format='C2' width=120></e-column>
-                  <e-column field='UpperRange' headerText='Upper Range' textAlign='Left' format='yMd' width=120></e-column>
-                  <e-column field='LowerRange' headerText='Lower Range' textAlign='Left' width=90></e-column>
+                  <e-column field='SrNo' headerText='Sr. No.' textAlign='center' width=70></e-column>
+                  <e-column field='ParameterName' headerText='Parameter Name' textAlign='center' width=90></e-column>
+                  <e-column field='TargetValue' headerText='Target Value' textAlign='center' format='C2' width=90></e-column>
+                  <e-column field='UpperRange' headerText='Upper Range' textAlign='center' format='yMd' width=90></e-column>
+                  <e-column field='LowerRange' headerText='Lower Range' textAlign='center' width=90></e-column>
                   </e-columns>
                   </ejs-grid>
           </div>
@@ -52,34 +60,35 @@
       </button>
     </div>
     <div class="modal-body">
-      <form class="form-horizontal">
+       <form class="form-horizontal">
         <div class="card-body">
             <div class="form-group row">
-                <label for="fname" class="col-sm-8 control-label col-form-label">Parameter :</label>
+                <label for="ParameterName" class="col-sm-8 control-label col-form-label">Parameter Name:</label>
                 <div class="col-sm-4">
-                    <input type="text" class="form-control" id="parameter" placeholder="">
+                    <input type="text" class="form-control" id="Parameter" placeholder="">
                 </div>
             </div>
             <div class="form-group row">
-                <label for="lname" class="col-sm-8 control-label col-form-label">Nominal Value :</label>
+                <label for="TargetValue" class="col-sm-8 control-label col-form-label">Target Value:</label>
                 <div class="col-sm-4">
-                    <input type="text" class="form-control" id="nominalValue" placeholder="">
+                    <input type="text" class="form-control" id="TargetValue" placeholder="">
                 </div>
             </div>
             <div class="form-group row">
-                <label for="email1" class="col-sm-8 control-label col-form-label">Nominal Upper range :</label>
+                <label for="UpperRange" class="col-sm-8 control-label col-form-label">Upper range :</label>
                 <div class="col-sm-4">
-                    <input type="email" class="form-control" id="nominalUpperRange" placeholder="">
+                    <input type="text" class="form-control" id="UpperRange" placeholder="">
                 </div>
             </div>
             <div class="form-group row">
-                <label for="cono1" class="col-sm-8 control-label col-form-label">Nominal Lower range :</label>
+                <label for="LowerRange" class="col-sm-8 control-label col-form-label">Lower range :</label>
                 <div class="col-sm-4">
-                    <input type="text" class="form-control" id="nominalLowerRange" placeholder="">
+                    <input type="text" class="form-control" id="LowerRange" placeholder="">
                 </div>
             </div>
         </div>
-      </form>
+      </form> 
+     
     </div>
     <div class="modal-footer">
       <button class="btn-btn-info btn_style">Add</button>

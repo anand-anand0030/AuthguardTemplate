@@ -10,6 +10,8 @@ import { GridModule, PageService, SortService, FilterService, GroupService, Edit
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { UploaderModule } from '@syncfusion/ej2-angular-inputs';
 import { DatePickerModule } from '@syncfusion/ej2-angular-calendars';
+import { ComboBoxModule } from '@syncfusion/ej2-angular-dropdowns';
+import { DropDownButtonModule } from '@syncfusion/ej2-angular-splitbuttons';
 
 
 @NgModule({
@@ -20,6 +22,8 @@ import { DatePickerModule } from '@syncfusion/ej2-angular-calendars';
     GridModule, ButtonModule,
     NgbModule,
     UploaderModule,
+    ComboBoxModule,
+    DropDownButtonModule,
     DatePickerModule,
   ],
   providers: [PageService,

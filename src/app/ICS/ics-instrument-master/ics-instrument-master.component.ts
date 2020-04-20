@@ -1,6 +1,7 @@
 import { Component, AfterViewInit} from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
-import { GridLine } from '@syncfusion/ej2-angular-grids';
+import { GridLine, FilterSettingsModel } from '@syncfusion/ej2-angular-grids';
+
 
 @Component({
   selector: 'app-ics',
@@ -11,8 +12,10 @@ export class IcsComponent implements AfterViewInit {
    public data: object[];
    public lines: GridLine;
 
+   public filterOptions: FilterSettingsModel;
 
 constructor(private toastr: ToastrService) {}
+
 
   // tslint:disable-next-line:use-life-cycle-interface
   ngOnInit(): void {
@@ -20,8 +23,8 @@ constructor(private toastr: ToastrService) {}
       [
          {
            SrNo: '01',
-          InstrumentId: 'Gx121345678',
-           InstrumentName: 'HPLC',
+          InstId: 'Gx121345678',
+           InstName: 'HPLC',
           Make: 'Thermofisher',
           Model: 'Ultimate 3000',
           //  Qualification:,
@@ -32,13 +35,54 @@ constructor(private toastr: ToastrService) {}
           ManufacturersSrNo: '6784538'
 
          },
-        // {
-        //     OrderID: 10249, CustomerID: 'TOMSP', EmployeeID: 6, OrderDate: new Date(836505e6),
-        //     ShipName: 'Toms Spezialitäten', ShipCity: 'Münster', ShipAddress: 'Luisenstr. 48',
-        //     ShipRegion: 'CJ', ShipPostalCode: '44087', ShipCountry: 'Germany', Freight: 11.61, Verified: !1
-        // }
+         {
+          SrNo: '02',
+         InstId: 'Gx121345678',
+          InstName: 'HPLC',
+         Make: 'Thermofisher',
+         Model: 'Ultimate 3000',
+         //  Qualification:,
+          Availability: 'Yes/No',
+         //  URSNoLink:,
+         //  PONoLink:,
+         DeliveryDate: '28/02/2020',
+         ManufacturersSrNo: '6784538'
+
+        },
+        {
+          SrNo: '03',
+         InstId: 'Gx121345678',
+          InstName: 'HPLC',
+         Make: 'Thermofisher',
+         Model: 'Ultimate 3000',
+         //  Qualification:,
+          Availability: 'Yes/No',
+         //  URSNoLink:,
+         //  PONoLink:,
+         DeliveryDate: '28/02/2020',
+         ManufacturersSrNo: '6784538'
+
+        },
+        {
+          SrNo: '04',
+         InstId: 'Gx121345678',
+          InstName: 'HPLC',
+         Make: 'Thermofisher',
+         Model: 'Ultimate 3000',
+         //  Qualification:,
+          Availability: 'Yes/No',
+         //  URSNoLink:,
+         //  PONoLink:,
+         DeliveryDate: '28/02/2020',
+         ManufacturersSrNo: '6784538'
+
+        },
+       
       ];
         this.lines = 'Both';
+        this.filterOptions = {
+          type: 'Menu'
+       };
   }
 
 

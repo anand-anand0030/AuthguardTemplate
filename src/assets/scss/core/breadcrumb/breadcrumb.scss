@@ -3,7 +3,8 @@
 *******************/
 
 .page-breadcrumb {
-    padding: 10px 10px 0 10px;  
+    padding: 10px 10px 0 10px;
+    background-color: #F5FBFF;  
     .page-title{
         margin-bottom: 0px;
     }
@@ -17,6 +18,7 @@
             font-family: themify;
             color: $gray-400;
             font-size: 11px;
+            
         }
     }
 }

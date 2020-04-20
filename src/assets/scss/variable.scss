@@ -12,7 +12,8 @@ $theme-dark: #212529;
 
 $skin1: #2962ff;
 $skin2: #fe5419;
-$skin3: #2f90eb;
+// $skin3: #2f90eb;
+$skin3: #1A8CBD;
 $skin4: #6659f7;
 $skin5: #414755;
 $skin6: #fff;
@@ -117,7 +118,7 @@ $orange: #fb8c00 !default;
 $yellow: #ffbc34 !default;
 $green: #36bea6 !default;
 $teal: #20c997 !default;
-$cyan: #2f90eb !default;
+$cyan: #1A8CBD !default;
 $primary: #7460ee !default;
 $text-muted: $gray-500 !default;
 
@@ -135,6 +136,7 @@ $colors: (
   white: $white,
   gray: $gray-600,
   gray-dark: $gray-800
+ 
 );
 
 $primary: $blue !default;
@@ -163,7 +165,8 @@ $theme-colors: map-merge(
     "muted": $muted,
     "cyan": $cyan,
     "orange": $orange,
-    "purple": $purple
+    "purple": $purple,
+    
   ),
   $theme-colors
 );

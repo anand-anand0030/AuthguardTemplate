@@ -10,9 +10,9 @@ const routes: Routes = [
       {
         path: '',
         data: {
-          title: 'EQS Calibration Record Master',
+          // title: 'EQS Calibration Record Master',
           urls: [
-            { title: 'Dashboard', url: '/landing' },
+            { title: 'Home', url: '/landing' },
             { title: 'EQS CalibrationRecordMaster' }
           ]
         },

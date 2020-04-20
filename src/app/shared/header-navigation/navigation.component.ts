@@ -23,13 +23,13 @@ export class NavigationComponent implements AfterViewInit {
 
   // This is for Notifications
   notifications: Object[] = [
-    // {
-    //   btn: 'btn-danger',
-    //   icon: 'ti-link',
-    //   title: 'Luanch Admin',
-    //   subject: 'Just see the my new admin!',
-    //   time: '9:30 AM'
-    // },
+     {
+     btn: 'btn-info',
+      icon: 'ti-link',
+     title: 'You are active',
+      // subject: 'Just see the my new admin!',
+      time: '9:30 AM'
+     }
     // {
     //   btn: 'btn-success',
     //   icon: 'ti-calendar',
@@ -55,13 +55,13 @@ export class NavigationComponent implements AfterViewInit {
 
   // This is for Mymessages
   mymessages: Object[] = [
-    // {
-    //   useravatar: 'assets/images/users/1.jpg',
-    //   status: 'online',
-    //   from: 'Pavan kumar',
-    //   subject: 'Just see the my admin!',
-    //   time: '9:30 AM'
-    // },
+     {
+   useravatar: 'assets/images/users/1.jpg',
+      status: 'online',
+      from: 'ABC',
+      subject: 'Regards',
+     time: '9:30 AM'
+    },
     // {
     //   useravatar: 'assets/images/users/2.jpg',
     //   status: 'busy',

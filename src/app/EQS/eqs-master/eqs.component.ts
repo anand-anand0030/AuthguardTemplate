@@ -1,17 +1,16 @@
 import { Component, AfterViewInit } from '@angular/core';
 // import { rippleEffect } from '@syncfusion/ej2-base';
 import { ToastrService } from 'ngx-toastr';
+import { GridLine, FilterSettingsModel } from '@syncfusion/ej2-grids';
 
 @Component({
   templateUrl: './eqs.component.html',
 styleUrls: ['./eqs-master.css']
 })
 export class EqsComponent implements AfterViewInit {
-  // subtitle: string;
-  // constructor() {
-  //   this.subtitle = 'This is some text within a card block. EQS works!';
-  // }
-   public data: object[];
+  public data: object[];
+   public lines: GridLine;
+   public filterOptions: FilterSettingsModel;
 
 constructor(private toastr: ToastrService) {}
 
@@ -19,16 +18,31 @@ constructor(private toastr: ToastrService) {}
   ngOnInit(): void {
       this.data =
       [
-        {
-            OrderID: 10248, CustomerID: 'VINET', EmployeeID: 5, OrderDate: new Date(8364186e5),
-            ShipName: 'Vins et alcools Chevalier', ShipCity: 'Reims', ShipAddress: '59 rue de l Abbaye',
-            ShipRegion: 'CJ', ShipPostalCode: '51100', ShipCountry: 'France', Freight: 32.38, Verified: !0
-        },
-        {
-            OrderID: 10249, CustomerID: 'TOMSP', EmployeeID: 6, OrderDate: new Date(836505e6),
-            ShipName: 'Toms Spezialitäten', ShipCity: 'Münster', ShipAddress: 'Luisenstr. 48',
-            ShipRegion: 'CJ', ShipPostalCode: '44087', ShipCountry: 'Germany', Freight: 11.61, Verified: !1
-        }];
+        //  {
+        //    SrNo: '01',
+        //   InstrumentId: 'Gx121345678',
+        //    InstrumentName: 'HPLC',
+        //   Make: 'Thermofisher',
+        //   Model: 'Ultimate 3000',
+        //   //  Qualification:,
+        //    Availability: 'Yes/No',
+        //   //  URSNoLink:,
+        //   //  PONoLink:,
+        //   DeliveryDate: '28/02/2020',
+        //   ManufacturersSrNo: '6784538'
+
+        //  },
+        // {
+        //     OrderID: 10249, CustomerID: 'TOMSP', EmployeeID: 6, OrderDate: new Date(836505e6),
+        //      ShipName: 'Toms Spezialitäten', ShipCity: 'Münster', ShipAddress: 'Luisenstr. 48',
+        //      ShipRegion: 'CJ', ShipPostalCode: '44087', ShipCountry: 'Germany', Freight: 11.61, Verified: !1
+        //  }
+      ];
+        this.lines = 'Both';
+        this.filterOptions = {
+          type: 'Menu'
+       };
+      
   }
 
 
@@ -42,5 +56,5 @@ constructor(private toastr: ToastrService) {}
    this.toastr.error('Deleted successfully');
 
   }
-
 }
+

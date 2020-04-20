@@ -1,36 +1,72 @@
 
 <div class="row">
-  <div class="col-lg-12">
-      <div class="card">
-          <div class="card-body">
-            <div class="d-flex no-block align-items-center">
-              <h4 class="card-title">Equipment Master</h4>
-              <div class="ml-auto mb-2">
-                  <a class="btn btn-info" [routerLink]="['addequipment']">  <i class="fas fa-plus" style="color: azure;"></i> add eqp </a>
-              </div>
-          </div>
-                   <div class="table-responsive">
-                        <ejs-grid [dataSource]='data' [allowSelection]='true'  [enableHover]='false'  [allowSorting]='true' e-gridheader=''>
-                          <e-columns>
-                            <!-- <e-column type='checkbox' [allowFiltering]='false' [allowSorting]='false' width='30'></e-column> -->
-                              <e-column  headerText='Action' width='50'>
-                              <ng-template #template let-data>
-                                  <div class="loc">
-                                    <button cssClass='small'  ejs-button (click)="editEquipment()">  <span class="e-icons e-pencil"></span></button>
-                                  </div>
-                              </ng-template>
-                          </e-column>
-                              <e-column field='OrderID' headerText='Order ID' textAlign='Right' width=90></e-column>
-                              <e-column field='CustomerID' headerText='Customer ID' width=120></e-column>
-                              <e-column field='Freight' headerText='Freight' textAlign='Right' format='C2' width=90></e-column>
-                              <e-column field='OrderDate' headerText='Order Date' textAlign='Right' format='yMd' width=120></e-column>
-                          </e-columns>
-                          </ejs-grid>
-              </div>
-          </div>
-      </div>
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="c_header">
+                <h4>Equipment Master</h4>
+                                </div>
+            <div class="card-body">
+                
+              <div class="d-flex no-block align-items-center">
+                <h4 class="card-title"> </h4>
+                <div class="ml-auto mb-2">
+                    <button  class="btn-btn-info mr-2 float-right btn_style"><i class="ti-export"></i> Export</button>
+                    <button class="btn-btn-info mr-2 float-right btn_style" [routerLink]="['addequipment']"><i class="fas fa-plus-circle"></i>Add Equipment</button>
+                    <!-- <button class="btn-btn-info btn_style"[routerLink]="['addinstrument']"> <i class="fas fa-plus-circle"></i>Add Instrument</button> -->
+                    <!-- <a class="btn btn-info" role="button" [routerLink]="['addinstrument']" > <i class="fas fa-plus-circle"></i> Add Instrument </a> -->
+                    <!-- <a class="btn btn-info" [routerLink]="['addinstrument']">  <i class="fas fa-plus-circle"></i><i style="color: rgba(6, 48, 88, 0.856);"></i> Add Instrument </a> -->
+                </div>
+            </div>
+                    <div class="table-responsive">
+                          <ejs-grid [dataSource]='data' [allowSelection]='true'allowFiltering='true'  [filterSettings]='filterOptions'[gridLines]="lines"  [enableHover]='false'  [allowSorting]='true' e-gridheader=''height='350px'>
+                            <e-columns>
+                                <e-column  headerText='Action' textAlign='center' width='100'>
+                                    <ng-template #template let-data>
+                                        <div class="loc">
+                                        <button cssClass='small'  ejs-button (click)="editEquipment()">  <span class="e-icons e-edit"></span></button>
+                                        </div>
+                                    </ng-template>
+                                </e-column>
+                            <e-column field='SrNo' headerText='Sr.No.' textAlign='center' width=120></e-column>
+                            <!-- <e-column field='Edit Instrument' headerText='Edit Instrument' width=150></e-column> -->
+                            <e-column field='EquipmentId' headerText='Equipment Id' textAlign='center' format='C2' width=180></e-column>
+                            <e-column field='EquipmentName' headerText='Equipment Name' textAlign='center' format='yMd' width=180></e-column>
+                            <e-column field='Make' headerText='Make' textAlign='center' width=150></e-column>
+                            <e-column field='Model' headerText='Model' textAlign='center' width=150></e-column>
+                             <e-column field='Qualification' headerText='Qualification' textAlign='center' width='150'>
+                    
+                            </e-column> 
+
+                            <e-column field='Availability' headerText='Availability' textAlign='center' format='C2' width=150></e-column>
+                             <!-- <e-column field='URSNoLink' headerText='URS No. & Link' textAlign='Right' format='yMd' width=150></e-column>  -->
+                             <e-column field='URSNo&Link' headerText='URS No. & Link' textAlign='center' width='170'>
+                                <ng-template #template let-data>
+                                    <div class="loc">
+                                    <button cssClass='small'  ejs-button (click)="editEquipment()">  <span><img src="assets/images/openfolder.png"  class="dark-logo openFolder" /></span></button>
+                                    </div>
+                                </ng-template>
+                            </e-column>
+                           
+                           
+                            <!-- <e-column field='PONoLink' headerText='PO No. & Link' textAlign='Right' width=150></e-column> -->
+                            <e-column field='PONo&Link' headerText='PO No. & Link' textAlign='center' width='170'>
+                                <ng-template #template let-data>
+                                    <div class="loc">
+                                    <button cssClass='small'  ejs-button (click)="editEquipment()">  <span><img src="assets/images/openfolder.png"  class="dark-logo openFolder" /></span></button>
+                                    </div>
+                                </ng-template>
+                            </e-column>
+                            <e-column field='DeliveryDate' headerText='Delivery Date' textAlign='center' width=170></e-column>
+                            <e-column field='ManufacturersSrNo'   headerText='Manufacturers Sr.No' textAlign='center' format='C2' width=200></e-column>
+                            <e-column field='StorageLoc'   headerText='Storage Location' textAlign='center' format='C2' width=200></e-column>
+                            </e-columns>
+                            </ejs-grid>
+                </div>
+            </div>
+        </div>
+    </div>
   </div>
-</div>
-
-
-
+  
+  
+  
+  

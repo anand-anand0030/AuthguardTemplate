@@ -10,14 +10,16 @@
 }
 
 .page-wrapper {
-  background: $body-bg;
+   background: $body-bg;
   position: relative;
   transition: 0.2s ease-in;
 }
 
 .page-wrapper > .container-fluid {
   padding: 10px;
+  background-color: #F5FBFF;
   min-height: calc(100vh - 180px);
+
 }
 
 /*******************
@@ -26,6 +28,7 @@
 
 .footer {
   padding: 15px 20px;
+  background-color: #F5FBFF;
 }
 
 /*******************

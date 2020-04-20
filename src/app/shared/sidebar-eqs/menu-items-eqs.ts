@@ -11,8 +11,8 @@ export const ROUTES: RouteInfo[] = [
   // },
   {
     path: '/eqshome',
-    title: 'EQS-Master',
-    icon: 'mdi mdi-gauge',
+    title: 'Equipment Master',
+    icon: 'mdi mdi-account-edit',
     class: '',
     extralink: false,
     submenu: [
@@ -21,14 +21,14 @@ export const ROUTES: RouteInfo[] = [
   {
     path: '/',
     title: 'Parameter',
-    icon: 'mdi mdi-gauge',
+    icon: 'mdi mdi-account-edit',
     class: 'has-arrow',
     extralink: false,
     submenu: [
       {
         path: '/eqsparameter',
         title: 'Add Parameter',
-        icon: 'mdi mdi-adjust',
+        icon: 'mdi mdi-account-edit',
         class: '',
         extralink: false,  // false
         submenu: []
@@ -36,7 +36,7 @@ export const ROUTES: RouteInfo[] = [
       {
         path: '/dashboard',
         title: 'Dashboard',
-        icon: 'mdi mdi-adjust',
+        icon: 'mdi mdi-account-edit',
         class: '',
         extralink: false,  // false
         submenu: []
@@ -46,23 +46,23 @@ export const ROUTES: RouteInfo[] = [
   {
     path: '/qualification',
     title: 'Qualification',
-    icon: 'mdi mdi-gauge',
+    icon: 'mdi mdi-account-edit',
     class: '',
     extralink: false,
     submenu: []
   },
   {
     path: '/eqscalibrationmaster',
-    title: 'Calibration Record Master',
-    icon: 'mdi mdi-gauge',
+    title: 'Calibration',
+    icon: 'mdi mdi-account-edit',
     class: '',
     extralink: false,
     submenu: []
   },
   {
     path: '/eqsmaintenance',
-    title: 'Maintainance',
-    icon: 'mdi mdi-gauge',
+    title: 'Maintenance',
+    icon: 'mdi mdi-account-edit',
     class: '',
     extralink: false,
     submenu: []
@@ -70,14 +70,14 @@ export const ROUTES: RouteInfo[] = [
   {
     path: '/eqs-reports',
     title: 'Reports',
-    icon: 'mdi mdi-bullseye',
+    icon: 'mdi mdi-account-edit',
     class: 'has-arrow',
     extralink: false,
     submenu: [
       {
         path: '/eqs-reports/equipmentList',
         title: 'List of equipment',
-        icon: 'mdi mdi-adjust',
+        icon: 'mdi mdi-account-edit',
         class: '',
     extralink: false,
         submenu: []
@@ -85,7 +85,7 @@ export const ROUTES: RouteInfo[] = [
       {
         path: '/eqs-reports/equipmentHistory',
         title: 'History of equipment',
-        icon: 'mdi mdi-adjust',
+        icon: 'mdi mdi-account-edit',
         class: '',
     extralink: false,
         submenu: []
@@ -93,7 +93,7 @@ export const ROUTES: RouteInfo[] = [
       {
         path: '/eqs-reports/calibrationReport',
         title: 'Calibration Report',
-        icon: 'mdi mdi-adjust',
+        icon: 'mdi mdi-account-edit',
         class: '',
     extralink: false,
         submenu: []
@@ -103,35 +103,64 @@ export const ROUTES: RouteInfo[] = [
   {
     path: '',
     title: 'Settings',
-    icon: 'mdi mdi-bullseye',
+    icon: 'mdi mdi-account-edit',
     class: 'has-arrow',
     extralink: false,
     submenu: [
-      {
-        path: '/component/accordion',
-        title: 'Accordion',
-    icon: 'mdi mdi-adjust',
-        class: '',
-        extralink: true, // set false to display the submenu
-        submenu: []
-      }
-    ]
+    //   {
+    //     path: '/component/accordion',
+    //     title: 'Accordion',
+    // icon: 'mdi mdi-account-edit',
+    //     class: '',
+    //     extralink: false, 
+    //     submenu: []
+    //   }
+    
+    {
+      path: '/eqs-settings/usersettings',
+      title: 'User Settings',
+  icon: 'mdi mdi-account-edit',
+      class: '',
+      extralink: false,
+      submenu: []
+    },
+
+
+    {
+      path: '/eqs-settings/customheaderfields',
+      title: 'Custom Header Fields',
+  icon: 'mdi mdi-account-edit',
+      class: '',
+      extralink: false,
+      submenu: []
+    },
+
+    {
+      path: '/eqs-settings/alertsettings',
+      title: 'Alert Settings',
+  icon: 'mdi mdi-account-edit',
+      class: '',
+      extralink: false,
+      submenu: []
+    },
+  
+  ]
   },
-  {
-    path: '',
-    title: 'Template components',
-    icon: 'mdi mdi-bullseye',
-    class: 'has-arrow',
-    extralink: false,
-    submenu: [
-      {
-        path: '/component/accordion',
-        title: 'Accordion',
-    icon: 'mdi mdi-adjust',
-        class: '',
-        extralink: false,
-        submenu: []
-      }
-    ]
-  }
+  // {
+  //   path: '',
+  //   title: 'Template components',
+  //   icon: 'mdi mdi-account-edit',
+  //   class: 'has-arrow',
+  //   extralink: false,
+  //   submenu: [
+  //     {
+  //       path: '/component/accordion',
+  //       title: 'Accordion',
+  //   icon: 'mdi mdi-adjust',
+  //       class: '',
+  //       extralink: false,
+  //       submenu: []
+  //     }
+  //   ]
+  // }
 ];

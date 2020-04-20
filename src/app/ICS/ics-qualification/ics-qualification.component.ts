@@ -3,37 +3,63 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { ItemModel } from '@syncfusion/ej2-angular-splitbuttons';
 import { TextBoxComponent } from '@syncfusion/ej2-angular-inputs';
 import { ChangeEventArgs } from '@syncfusion/ej2-angular-buttons';
-import { Edit, GridLine } from '@syncfusion/ej2-angular-grids';
+import { Edit, GridLine, FilterSettingsModel } from '@syncfusion/ej2-angular-grids';
 import { ToastrService } from 'ngx-toastr';
+import { EmitType } from '@syncfusion/ej2-base';
+ import { FilteringEventArgs } from '@syncfusion/ej2-dropdowns';
+import { Query } from '@syncfusion/ej2-data';
+import { FilterService } from '@syncfusion/ej2-angular-grids';
 @Component({
   selector: 'app-ics-qualification',
   templateUrl: './ics-qualification.component.html',
+  providers:[FilterService],
   styleUrls: ['./ics-qualification.component.css']
 })
 export class IcsQualificationComponent implements AfterViewInit {
   closeResult: string;
   public dateValue: Date = new Date();
-
-  public items: ItemModel[] = [
-    {
-        text: 'Inst Id'
-    },
-    {
-        text: 'Inst Id'
-    },
-    {
-        text: 'Inst Id'
-    }];
-    public items1: ItemModel[] = [
-      {
-          text: 'Inst Name'
-      },
-      {
-          text: 'Inst Name'
-      },
-      {
-          text: 'Inst Name'
-      }];
+ 
+  public filterOptions: FilterSettingsModel;
+  public data3: { [key: string]: Object; }[] = [
+    { Name: 'Select', Code: 'S' }
+   
+  ];
+  // maps the appropriate column to fields property
+  public fields: Object = { text: 'Name', value: 'Code' };
+  // set the height of the popup element
+  public height: string = '220px';
+  // set the placeholder to ComboBox input element
+  public watermark: string = 'Select';
+  public watermark1: string = 'Select Type';
+  // filtering event handler to filter a Country
+  public onFiltering: EmitType<FilteringEventArgs> = (e: FilteringEventArgs) => {
+    let query: Query = new Query();
+    //frame the query based on search string with filter type.
+    query = (e.text !== '') ? query.where('Name', 'startswith', e.text, true) : query;
+    //pass the filter data source, filter query to updateData method.
+    e.updateData(this.data3, query);
+  }
+  
+  // public items: ItemModel[] = [
+  //   {
+  //       text: 'Inst Id'
+  //   },
+  //   {
+  //       text: 'Inst Id'
+  //   },
+  //   {
+  //       text: 'Inst Id'
+  //   }];
+  //   public items1: ItemModel[] = [
+  //     {
+  //         text: 'Inst Name'
+  //     },
+  //     {
+  //         text: 'Inst Name'
+  //     },
+  //     {
+  //         text: 'Inst Name'
+  //     }];
       public items2: ItemModel[] = [
         {
             text: 'IQ'
@@ -110,6 +136,9 @@ export class IcsQualificationComponent implements AfterViewInit {
               //  }
           ];
             this.lines = 'Both';
+            this.filterOptions = {
+              type: 'Menu'
+           };
             // uploader
             this.dropEle = document.getElementById('droparea');
             // folder manager

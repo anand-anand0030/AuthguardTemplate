@@ -1,54 +1,77 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ItemModel } from '@syncfusion/ej2-splitbuttons';
+import { ToastrService } from 'ngx-toastr';
+import { GridLine, FilterSettingsModel } from '@syncfusion/ej2-grids';
+import { EmitType } from '@syncfusion/ej2-base';
+ import { FilteringEventArgs } from '@syncfusion/ej2-dropdowns';
+import { Query } from '@syncfusion/ej2-data';
+import { FilterService } from '@syncfusion/ej2-angular-grids';
+
 
 @Component({
   selector: 'app-eqs-maintenance',
   templateUrl: './eqs-maintenance.component.html',
+  providers:[FilterService],
   styleUrls: ['./eqs-maintenance.component.css']
 })
 export class EqsMaintenanceComponent implements OnInit {
-
   closeResult: string;
   public dateValue: Date = new Date();
-
-  public items: ItemModel[] = [
-    {
-        text: 'Inst Id'
-    },
-    {
-        text: 'Inst Id'
-    },
-    {
-        text: 'Inst Id'
-    }];
-    public items1: ItemModel[] = [
-      {
-          text: 'Inst Name'
-      },
-      {
-          text: 'Inst Name'
-      },
-      {
-          text: 'Inst Name'
-      }];
+  public filterOptions: FilterSettingsModel;
+  public data3: { [key: string]: Object; }[] = [
+    { Name: 'Select', Code: 'S' }
+   
+  ];
+  // maps the appropriate column to fields property
+  public fields: Object = { text: 'Name', value: 'Code' };
+  // set the height of the popup element
+  public height: string = '220px';
+  // set the placeholder to ComboBox input element
+  public watermark: string = 'Select';
+  public watermark1: string = 'Select Type';
+  // filtering event handler to filter a Country
+  public onFiltering: EmitType<FilteringEventArgs> = (e: FilteringEventArgs) => {
+    let query: Query = new Query();
+    //frame the query based on search string with filter type.
+    query = (e.text !== '') ? query.where('Name', 'startswith', e.text, true) : query;
+    //pass the filter data source, filter query to updateData method.
+    e.updateData(this.data3, query);
+  }
+  // public items: ItemModel[] = [
+  //   {
+  //       text: 'Inst Id'
+  //   },
+  //   {
+  //       text: 'Inst Id'
+  //   },
+  //   {
+  //       text: 'Inst Id'
+  //   }];
+  //   public items1: ItemModel[] = [
+  //     {
+  //         text: 'Inst Name'
+  //     },
+  //     {
+  //         text: 'Inst Name'
+  //     },
+  //     {
+  //         text: 'Inst Name'
+  //     }];
       public items2: ItemModel[] = [
+      
         {
-            text: 'IQ'
+            text: 'Preventive Maintenance'
         },
         {
-            text: 'IQ'
-        },
-        {
-            text: 'IQ'
+            text: 'Breakdown'
         }];
   
 
     // End of 2 drop down
 // start of table field
       public data: object[];
-
-      
+      public lines: GridLine;
  // uploader
  public path: Object = {
   saveUrl: 'https://aspnetmvc.syncfusion.com/services/api/uploadbox/Save',
@@ -72,23 +95,35 @@ public dropEle: HTMLElement;
             this.data =
             [
               // {
-              //     OrderID: 10248, CustomerID: 'VINET', EmployeeID: 5, OrderDate: new Date(8364186e5),
-              //     ShipName: 'Vins et alcools Chevalier', ShipCity: 'Reims', ShipAddress: '59 rue de l Abbaye',
-              //     ShipRegion: 'CJ', ShipPostalCode: '51100', ShipCountry: 'France', Freight: 32.38, Verified: !0
-              // },
-              // {
-              //     OrderID: 10249, CustomerID: 'TOMSP', EmployeeID: 6, OrderDate: new Date(836505e6),
-              //     ShipName: 'Toms Spezialitäten', ShipCity: 'Münster', ShipAddress: 'Luisenstr. 48',
-              //     ShipRegion: 'CJ', ShipPostalCode: '44087', ShipCountry: 'Germany', Freight: 11.61, Verified: !1
-              // }
+                // SrNo: '01',
+                //   InstId: 'Gx121345678',
+                //  InstName: 'HPLC', 
+                //   TypeOfAction: 'AM',
+                //  PerformedDate: '04/03/2020',
+                //   NextDueDate: '04/03/2021',
+                // Attachment:, 
+                //  Notes:,
+              // Edit:
+              //  },
+              {
+                 OrderID: 10249, CustomerID: 'TOMSP', EmployeeID: 6, OrderDate: new Date(836505e6),
+                  ShipName: 'Toms Spezialitäten', ShipCity: 'Münster', ShipAddress: 'Luisenstr. 48',
+                   ShipRegion: 'CJ', ShipPostalCode: '44087', ShipCountry: 'Germany', Freight: 11.61, Verified: !1
+               }
             ];
+            this.lines = 'Both';
+            this.filterOptions = {
+              type: 'Menu'
+           };
+          
+
         }
 
 // Start of modal ( add parameter pop up)
 
 // tslint:disable-next-line:member-ordering
 
-constructor(private modalService: NgbModal) {}
+constructor(private modalService: NgbModal , private toastr: ToastrService) {}
 
 adddetails(content3) {
   // this.modalService.open(content3, { centered: true });
@@ -113,4 +148,13 @@ private getDismissReason(reason: any): string {
     return `with: ${reason}`;
   }
 }
+editMaintenance() {
+  // alert('hi edit');
+   this.toastr.success('Hi edit Toaster'); // msg,title,override previousToastMessage
+   // console.log(this.toastr.success('Hi edit Toaster', 'dsadsadas'));
+  this.toastr.warning('Deleted successfully');
+  this.toastr.error('Deleted successfully');
+
+ }
 }
+

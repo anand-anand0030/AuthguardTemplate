@@ -9,6 +9,7 @@ import { DatePickerModule } from '@syncfusion/ej2-angular-calendars';
 import { UploaderModule } from '@syncfusion/ej2-angular-inputs';
 import { HttpModule, JsonpModule } from '@angular/http';
 import { FileManagerModule , NavigationPaneService, ToolbarService, DetailsViewService } from '@syncfusion/ej2-angular-filemanager';
+import { ComboBoxModule } from '@syncfusion/ej2-angular-dropdowns';
 @NgModule({
   declarations: [IcsQualificationComponent],
   imports: [
@@ -18,7 +19,7 @@ import { FileManagerModule , NavigationPaneService, ToolbarService, DetailsViewS
     GridModule,
     DatePickerModule,
     UploaderModule,
-    FileManagerModule , HttpModule, JsonpModule
+    FileManagerModule , HttpModule, JsonpModule, ComboBoxModule
 
   ],
   providers: [PageService,

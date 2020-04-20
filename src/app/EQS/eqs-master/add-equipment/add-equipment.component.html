@@ -1,102 +1,361 @@
 
-<!-- Row -->
-<div class="row">
-  <div class="col-lg-12">
-      <div class="card">
-          <div class="d-flex no-block align-items-center card-header bg-info">
-            <h4 class="card-title">Add equipment</h4>
-            <div class="ml-auto">
-              <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="customCheck2" checked>
-                <label class="custom-control-label" for="customCheck2">In Use</label>
-            </div>
-            </div>
-        </div>
-          <form class="form-horizontal">
-              <div class="form-body">
-                  <hr class="m-t-0 m-b-40">
-                  <div class="card-body">
-                      <div class="row">
-                          <div class="col-md-6">
-                              <div class="form-group row">
-                                  <label class="control-label text-right col-md-3">First Name:</label>
-                                  <div class="col-md-9">
-                                      <p class="form-control-static"> John </p>
+
+                    <div class="row">
+                            <div class="col-md-12">
+                                <div class="card">
+                                  <div class="c_header">
+                                    <h4>Add Equipment</h4>
+                                                    </div>
+                                    <div class="card-body">
+                                        
+                                        
+                                        <ngb-tabset #t="ngbTabset">
+      
+                                          <ngb-tab id="tab-selectbyid1" title="Master">
+                                            <ng-template ngbTabContent>
+      
+                                              <form class="form-horizontal">
+                                                <div class="card-body">
+                                                    <div class="form-group row">
+                                                        <label for="EquipmentId" class="col-sm-2 control-label col-form-label">Equipment ID :</label>
+                                                        <div class="col-sm-4">
+                                                            <input type="text" class="form-control" id="EquipmentId" placeholder="">
+                                                        </div>
+                                                        <label for="EquipmentType" class="col-sm-2 control-label col-form-label">Equipment Type :</label>
+                                                        <div class="col-sm-4">
+                                                          <ejs-combobox id='EquipmentType' [dataSource]='data3' [fields]='fields' (filtering)='onFiltering($event)' [popupHeight]='height' [allowFiltering]='true'
+                                                          [placeholder]='watermark'></ejs-combobox>
+                                                        </div>
+                                                    </div>
+                                                   
+                                                    <div class="form-group row">
+                                                        <label for="Make" class="col-sm-2 control-label col-form-label">Make :</label>
+                                                        <div class="col-sm-4">
+                                                            <input type="text" class="form-control" id="Make" placeholder="">
+                                                        </div>
+                                                        <label for="Model" class="col-sm-2 control-label col-form-label">Model :</label>
+                                                        <div class="col-sm-4">
+                                                            <input type="text" class="form-control" id="Model" placeholder="">
+                                                        </div>
+                                                    </div>
+                                                   
+      
+                                                    <div class="form-group row">
+                                                      <label for="Image" class="col-sm-2 control-label col-form-label">Image :</label>
+                                                      <div class="col-sm-4">
+                                                        <ejs-uploader #defaultupload [autoUpload]='false' [dropArea]='dropEle' [asyncSettings]='path' (success)="onUploadSuccess($event)" (failure)="onUploadFailure($event)"></ejs-uploader>
+                                                      </div>
+                                                      <label for="CalibrationDue" class="col-sm-2 control-label col-form-label">Calibration Due :</label>
+                                                      <div class="col-sm-4">
+                                                          <input type="text" class="form-control" id="CalibrationDue" placeholder="">
+                                                      </div>
+                                                     
+                                                  </div>
+                                                 
+                                                <div class="form-group row">
+                                                  <label for="URSNo&Link" class="col-sm-2 control-label col-form-label">URS No & Link :</label>
+                                                  <div class="col-sm-4">
+                                                    <input type="text" class="form-control" id="URSNo&Link" placeholder=""> <br>
+                                                    <ejs-uploader #defaultupload [autoUpload]='false' [dropArea]='dropEle' [asyncSettings]='path' (success)="onUploadSuccess($event)" (failure)="onUploadFailure($event)"></ejs-uploader>
+                                                  </div>
+                                                  <label for="PONo&Link" class="col-sm-2 control-label col-form-label">PO No. and Link :</label>
+                                                <div class="col-sm-4">
+                                                  <input type="text" class="form-control" id="PONo&Link" placeholder=""> <br>
+                                                  <ejs-uploader #defaultupload [autoUpload]='false' [dropArea]='dropEle' [asyncSettings]='path' (success)="onUploadSuccess($event)" (failure)="onUploadFailure($event)"></ejs-uploader>
+                                                </div>
+                                              </div>
+                                             
+                                            <div class="form-group row">
+                                              <label for="DeliveryDate" class="col-sm-2 control-label col-form-label">Delivery Date :</label>
+                                              <div class="col-sm-4">
+                                                <ejs-datepicker [value]='dateValue' placeholder='Enter date'></ejs-datepicker>
+                                              </div>
+                                              <label for="ManufacturersSrNo" class="col-sm-2 control-label col-form-label">Manufacturer’s Sr. No.:</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="ManufacturersSrNo" placeholder="">
+                                            </div>
+                                          </div>
+                                          
+                                        <div class="form-group row">
+                                          <label for="CriticalityLevel" class="col-sm-2 control-label col-form-label">Criticality Level :</label>
+                                          <div class="col-sm-4">
+                                            <select id="level">
+                                              <option value="option1">1</option>
+                                              <option value="option2">2</option>
+                                              <option value="option3">3</option>
+                                              <option value="option4">4</option>
+                                            </select>
+                                          </div>
+                                          <label for="EquipmentInCharge" class="col-sm-2 control-label col-form-label">Equipment in charge :</label>
+                                        <div class="col-sm-4">
+                                            <input type="text" class="form-control" id="EquipmentInCharge" placeholder="">
+                                        </div>
+                                      </div>
+                                    
+                                    <div class="form-group row">
+                                      <label for="BackupInCharge" class="col-sm-2 control-label col-form-label">Backup in charge :</label>
+                                      <div class="col-sm-4">
+                                          <input type="text" class="form-control" id="BackupInCharge" placeholder="">
+                                      </div>
+                                      <label for="ServiceEngineerContact" class="col-sm-2 control-label col-form-label">Service Engineer contact:</label>
+                                      <div class="col-sm-4">
+                                          <input type="text" class="form-control" id="ServiceEngineerContact" placeholder="">
+                                      </div>
+                                  </div>
+                                  <div class="form-group row">
+                                      <label for="StorageLoc" class="col-sm-2 control-label col-form-label">Storage Location:</label>
+                                      <div class="col-sm-4">
+                                        <ejs-combobox id='StorageLoc' [dataSource]='data3' [fields]='fields' (filtering)='onFiltering($event)' [popupHeight]='height' [allowFiltering]='true'
+                                        [placeholder]='watermark'></ejs-combobox>
+                                      </div>
+                                      
+                                  </div>
+                                   </div>
+                                  </form> 
+                                  <div class="form-actions">
+                                    <div class="card-body">
+                                        <div class="d-flex no-block align-items-center">
+                                          <div class="ml-auto">
+                                            <div class="custom-control custom-checkbox">
+                                              <button type="submit" class="btn btn-cyan" (click)="gotoIcsMaster()">  
+                                                <i class="ti-save"></i>  Save </button>
+                                            <button type="button" class="btn btn-dark" (click)="gotoIcsMaster()"> <i class="ti-close"></i> Cancel</button>
+                                          </div>
+                                          </div>
+                                      </div>
+                                    </div>
+                                </div>  
+                                 </ng-template>
+                                          </ngb-tab>
+                                          
+                                          <ngb-tab id="tab-selectbyid2">
+                                            <ng-template ngbTabTitle>Qualification</ng-template>
+                                         
+                                            <ng-template ngbTabContent>
+                                              <br>
+                                              <h6>*These are the initial qualification dates </h6>
+                              <ejs-grid  [editSettings]='editSettings'  [toolbar]='toolbar' height='300px' [dataSource]='data' [allowSelection]='true' [gridLines]="lines"  [enableHover]='false'  [allowSorting]='true' e-gridheader=''>
+                                <e-columns>
+                                  <e-column field='Qtype' headerText='Qualification Type' textAlign= 'Center' editType= 'dropdownedit' [edit]='ddParams' width=50></e-column>
+                                    <!-- <e-column field='QualificationType' headerText='Qualification Type' isPrimaryKey='true' width=120></e-column> -->
+                                    <e-column field='Date' headerText='Date'textAlign= 'Center' editType= 'datepickeredit' [edit]='dpParams' width=40></e-column>
+                                    
+                                    <e-column field='Link' headerText='Link' textAlign= 'Center' width=30 format= 'C2'></e-column>
+                                    <e-column field='Description' headerText='Description' textAlign= 'Center' width=100 format= 'C2'></e-column>
+                                    <e-column field='PerformedBy' headerText='Performed By' textAlign= 'Center' width=50 format= 'C2'></e-column>
+                                </e-columns>
+                                </ejs-grid>
+                                <div class="form-actions">
+                                  <div class="card-body">
+                                      <div class="d-flex no-block align-items-center">
+                                        <div class="ml-auto">
+                                          <div class="custom-control custom-checkbox">
+                                            <button type="submit" class="btn btn-cyan" (click)="gotoIcsMaster()">  
+                                              <i class="ti-save"></i>  Save </button>
+                                          <button type="button" class="btn btn-dark" (click)="gotoIcsMaster()"> <i class="ti-close"></i> Cancel</button>
+                                        </div>
+                                        </div>
+                                    </div>
                                   </div>
                               </div>
-                          </div>
-                          <!--/span-->
-                          <div class="col-md-6">
-                              <div class="form-group row">
-                                  <label class="control-label text-right col-md-3">Last Name:</label>
-                                  <div class="col-md-9">
-                                      <p class="form-control-static"> Doe </p>
+                                            </ng-template>
+                                            
+                                          </ngb-tab>
+      
+                                          <ngb-tab id="tab-selectbyid3">
+                                            <ng-template ngbTabTitle>Calibration</ng-template>
+                                            <ng-template ngbTabContent>
+                                              <form class="form-horizontal">
+                                                <div class="card-body">
+                                              <div class="form-group row">
+                                               
+                                                <div class="custom-control custom-radio">
+                                                  <h6>Calibration Required?</h6>
+                                                  <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                                                  <label class="custom-control-label" for="customRadio1">Yes</label>
+      <br>
+                                                  <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                                                  <label class="custom-control-label" for="customRadio2">No</label>
+                                              </div>
+                                               
+                                            </div>
+                                            <div class="form-group row">
+                                              <label for="CalibrationFreqInMonths" class="col-sm-2 control-label col-form-label">Calibration Frequency In Months :</label>
+                                              <div class="col-sm-4">
+                                                  <input type="text" class="form_control" id="CalibrationFreqInMonths" placeholder="">
+                                              </div>
+                                          </div>
+                                        
+                                            </div>
+                                            <!-- </div> -->
+                                            
+                                            </form>
+                                            <div class="form-actions">
+                                              <div class="card-body">
+                                                  <div class="d-flex no-block align-items-center">
+                                                    <div class="ml-auto">
+                                                      <div class="custom-control custom-checkbox">
+                                                        <button type="submit" class="btn btn-cyan" (click)="gotoIcsMaster()">  
+                                                          <i class="ti-save"></i>  Save </button>
+                                                      <button type="button" class="btn btn-dark" (click)="gotoIcsMaster()"> <i class="ti-close"></i> Cancel</button>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                              </div>
+                                          </div>
+                                            </ng-template>
+                                          </ngb-tab>
+      
+                                          <ngb-tab id="tab-selectbyid4">
+                                            <ng-template ngbTabTitle>Maintenance</ng-template>
+                                            <ng-template ngbTabContent>
+                                            
+      <br>
+                                                             
+                              <ejs-grid  [editSettings]='editSettings' [toolbar]='toolbar' height='300px' [dataSource]='data' [allowSelection]='true' [gridLines]="lines"  [enableHover]='false'  [allowSorting]='true' e-gridheader=''>
+                                <e-columns>
+                                    <!-- <e-column field='SrNo' headerText='SrNO' textAlign='Left' isPrimaryKey='true' width=50></e-column> -->
+                                    <!-- <e-column field='MaintenanceType' headerText='Maintenance Type' isPrimaryKey='true' width=120></e-column>
+                      
+                                    <e-column field='Frequency' headerText='Frequency ( In Month)' textAlign= 'Left' width=80 format= 'C2'></e-column> -->
+                                    <e-column field='Mtype' headerText='Maintenance Type'textAlign='Center' editType= 'dropdownedit' [edit]='ddParams1' width=20></e-column>
+      
+                                    <e-column field='Frequency' headerText='Frequency In Months'textAlign='Center' editType= 'dropdownedit' [edit]='ddParams2' width=20></e-column>
+                              
+                              
+                              
+                                  </e-columns>
+                                </ejs-grid>
+                                <div class="form-actions">
+                                  <div class="card-body">
+                                      <div class="d-flex no-block align-items-center">
+                                        <div class="ml-auto">
+                                          <div class="custom-control custom-checkbox">
+                                            <button type="submit" class="btn btn-cyan" (click)="gotoIcsMaster()">  
+                                              <i class="ti-save"></i>  Save </button>
+                                          <button type="button" class="btn btn-dark" (click)="gotoIcsMaster()"> <i class="ti-close"></i> Cancel</button>
+                                        </div>
+                                        </div>
+                                    </div>
                                   </div>
                               </div>
-                          </div>
-                          <!--/span-->
-                      </div>
-                      <!--/row-->
-                      <div class="row">
-                          <div class="col-md-6">
-                              <div class="form-group row">
-                                  <label class="control-label text-right col-md-3">Gender:</label>
-                                  <div class="col-md-9">
-                                      <p class="form-control-static"> Male </p>
+                                            </ng-template>
+                                          </ngb-tab>
+      
+      
+      
+                                          <ngb-tab id="tab-selectbyid5">
+                                            <ng-template ngbTabTitle>Custom Header</ng-template>
+                                         
+                                            <ng-template ngbTabContent>
+      
+      <br>
+                                                <div class="table-responsive">
+                                                    <ejs-grid [dataSource]='data' [allowSelection]='true'  [gridLines]="lines"  [enableHover]='false'  [allowSorting]='true' e-gridheader=''height='300px'>
+                                                        <e-columns>
+                                                            <e-column field='Cname' headerText='Name'textAlign='Center' format='C2' width=50></e-column>
+                                                            <e-column field='Cvalue' headerText='Value' textAlign='Center' format='yMd' width=50></e-column>
+                                                          </e-columns>
+                                                    </ejs-grid>
+                                                </div>
+                                           
+                                <div class="form-actions">
+                                  <div class="card-body">
+                                      <div class="d-flex no-block align-items-center">
+                                        <div class="ml-auto">
+                                          <div class="custom-control custom-checkbox">
+                                            <button type="submit" class="btn btn-cyan" (click)="gotoIcsMaster()">  
+                                              <i class="ti-save"></i>  Save </button>
+                                          <button type="button" class="btn btn-dark" (click)="gotoIcsMaster()"> <i class="ti-close"></i> Cancel</button>
+                                          <button type="button" class="btn btn-cyan"> <i class="ti-pencil"></i> Edit</button>
+                                        </div>
+                                        </div>
+                                    </div>
                                   </div>
                               </div>
+                                            </ng-template>
+                                            
+                                          </ngb-tab>
+      
+      
+      
+      
+      
+      
+      
+      
+                                          <ngb-tab id="tab-selectbyid6">
+                                            <ng-template ngbTabTitle>Reports</ng-template>
+                                            <ng-template ngbTabContent>
+                                              <form class="form-horizontal">
+                                                <div class="card-body">
+                                              <div class="form-group row">
+                                                <label for="SOPs attachment" class="col-sm-2 control-label col-form-label">SOPs attachment:</label>
+                                                <div class="col-sm-4">
+                                                  <ejs-uploader #defaultupload [autoUpload]='false' [dropArea]='dropEle' [asyncSettings]='path' (success)="onUploadSuccess($event)" (failure)="onUploadFailure($event)"></ejs-uploader>
+                                                </div>
+                                        
+                                            </div>
+                                           
+                                            <div class="form-group row">
+                                                <label for="Other Docs and Link" class="col-sm-2 control-label col-form-label">Other Docs and Link:</label>
+                                                <div class="col-sm-4">
+                                                  <ejs-uploader #defaultupload [autoUpload]='false' [dropArea]='dropEle' [asyncSettings]='path' (success)="onUploadSuccess($event)" (failure)="onUploadFailure($event)"></ejs-uploader>
+                                                  
+                                                </div>
+                                              
+                                            </div>
+                                            </div>
+                                          
+                                             <div class="form-actions">
+                                              <div class="card-body">
+                                                  <div class="d-flex no-block align-items-center">
+                                                    <div class="ml-auto">
+                                                      <div class="custom-control custom-checkbox">
+                                                        <button type="submit" class="btn btn-cyan" (click)="gotoIcsMaster()">  
+                                                          <i class="ti-save"></i>  Save & Submit</button>
+                                                      
+                                                        <button type="button" class="btn btn-dark" (click)="gotoIcsMaster()"> <i class="ti-close"></i> Cancel</button> 
+                                                   
+                                                      </div>
+                                                    </div>
+                                                </div>
+                                              </div>
+                                          </div> 
+                                            
+                                            </form>
+      
+                                            </ng-template>
+                                          </ngb-tab>
+      
+                                
+      
+      
+                                        </ngb-tabset>
+                                      
+                                        </div>
+                                        </div>
+                                        </div>
                           </div>
-                          <!--/span-->
-                          <div class="col-md-6">
-                              <div class="form-group row">
-                                  <label class="control-label text-right col-md-3">Date of Birth:</label>
-                                  <div class="col-md-9">
-                                      <p class="form-control-static"> 11/06/1987 </p>
-                                  </div>
+      
+      
+                          <!-- <div class="form-actions">
+                              <div class="card-body">
+                                  <div class="d-flex no-block align-items-center">
+                                    <div class="ml-auto">
+                                      <div class="custom-control custom-checkbox">
+                                        <button type="submit" class="btn btn-cyan" (click)="gotoIcsMaster()">  
+                                          <i class="ti-save"></i>  Save </button>
+                                      <button type="button" class="btn btn-dark" (click)="gotoIcsMaster()"> <i class="ti-close"></i> Cancel</button>
+                                    </div>
+                                    </div>
+                                </div>
                               </div>
-                          </div>
-                          <!--/span-->
-                      </div>
-                      <!--/row-->
-                      <div class="row">
-                          <div class="col-md-6">
-                              <div class="form-group row">
-                                  <label class="control-label text-right col-md-3">Category:</label>
-                                  <div class="col-md-9">
-                                      <p class="form-control-static"> Category1 </p>
-                                  </div>
-                              </div>
-                          </div>
-                          <!--/span-->
-                          <div class="col-md-6">
-                              <div class="form-group row">
-                                  <label class="control-label text-right col-md-3">Membership:</label>
-                                  <div class="col-md-9">
-                                      <p class="form-control-static"> Free </p>
-                                  </div>
-                              </div>
-                          </div>
-                          <!--/span-->
-                      </div>
-                      <!--/row-->
-                  </div>
-                  <hr>
-                  <div class="form-actions">
-                      <div class="card-body">
-                          <div class="d-flex no-block align-items-center">
-                            <div class="ml-auto">
-                              <div class="custom-control custom-checkbox">
-                                <button type="submit" class="btn btn-danger" (click)="gotoEqsMaster()">
-                                  <i class="fa fa-pencil"></i> Submit</button>
-                              <button type="button" class="btn btn-dark" (click)="gotoEqsMaster()">Cancel</button>
-                            </div>
-                            </div>
-                        </div>
-                      </div>
-                  </div>
+                          </div> -->
+                      <!-- </div>
+                  </form>
               </div>
-          </form>
-      </div>
-  </div>
-</div>
-<!-- Row -->
+          </div>
+        </div> -->
+        <!-- Row -->
+        

@@ -10,99 +10,188 @@
                                   
                                   
                                   <ngb-tabset #t="ngbTabset">
-
-                                    <ngb-tab id="tab-selectbyid1" title="Master">
+                                    <ngb-tab id="tab-selectbyid1" title="Master">                                    
                                       <ng-template ngbTabContent>
-
-                                        <form class="form-horizontal">
-                                          <div class="card-body">
-                                              <div class="form-group row">
-                                                  <label for="Instrument ID" class="col-sm-2 control-label col-form-label">Instrument ID:</label>
-                                                  <div class="col-sm-4">
-                                                      <input type="text" class="form_control" id="Instrument ID" placeholder="">
-                                                  </div>
-                                                  <label for="Instrument Name" class="col-sm-2 control-label col-form-label">Instrument Name:</label>
-                                                  <div class="col-sm-4">
-                                                      <input type="text" class="form-control" id="Instrument Name" placeholder="">
-                                                  </div>
-                                              </div>
-                                             
-                                              <div class="form-group row">
-                                                  <label for="Make" class="col-sm-2 control-label col-form-label">Make:</label>
-                                                  <div class="col-sm-4">
-                                                      <input type="text" class="form_control" id="Make" placeholder="">
-                                                  </div>
-                                                  <label for="Model" class="col-sm-2 control-label col-form-label">Model:</label>
-                                                  <div class="col-sm-4">
-                                                      <input type="text" class="form_control" id="Model" placeholder="">
-                                                  </div>
-                                              </div>
-                                             
-
-                                              <div class="form-group row">
-                                                <label for="Image" class="col-sm-2 control-label col-form-label">Image:</label>
-                                                <div class="col-sm-4">
-                                                  <ejs-uploader #defaultupload [autoUpload]='false' [dropArea]='dropEle' [asyncSettings]='path' (success)="onUploadSuccess($event)" (failure)="onUploadFailure($event)"></ejs-uploader>
+<br>
+                                        <div class="row">
+                                          <div class="col-sm-12">
+                                            <div class="row">
+                                              <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="InstId" class="control-label col-form-label">Instrument ID:</label>
+                                                    <input type="text" class="form-control" id="InstId" placeholder="">
                                                 </div>
-                                                <label for="CalibrationFreq" class="col-sm-2 control-label col-form-label">Calibration Frequency:</label>
-                                                <div class="col-sm-4">
-                                                    <input type="text" class="form_control" id="CalibrationFreq" placeholder="">
+                                              </div>
+                                              <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="InstName" class="control-label col-form-label">Instrument Type:</label>
+                                                    <ejs-combobox id='InstName' [dataSource]='data3' [fields]='fields' (filtering)='onFiltering($event)' [popupHeight]='height' [allowFiltering]='true'
+                                                    [placeholder]='watermark'></ejs-combobox>
                                                 </div>
-                                               
+                                              </div>                                            
                                             </div>
-                                           
-                                          <div class="form-group row">
-                                            <label for="URS No and Link" class="col-sm-2 control-label col-form-label">URS No & Link</label>
-                                            <div class="col-sm-4">
-                                              <input type="text" class="form_control" id="URS No and Link" placeholder=""> <br>
-                                              <ejs-uploader #defaultupload [autoUpload]='false' [dropArea]='dropEle' [asyncSettings]='path' (success)="onUploadSuccess($event)" (failure)="onUploadFailure($event)"></ejs-uploader>
-                                            </div>
-                                            <label for="PO No. and Link" class="col-sm-2 control-label col-form-label">PO No. and Link:</label>
-                                          <div class="col-sm-4">
-                                            <input type="text" class="form_control" id="nominalLowerRange" placeholder=""> <br>
-                                            <ejs-uploader #defaultupload [autoUpload]='false' [dropArea]='dropEle' [asyncSettings]='path' (success)="onUploadSuccess($event)" (failure)="onUploadFailure($event)"></ejs-uploader>
                                           </div>
                                         </div>
-                                       
-                                      <div class="form-group row">
-                                        <label for="Delivery Date" class="col-sm-2 control-label col-form-label">Delivery Date:</label>
-                                        <div class="col-sm-4">
-                                          <ejs-datepicker [value]='dateValue' placeholder='Enter date'></ejs-datepicker>
-                                        </div>
-                                        <label for="Manufacturer’s Sr. No." class="col-sm-2 control-label col-form-label">Manufacturer’s Sr. No.:</label>
-                                      <div class="col-sm-4">
-                                          <input type="text" class="form_control" id="Manufacturer’s" placeholder="">
-                                      </div>
-                                    </div>
+
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                              <div class="row">
+                                                  <div class="col-sm-6">
+                                                      <div class="form-group">
+                                                          <label for="Make" class="col-sm-2 control-label col-form-label">Make:</label>
+                                                          <input type="text" class="form-control" id="Make" placeholder="">
+                                                      </div>
+                                                    </div>
+                                                <div class="col-sm-6">
+                                                  <div class="form-group">
+                                                      <label for="Model" class="control-label col-form-label">Model:</label>
+                                                      <input type="text" class="form-control" id="Model" placeholder="">
+                                                  </div>
+                                                </div>                                      
+                                              </div>
+                                            </div>
+                                          </div>
+
+
+                                          <div class="row">
+                                            <div class="col-sm-12">
+                                              <div class="row">
+                                                  <!-- <div class="col-sm-6">
+                                                      <div class="form-group">
+                                                          <label for="CalibrationDue" class="control-label col-form-label">Calibration Due:</label>
+                                                          <input type="text" class="form-control" id="CalibrationDue" placeholder="">
+                                                      </div>
+                                                    </div>       -->
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <label for="Image" class="control-label col-form-label">Image:</label>                                                  
+                                                      <ejs-uploader #defaultupload [autoUpload]='false' [dropArea]='dropEle' [asyncSettings]='path' (success)="onUploadSuccess($event)" (failure)="onUploadFailure($event)"></ejs-uploader>                                                  
+                                                        </div>
+                                                      </div>                                                                                        
+                                              </div>
+                                            </div>
+                                          </div>
+
+                                          <div class="row">
+                                              <div class="col-sm-12">
+                                                <div class="row">
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <label for="URSNo" class="control-label col-form-label">URS No.:</label>
+                                                           <input type="text" class="form-control" id="EquipmentInCharge" placeholder="">
+                                                        </div>
+                                                      </div>
+                                                      <div class="col-sm-6">
+                                                          <div class="form-group">
+                                                              <label for="URSLink" class="control-label col-form-label">URS Link:</label>                                                       
+                                                              <ejs-uploader #defaultupload [autoUpload]='false' [dropArea]='dropEle' [asyncSettings]='path' (success)="onUploadSuccess($event)" (failure)="onUploadFailure($event)"></ejs-uploader>                                
+                                                          </div>
+                                                        </div>
+                                                        </div>
+                                                        </div>
+                                                      </div>
+                                                        
+                                          <div class="row">
+                                              <div class="col-sm-12">
+                                                <div class="row">
+                                                      <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <label for="PONO" class="control-label col-form-label">PO No.:</label>
+                                                            <input type="text" class="form-control" id="ServiceEngineerContact" placeholder="">
+                                                        </div>
+                                                      </div>
+                                                      <div class="col-sm-6">
+                                                          <div class="form-group">
+                                                      <label for="POLink" class="control-label col-form-label">PO Link:</label>
+                                                      <ejs-uploader #defaultupload [autoUpload]='false' [dropArea]='dropEle' [asyncSettings]='path' (success)="onUploadSuccess($event)" (failure)="onUploadFailure($event)"></ejs-uploader>
+                                                    </div>
+                                                      </div>                                      
+                                                </div>
+                                              </div>
+                                            </div>
+
+
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                  <div class="row">
+                                                      <div class="col-sm-6">
+                                                          <div class="form-group">
+                                                              <label for="EquipmentInCharge" class="control-label col-form-label">Equipment in charge:</label>
+                                                              <input type="text" class="form-control" id="EquipmentInCharge" placeholder="">                                              
+                                                          </div>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="form-group">
+                                                                <label for="ServiceEngineerContact" class="control-label col-form-label">Service Engineer contact:</label>
+                                                               <input type="text" class="form-control" id="ServiceEngineerContact" placeholder="">
+                                                              </div>
+                                                            </div>                                        
+                                                          </div>
+                                                        </div>
+                                                      </div>  
+                                                   
+            
+                                              <div class="row">
+                                                  <div class="col-sm-12">
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <div class="form-group" style="width: 50%;">
+                                                                <label for="DeliveryDate" class="control-label col-form-label">Delivery Date:</label>
+                                                               
+                                                                  <ejs-datepicker [value]='dateValue' placeholder='Enter date'></ejs-datepicker>
+                                                            </div>
+                                                          </div>
+                                                          <div class="col-sm-6">
+                                                            <div class="form-group">
+                                                                <label for="ManufacturersSrNo" class="control-label col-form-label">Manufacturer’s Sr. No.:</label>
+                                                                
+                                                                    <input type="text" class="form-control" id="ManufacturersSrNo" placeholder="">
+                                                            </div>
+                                                          </div>
+                                                          </div>
+                                                          </div>
+                                                          </div>
+
+
+
+                                                          <div class="row">
+                                                              <div class="col-sm-12">
+                                                                <div class="row">
+                                                      <div class="col-sm-6">
+                                                        <div class="form-group">
+                                              <label for="Criticality Level" class="control-label col-form-label">Criticality Level:</label>
                                     
-                                  <div class="form-group row">
-                                    <label for="Criticality Level" class="col-sm-2 control-label col-form-label">Criticality Level:</label>
-                                    <div class="col-sm-4">
-                                      <select id="level">
-                                        <option value="option1">1</option>
-                                        <option value="option2">2</option>
-                                        <option value="option3">3</option>
-                                        <option value="option4">4</option>
-                                      </select>
-                                    </div>
-                                    <label for="Equipment in charge" class="col-sm-2 control-label col-form-label">Equipment in charge:</label>
-                                  <div class="col-sm-4">
-                                      <input type="text" class="form_control" id="Equipment in charge" placeholder="">
-                                  </div>
-                                </div>
-                              
-                              <div class="form-group row">
-                                <label for="Backup in charge" class="col-sm-2 control-label col-form-label">Backup in charge:</label>
-                                <div class="col-sm-4">
-                                    <input type="text" class="form_control" id="Backup in charge" placeholder="">
-                                </div>
-                                <label for="Service Engineer contact" class="col-sm-2 control-label col-form-label">Service Engineer contact:</label>
-                                <div class="col-sm-4">
-                                    <input type="text" class="form_control" id="Service Engineer contact" placeholder="">
-                                </div>
-                            </div>
-                             </div>
-                            </form> 
+                                              <button ejs-dropdownbutton [items]='items' content='Select'></button>
+                                            </div>
+                                              </div>
+                                              <div class="col-sm-6">
+                                                  <div class="form-group">                                              
+                                                      <label for="BackupInCharge" class="control-label col-form-label">Backup in charge:</label>
+                                                 
+                                                      <input type="text" class="form-control" id="BackupInCharge" placeholder=""> 
+                                                  </div>
+                                                </div>
+                                                </div>
+                                                </div>
+                                                </div>
+                                                
+                                                
+                                                          
+                                                          <div class="row">
+                                                              <div class="col-sm-12">
+                                                                <div class="row">
+                                              <div class="col-sm-6">
+                                                        <div class="form-group">
+                                              <label for="StorageLoc" class="control-label col-form-label">Storage Location:</label>
+                                               <ejs-combobox id='InstName' [dataSource]='data3' [fields]='fields' (filtering)='onFiltering($event)' [popupHeight]='height' [allowFiltering]='true'
+                                                    [placeholder]='watermark'></ejs-combobox>
+                                             
+                                            </div>
+                                              </div>
+                                               </div>
+                                                   </div>
+                                                 </div>              
+                             
                             <div class="form-actions">
                               <div class="card-body">
                                   <div class="d-flex no-block align-items-center">
@@ -119,6 +208,7 @@
                            </ng-template>
                                     </ngb-tab>
                                     
+
                                     <ngb-tab id="tab-selectbyid2">
                                       <ng-template ngbTabTitle>Qualification</ng-template>
                                    
@@ -127,11 +217,13 @@
                                         <h6>*These are the initial qualification dates </h6>
                         <ejs-grid  [editSettings]='editSettings'  [toolbar]='toolbar' height='273px' [dataSource]='data' [allowSelection]='true' [gridLines]="lines"  [enableHover]='false'  [allowSorting]='true' e-gridheader=''>
                           <e-columns>
-                          
-                              <e-column field='QualificationType' headerText='Qualification Type' isPrimaryKey='true' width=120></e-column>
-                              <e-column field='Date' headerText='Date' editType= 'datepickeredit' [edit]='dpParams' width=150></e-column>
-                              <e-column field='Description' headerText='Description' textAlign= 'Left' width=80 format= 'C2'></e-column>
-                              <e-column field='Link' headerText='Link' textAlign= 'Left' width=80 format= 'C2'></e-column>
+                            <e-column field='Qtype' headerText='Qualification Type' editType= 'dropdownedit' [edit]='ddParams' width=20></e-column>
+                              <!-- <e-column field='QualificationType' headerText='Qualification Type' isPrimaryKey='true' width=120></e-column> -->
+                              <e-column field='Date' headerText='Date' editType= 'datepickeredit' [edit]='dpParams' width=30></e-column>
+                              
+                              <e-column field='Link' headerText='Link' textAlign= 'center' width=30 format= 'C2'></e-column>
+                              <e-column field='Description' headerText='Description' textAlign= 'center' width=100 format= 'C2'></e-column>
+                              <e-column field='PerformedBy' headerText='Performed By' textAlign= 'center' width=100 format= 'C2'></e-column>
                           </e-columns>
                           </ejs-grid>
                           <div class="form-actions">
@@ -151,37 +243,39 @@
                                       
                                     </ngb-tab>
 
+
                                     <ngb-tab id="tab-selectbyid3">
                                       <ng-template ngbTabTitle>Calibration</ng-template>
                                       <ng-template ngbTabContent>
-                                        <form class="form-horizontal">
-                                          <div class="card-body">
-                                        <div class="form-group row">
+                                       
                                          
-                                          <div class="custom-control custom-radio">
-                                            <h6>Calibration Required?</h6>
-                                            <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
-                                            <label class="custom-control-label" for="customRadio1">Yes</label>
-<br>
-                                            <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
-                                            <label class="custom-control-label" for="customRadio2">No</label>
+                                      <br>
+                                      <div class="row">
+                                          <div class="col-sm-12">
+                                            <div class="row">
+                                              <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <div class="custom-control custom-radio">
+                                                        <h6>Calibration Required?</h6>
+                                                    <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                                                    <label class="custom-control-label" for="customRadio1">Yes</label><br>
+                                                    <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                                                    <label class="custom-control-label" for="customRadio2">No</label>
+                                                    </div></div></div></div></div></div>
+                                                    <div class="row">
+                                          <div class="col-sm-12">
+                                            <div class="row">
+                                              <div class="col-sm-6">
+                                                <div class="form-group">
+                                        <label for="CalibrationFreqInMonths" class="control-label col-form-label">Calibration Frequency In Months:</label>
+                                       
+                                            <input type="text" class="form_control" id="CalibrationFreqInMonths" placeholder="">
                                         </div>
-                                         
                                       </div>
-                                     
-                                      <!-- <div class="form-group row"> -->
-                                          <!-- <label for="Calibration report link" class="col-sm-2 control-label col-form-label">Calibration report link:</label> -->
-                                          <!-- <div class="col-sm-4">
-                                            <ejs-uploader #defaultupload [autoUpload]='false' [dropArea]='dropEle' [asyncSettings]='path' (success)="onUploadSuccess($event)" (failure)="onUploadFailure($event)"></ejs-uploader>
-                                          </div> -->
-                                          <!-- <label for="Annual Calibration date" class="col-sm-2 control-label col-form-label">Annual Calibration date:</label> -->
-                                          <!-- <div class="col-sm-4">
-                                            <ejs-datepicker [value]='dateValue' placeholder='Enter date'></ejs-datepicker>
-                                          </div> -->
-                                      </div>
-                                      <!-- </div> -->
-                                      
-                                      </form>
+                                    </div>
+                                  </div>
+                                  </div>
+                                
                                       <div class="form-actions">
                                         <div class="card-body">
                                             <div class="d-flex no-block align-items-center">
@@ -201,53 +295,15 @@
                                     <ngb-tab id="tab-selectbyid4">
                                       <ng-template ngbTabTitle>Maintenance</ng-template>
                                       <ng-template ngbTabContent>
-                                        <!-- <form class="form-horizontal">
-                                          <div class="card-body">
-                                        <div class="form-group row">
-                                          <label for="Warranty Due date" class="col-sm-2 control-label col-form-label">Warranty Due date:</label>
-                                          <div class="col-sm-4">
-                                            <ejs-datepicker [value]='dateValue' placeholder='Enter date'></ejs-datepicker>
-                                          </div>
-                                          <label for="AMC due date" class="col-sm-2 control-label col-form-label">AMC due date:</label>
-                                          <div class="col-sm-4">
-                                            <ejs-datepicker [value]='dateValue' placeholder='Enter date'></ejs-datepicker>
-                                          </div>
-                                      </div>
-                                     
-                                      <div class="form-group row">
-                                          <label for="CMC Due date" class="col-sm-2 control-label col-form-label">CMC Due date:</label>
-                                          <div class="col-sm-4">
-                                            <ejs-datepicker [value]='dateValue' placeholder='Enter date'></ejs-datepicker>
-                                            
-                                          </div>
-                                          <label for="PM Due date" class="col-sm-2 control-label col-form-label">PM Due date:</label>
-                                          <div class="col-sm-4">
-                                            <ejs-datepicker [value]='dateValue' placeholder='Enter date'></ejs-datepicker>
-                                          </div>
-                                      </div>
-                                      </div>
-                                      <div class="form-group row">
-                                        <label for=">AMC, CMC, PM and WO link" class="col-sm-2 control-label col-form-label">AMC, CMC, PM and WO link:</label>
-                                        <div class="col-sm-4">
-                                          <ejs-uploader #defaultupload [autoUpload]='false' [dropArea]='dropEle' [asyncSettings]='path' (success)="onUploadSuccess($event)" (failure)="onUploadFailure($event)"></ejs-uploader>
-                                        </div>
-                                        <label for="Service report:" class="col-sm-2 control-label col-form-label">Service report::</label>
-                                        <div class="col-sm-4">
-                                          <ejs-uploader #defaultupload [autoUpload]='false' [dropArea]='dropEle' [asyncSettings]='path' (success)="onUploadSuccess($event)" (failure)="onUploadFailure($event)"></ejs-uploader>
-                                        </div>
-                                    </div>
-                                
-   
-                                      </form> -->
-
-                                                       
-                        <ejs-grid  [editSettings]='editSettings' [toolbar]='toolbar' height='273px' [dataSource]='data' [allowSelection]='true' [gridLines]="lines"  [enableHover]='false'  [allowSorting]='true' e-gridheader=''>
+                                       
+                                     <br>                  
+                        <ejs-grid  [editSettings]='editSettings' [toolbar]='toolbar' height='300px' [dataSource]='data' [allowSelection]='true' [gridLines]="lines"  [enableHover]='false'  [allowSorting]='true' e-gridheader=''>
                           <e-columns>
-                              <!-- <e-column field='SrNo' headerText='SrNO' textAlign='Left' isPrimaryKey='true' width=50></e-column> -->
-                              <e-column field='MaintenanceType' headerText='Maintenance Type' isPrimaryKey='true' width=120></e-column>
-                
-                              <e-column field='Frequency' headerText='Frequency ( In Month)' textAlign= 'Left' width=80 format= 'C2'></e-column>
-                          </e-columns>
+                            
+                              <e-column field='Mtype' headerText='Maintenance Type'textAlign='center' editType= 'dropdownedit' [edit]='ddParams1' width=20></e-column>
+
+                              <e-column field='FrequencyInMonths' headerText='Frequency In Months'textAlign='center' editType= 'dropdownedit' [edit]='ddParams2' width=20></e-column>
+                             </e-columns>
                           </ejs-grid>
                           <div class="form-actions">
                             <div class="card-body">
@@ -265,17 +321,77 @@
                                       </ng-template>
                                     </ngb-tab>
 
+
+
                                     <ngb-tab id="tab-selectbyid5">
+                                      <ng-template ngbTabTitle>Custom Header</ng-template>
+                                   
+                                      <ng-template ngbTabContent>
+<br>
+
+                                          <div class="table-responsive">
+                                              <ejs-grid [dataSource]='data' [allowSelection]='true'  [gridLines]="lines"  [enableHover]='false'  [allowSorting]='true' e-gridheader=''height='300px'>
+                                                  <e-columns>
+                                                      <e-column field='Cname' headerText='Name' textAlign='center' format='C2' width=50></e-column>
+                                                      <e-column field='Cvalue' headerText='Value' textAlign='center' format='yMd' width=50></e-column>
+                                                    </e-columns>
+                                              </ejs-grid>
+                                          </div>
+                                     
+                          <div class="form-actions">
+                            <div class="card-body">
+                                <div class="d-flex no-block align-items-center">
+                                  <div class="ml-auto">
+                                    <div class="custom-control custom-checkbox">
+                                      <button type="submit" class="btn btn-cyan" (click)="gotoIcsMaster()">  
+                                        <i class="ti-save"></i>  Save </button>
+                                    <button type="button" class="btn btn-dark" (click)="gotoIcsMaster()"> <i class="ti-close"></i> Cancel</button>
+                                    <button type="button" class="btn btn-cyan"> <i class="ti-pencil"></i> Edit</button>
+                                  </div>
+                                  </div>
+                              </div>
+                            </div>
+                        </div>
+                                      </ng-template>
+                                      
+                                    </ngb-tab>
+
+
+
+
+
+
+
+
+                                    <ngb-tab id="tab-selectbyid6">
                                       <ng-template ngbTabTitle>Reports</ng-template>
                                       <ng-template ngbTabContent>
-                                        <form class="form-horizontal">
+                                        <br>
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                              <div class="row">
+                                                <div class="col-sm-6">
+                                                  <div class="form-group">
+                                                      <label for="SOPs attachment" class="control-label col-form-label">SOPs attachment:</label>
+                                                      
+                                                        <ejs-uploader #defaultupload [autoUpload]='false' [dropArea]='dropEle' [asyncSettings]='path' (success)="onUploadSuccess($event)" (failure)="onUploadFailure($event)"></ejs-uploader>
+                                                      </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                  <div class="form-group">
+                                                      <label for="Other Docs and Link" class="control-label col-form-label">Other Docs and Link:</label>
+                                         
+                                            <ejs-uploader #defaultupload [autoUpload]='false' [dropArea]='dropEle' [asyncSettings]='path' (success)="onUploadSuccess($event)" (failure)="onUploadFailure($event)"></ejs-uploader>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            
+                                          </div>
+                                          </div>
+                                        <!-- <form class="form-horizontal">
                                           <div class="card-body">
                                         <div class="form-group row">
                                           <label for="SOPs attachment" class="col-sm-2 control-label col-form-label">SOPs attachment:</label>
-                                          <div class="col-sm-4">
-                                            <ejs-uploader #defaultupload [autoUpload]='false' [dropArea]='dropEle' [asyncSettings]='path' (success)="onUploadSuccess($event)" (failure)="onUploadFailure($event)"></ejs-uploader>
-                                          </div>
-                                          <label for="Scrap note and link" class="col-sm-2 control-label col-form-label">Scrap note and link:</label>
                                           <div class="col-sm-4">
                                             <ejs-uploader #defaultupload [autoUpload]='false' [dropArea]='dropEle' [asyncSettings]='path' (success)="onUploadSuccess($event)" (failure)="onUploadFailure($event)"></ejs-uploader>
                                           </div>
@@ -290,7 +406,7 @@
                                         
                                       </div>
                                       </div>
-                                    
+                                     -->
                                        <div class="form-actions">
                                         <div class="card-body">
                                             <div class="d-flex no-block align-items-center">
@@ -307,7 +423,7 @@
                                         </div>
                                     </div> 
                                       
-                                      </form>
+                                       <!-- </form> -->
 
                                       </ng-template>
                                     </ngb-tab>

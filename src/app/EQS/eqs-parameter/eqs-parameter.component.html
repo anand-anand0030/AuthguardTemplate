@@ -1,24 +1,44 @@
 <div class="row">
     <div class="col-lg-12">
         <div class="card">
+          <div class="c_header">
+            <h4>Parameter</h4>
+                            </div>
             <div class="card-body">
-              <div class="d-flex no-block align-items-center">
-                <h4 class="card-title">Add Parameter</h4>
+              <!-- <div class="d-flex no-block align-items-center">
+                <h4 class="card-title"></h4>
             </div>
-            <hr>
-            <button class="mr-2" ejs-dropdownbutton [items]='items' content='Inst Id' style="color: rgba(54, 32, 252, 0.822);"></button>
-            <button class="mr-2" ejs-dropdownbutton [items]='items1' content='Inst Name' style="color: rgba(54, 32, 252, 0.822);"></button>
+            
+            <button class="mr-2 dropdown_style" ejs-dropdownbutton [items]='items' content='Equipment Id' ></button>
+            <button class="mr-2 dropdown_style" ejs-dropdownbutton [items]='items1' content='Equipment Name'></button> -->
             <!-- <a class="btn btn-warn" >  <i class="fas fa-plus-circle" style="color: cadetblue;"></i> Add Parameter</a> -->
-            <button class="btn-btn-info" (click)="addparameter(addParameterModal)" style="color: rgba(54, 32, 252, 0.822);"> <i class="fas fa-plus-circle"></i>Add Parameter</button>
-            <hr>
+            <!-- <button  class="btn-btn-info mr-2 float-right btn_style"><i class="ti-export"></i> Export</button>
+            <button  class="btn-btn-info mr-2 float-right btn_style" (click)="addparameter(addParameterModal)"><i class="fas fa-plus-circle"></i>Add Parameter</button>
+            
+            <hr> -->
+            <div class="d-flex no-block align-items-center">
+              <h4 class="card-title"> </h4>
+              <div class="ml-auto mb-2">
+                  <button  class="btn-btn-info mr-2 float-right btn_style"><i class="ti-export"></i> Export</button>
+                  <button class="btn-btn-info mr-2 float-right btn_style" (click)="addparameter(addParameterModal)"><i class="fas fa-plus-circle"></i>Add Parameter</button>
+                 
+              </div>
+          </div>
             <div class="table-responsive">
-                <ejs-grid [dataSource]='data' [allowSelection]='true'  [enableHover]='false'  [allowSorting]='true' e-gridheader=''>
+                <ejs-grid [dataSource]='data' [allowSelection]='true'allowFiltering='true' [filterSettings]='filterOptions'[gridLines]="lines"  [enableHover]='false'  [allowSorting]='true' e-gridheader=''height='350px'>
                     <e-columns>
-                  <e-column field='Sr No' headerText='Sr No' textAlign='Right' width=90></e-column>
-                  <e-column field='Parameter' headerText='Parameter' width=150></e-column>
-                  <e-column field='Nominal Value' headerText='Nominal Value' textAlign='Right' format='C2' width=150></e-column>
-                  <e-column field='Upper Range' headerText='Upper Range' textAlign='Right' format='yMd' width=150></e-column>
-                  <e-column field='Lower Range' headerText='Lower Range' textAlign='Right' width=90></e-column>
+                      <e-column  headerText='Action' textAlign='center' width='70'>
+                        <ng-template #template let-data>
+                            <div class="loc">
+                              <button cssClass='small'  ejs-button (click)="editParameter()">  <span class="e-icons e-edit"></span></button>
+                            </div>
+                        </ng-template>
+                    </e-column>
+                  <e-column field='SrNo' headerText='Sr. No.' textAlign='center' width=70></e-column>
+                  <e-column field='ParameterName' headerText='Parameter Name' textAlign='center' width=150></e-column>
+                  <e-column field='TargetValue' headerText='Target Value' textAlign='center' format='C2' width=90></e-column>
+                  <e-column field='UpperRange' headerText='Upper Range' textAlign='center' format='yMd' width=90></e-column>
+                  <e-column field='LowerRange' headerText='Lower Range' textAlign='center' width=90></e-column>
                   </e-columns>
                   </ejs-grid>
           </div>
@@ -30,8 +50,11 @@
 
 
 <ng-template #addParameterModal let-modal>
-    <div class="modal-header">
-      <h4 class="modal-title">Add Parameter</h4>
+    <div class="modal_header">
+      <!-- <div style="background-color: rgb(63,152,235); padding-top:10px; height: 40px;">
+        <h4 style="margin-left:10px;">Add Parameter</h4>
+                        </div> -->
+      <h6 class="modal-title">Add Parameter</h6> 
       <button type="button" class="close" aria-label="close" (click)="modal.dismiss('Cross click')">
         <span aria-hidden="true">&times;</span>
       </button>
@@ -40,38 +63,40 @@
       <form class="form-horizontal">
         <div class="card-body">
             <div class="form-group row">
-                <label for="fname" class="col-sm-3 control-label col-form-label">Parameter :</label>
-                <div class="col-sm-9">
-                    <input type="text" class="form-control" id="parameter" placeholder="">
+                <label for="ParameterName" class="col-sm-8 control-label col-form-label">Parameter Name:</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="ParameterName" placeholder="">
                 </div>
             </div>
             <div class="form-group row">
-                <label for="lname" class="col-sm-3 control-label col-form-label">Nominal Value :</label>
-                <div class="col-sm-9">
-                    <input type="text" class="form-control" id="nominalValue" placeholder="">
+                <label for="TargetValue" class="col-sm-8 control-label col-form-label">Target Value :</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="TargetValue" placeholder="">
                 </div>
             </div>
             <div class="form-group row">
-                <label for="email1" class="col-sm-3 control-label col-form-label">Nominal Upper range :</label>
-                <div class="col-sm-9">
-                    <input type="email" class="form-control" id="nominalUpperRange" placeholder="">
+                <label for="UpperRange" class="col-sm-8 control-label col-form-label">Upper range:</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="UpperRange" placeholder="">
                 </div>
             </div>
             <div class="form-group row">
-                <label for="cono1" class="col-sm-3 control-label col-form-label">Nominal Lower range :</label>
-                <div class="col-sm-9">
-                    <input type="text" class="form-control" id="nominalLowerRange" placeholder="">
+                <label for="LowerRange" class="col-sm-8 control-label col-form-label"> Lower range:</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="LowerRange" placeholder="">
                 </div>
             </div>
         </div>
       </form>
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-info waves-effect waves-light">Add</button>
-      <button type="button" class="btn btn-info waves-effect waves-light" (click)="modal.close('Close click')">Cancel</button>
+      <button class="btn-btn-info btn_style">Add</button>
+      <button class="btn-btn-info btn_style"(click)="modal.close('Close click')">Cancel</button>
+      <!-- <button type="button" class="btn btn-info waves-effect waves-light">Add</button> -->
+      
+    <!-- <button type="button" class="btn btn-info waves-effect waves-light" (click)="modal.close('Close click')">Cancel</button> -->
     </div>
 </ng-template>
-
 
 
 

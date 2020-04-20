@@ -35,7 +35,7 @@ export const ROUTES: RouteInfo[] = [
   },
   {
     path: '/callibrationmaster',
-    title: 'Calibration Record Master',
+    title: 'Calibration',
     icon: 'mdi mdi-account-edit',
     class: '',
     extralink: false,
@@ -125,6 +125,14 @@ export const ROUTES: RouteInfo[] = [
       {
         path: '/ics-settings/alertsetting',
         title: 'Alert Setting',
+    icon: 'mdi mdi-account-edit',
+        class: '',
+        extralink: false,
+        submenu: []
+      },
+      {
+        path: '/ics-settings/instrumenttype',
+        title: 'Instrument Type',
     icon: 'mdi mdi-account-edit',
         class: '',
         extralink: false,

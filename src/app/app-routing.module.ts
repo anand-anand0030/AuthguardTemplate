@@ -45,10 +45,16 @@ export const Approutes: Routes = [
         path: 'eqs-reports',
         loadChildren: './EQS/eqs-reports/eqs-reports.module#EqsReportsModule'
       },
+      // {
+      //   path: 'component',
+      //   loadChildren: './component/component.module#ComponentsModule'
+      // }
+
       {
-        path: 'component',
-        loadChildren: './component/component.module#ComponentsModule'
-      }
+        path: 'eqs-settings',
+        loadChildren: './EQS/eqs-settings/eqs-settings.module#EqsSettingsModule'
+      },
+
     ]
   },
   // ---------------------------------ICS Routes--------------------

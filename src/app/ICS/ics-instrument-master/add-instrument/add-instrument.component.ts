@@ -1,23 +1,72 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { EditSettingsModel, ToolbarItems, GridLine } from '@syncfusion/ej2-angular-grids';
+import { EditSettingsModel, ToolbarItems, GridLine , IEditCell} from '@syncfusion/ej2-angular-grids';
 import { DatePicker } from '@syncfusion/ej2-calendars';
+import { EmitType } from '@syncfusion/ej2-base';
+ import { FilteringEventArgs } from '@syncfusion/ej2-dropdowns';
+import { Query } from '@syncfusion/ej2-data';
+import { FilterService } from '@syncfusion/ej2-angular-grids';
 
-
+import { ItemModel } from '@syncfusion/ej2-angular-splitbuttons';
 @Component({
   selector: 'app-add-instrument',
   templateUrl: './add-instrument.component.html',
+  providers:[FilterService],
   styleUrls: ['./add-instrument.component.css']
 })
 export class AddInstrumentComponent implements OnInit {
   public dateValue: Date = new Date();
+
   constructor(private routes: Router) { }
+
    public data: object[];
    public lines: GridLine;
   public editSettings: EditSettingsModel;
   public toolbar: ToolbarItems[];
+
   public dpParams: DatePicker[];
+
+  public ddParams: IEditCell;
+  public ddParams1: IEditCell;
+  public ddParams2: IEditCell;
+  
+  public data3: { [key: string]: Object; }[] = [
+    { Name: 'Select', Code: 'S' }
+   
+  ];
+  // maps the appropriate column to fields property
+  public fields: Object = { text: 'Name', value: 'Code' };
+  // set the height of the popup element
+  public height: string = '220px';
+  // set the placeholder to ComboBox input element
+  public watermark: string = 'Select';
+  public watermark1: string = 'Select Type';
+  // filtering event handler to filter a Country
+  public onFiltering: EmitType<FilteringEventArgs> = (e: FilteringEventArgs) => {
+    let query: Query = new Query();
+    //frame the query based on search string with filter type.
+    query = (e.text !== '') ? query.where('Name', 'startswith', e.text, true) : query;
+    //pass the filter data source, filter query to updateData method.
+    e.updateData(this.data3, query);
+  }
+
+
+
+
+  public items: ItemModel[] = [
+      {
+           text: 'A'
+      },
+      {
+           text: 'B'
+       },
+       {
+           text: 'C'
+      },
+      {
+        text: 'NA'
+    }];
    ngOnInit(): void {
     this.editSettings = { allowEditing: true, allowAdding: true, allowDeleting: true };
     this.toolbar = ['Add', 'Edit', 'Delete', 'Update', 'Cancel'];
@@ -30,31 +79,13 @@ export class AddInstrumentComponent implements OnInit {
       // }
     ];
     this.lines = 'Both';
+    this.ddParams = { params: { value: 'IQ' } };
+    this.ddParams1 = { params: { value: 'Preventive Maintenance' } };
+    this.ddParams2 = { params: { value: '5' } };
+
 }
 
-  //   this.data =
-  //   [
-  //     {
-  //        SrNo: 1,
-  //        QualificationType: 'Installation Qualification'
-  //     },
-  //     {
-  //       SrNo: 2,
-  //       QualificationType: 'Performance Qualification'
-  //     },
-  //     {
-  //       SrNo: 3,
-  //       QualificationType: 'Operation Qualification'
-  //    },
-  //    {
-  //     SrNo: 4,
-  //     QualificationType: 'Installation Operation'
-  //  },
-  //  {
-  //   SrNo: 5,
-  //   QualificationType: 'Operation Performance'
-  //   } ];
-// }
+ 
 // tslint:disable-next-line:member-ordering
 
   gotoIcsMaster() {

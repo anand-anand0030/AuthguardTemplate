@@ -1,57 +1,75 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { ItemModel } from '@syncfusion/ej2-angular-splitbuttons';
-import { GridLine } from '@syncfusion/ej2-angular-grids';
+import { GridLine, FilterSettingsModel } from '@syncfusion/ej2-angular-grids';
 import { ToastrService } from 'ngx-toastr';
+import { EmitType } from '@syncfusion/ej2-base';
+ import { FilteringEventArgs } from '@syncfusion/ej2-dropdowns';
+import { Query } from '@syncfusion/ej2-data';
+import { FilterService } from '@syncfusion/ej2-angular-grids';
 
 @Component({
   selector: 'app-ics-calibrationmaster',
   templateUrl: './ics-calibrationmaster.component.html',
+  providers:[FilterService],
   styleUrls: ['./ics-calibrationmaster.component.css']
 })
 export class IcsCalibrationmasterComponent implements AfterViewInit {
-  closeResult: string;
+  closeResult: string; 
+
   public dateValue: Date = new Date();
 
-  public items: ItemModel[] = [
-    {
-        text: 'Inst Id'
-    },
-    {
-        text: 'Inst Id'
-    },
-    {
-        text: 'Inst Id'
-    }];
-    public items1: ItemModel[] = [
-      {
-          text: 'Inst Name'
-      },
-      {
-          text: 'Inst Name'
-      },
-      {
-          text: 'Inst Name'
-      }];
+  public filterOptions: FilterSettingsModel;
+
+  public data3: { [key: string]: Object; }[] = [
+    { Name: 'Select', Code: 'S' }
+   
+  ];
+  public data4: { [key: string]: Object; }[] = [
+    { Name: 'Inhouse', Code: 'I' },
+    { Name: 'Vendor', Code: 'V' }
+   
+  ];
+  public data5: { [key: string]: Object; }[] = [
+    { Name: 'Dissolution tester', Code: 'Dis' },
+    { Name: 'Disintegration tester', Code: 'Dis' },
+    { Name: 'Tablet hardness  tester', Code: 'Tab' },
+    { Name: 'Burst strength tester', Code: 'Bur' } 
+  ];
+  // maps the appropriate column to fields property
+  public fields: Object = { text: 'Name', value: 'Code' };
+  // set the height of the popup element
+  public height: string = '220px';
+  // set the placeholder to ComboBox input element
+  public watermark: string = 'Select';
+  public watermark1: string = 'Select Type';
+  // filtering event handler to filter a Country
+  public onFiltering: EmitType<FilteringEventArgs> = (e: FilteringEventArgs) => {
+    let query: Query = new Query();
+    //frame the query based on search string with filter type.
+    query = (e.text !== '') ? query.where('Name', 'startswith', e.text, true) : query;
+    //pass the filter data source, filter query to updateData method.
+    e.updateData(this.data3, query);
+  }
+  //end of 2 comboboxdropdown
+  
       public items2: ItemModel[] = [
         {
-            text: 'IQ'
+            text: 'Inhouse'
         },
         {
-            text: 'IQ'
-        },
-        {
-            text: 'IQ'
-        }];
-    // End of 2 drop down
-// start of table field
-      public data: object[];
-      public lines: GridLine;
+            text: 'Vendor'
+        }
+        
+        ];
+    // End of 1 drop down
+
      
  // uploader
       public path: Object = {
         saveUrl: 'https://aspnetmvc.syncfusion.com/services/api/uploadbox/Save',
-        removeUrl: 'https://aspnetmvc.syncfusion.com/services/api/uploadbox/Remove'
+        removeUrl: 'https://aspnetmvc.syncfusion.com/services/api/uploadbox/Remove',
+       
       };
         public onUploadSuccess(args: any): void  {
           if (args.operation === 'upload') {
@@ -66,6 +84,10 @@ export class IcsCalibrationmasterComponent implements AfterViewInit {
     // tslint:disable-next-line:member-ordering
     public dropEle: HTMLElement;
         // tslint:disable-next-line:use-life-cycle-interface
+
+        // start of table field
+      public data: object[];
+      public lines: GridLine;
         ngOnInit(): void {
             this.data =
             [
@@ -73,20 +95,16 @@ export class IcsCalibrationmasterComponent implements AfterViewInit {
                  SrNo: '01',
                  InstId: 'Gx121345678',
                  InstName: 'HPLC',
-                 FrequencyOfCalibration: '180 Days',
-                 DateOfCalibration: '04/09/2020',
-                 LastDateOfCalibration: '04/03/2020',
-                 // Attachment:,
-                // Notes:,
-              //   Edit:
+                 DueDate: '03/09/2020',
+                 PerformedDate: '04/09/2020',
+                 NextDueDate: '04/03/2020',
+               
                },
-              // {
-              //     OrderID: 10249, CustomerID: 'TOMSP', EmployeeID: 6, OrderDate: new Date(836505e6),
-              //     ShipName: 'Toms Spezialitäten', ShipCity: 'Münster', ShipAddress: 'Luisenstr. 48',
-              //     ShipRegion: 'CJ', ShipPostalCode: '44087', ShipCountry: 'Germany', Freight: 11.61, Verified: !1
-              // }
             ];
-            this.lines = 'Both';
+            this.lines = 'Both';              // Give border to grid 
+            this.filterOptions = {             // Search data of grid using filterservice
+              type: 'Menu'
+           };
         }
 
 // Start of modal ( add parameter pop up)

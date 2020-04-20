@@ -9,9 +9,9 @@ const routes: Routes = [
       {
         path: '',
         data: {
-          title: 'EQS Main Page',
+          // title: 'EQS Main Page',
           urls: [
-            { title: 'Dashboard', url: '/landing' },
+            { title: 'Home', url: '/landing' },
             { title: 'EQS Master Page' }
           ]
         },
@@ -21,9 +21,9 @@ const routes: Routes = [
         path: 'addequipment',
         component: AddEquipmentComponent,
         data: {
-          title: 'AddEquipment',
+          // title: 'AddEquipment',
           urls: [
-            { title: 'Dashboard', url: '/landing' },
+            { title: 'Home', url: '/landing' },
             { title: 'EQS', url: '/eqshome'  },
             { title: 'AddEquipment' }
           ]

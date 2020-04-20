@@ -9,9 +9,9 @@ const routes: Routes = [
       {
         path: '',
         data: {
-          title: 'EQS Qualification',
+          // title: 'EQS Qualification',
           urls: [
-            { title: 'Dashboard', url: '/landing' },
+            { title: 'Home', url: '/landing' },
             { title: 'EQS Qualification' }
           ]
         },

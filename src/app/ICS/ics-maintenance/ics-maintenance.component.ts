@@ -1,44 +1,53 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { ItemModel } from '@syncfusion/ej2-angular-splitbuttons';
-import { GridLine } from '@syncfusion/ej2-angular-grids';
+import { GridLine, FilterSettingsModel } from '@syncfusion/ej2-angular-grids';
 import { ToastrService } from 'ngx-toastr';
+import { EmitType } from '@syncfusion/ej2-base';
+ import { FilteringEventArgs } from '@syncfusion/ej2-dropdowns';
+import { Query } from '@syncfusion/ej2-data';
+import { FilterService } from '@syncfusion/ej2-angular-grids';
 
 @Component({
   selector: 'app-ics-maintenance',
   templateUrl: './ics-maintenance.component.html',
+  providers:[FilterService],
   styleUrls: ['./ics-maintenance.component.css']
 })
 export class IcsMaintenanceComponent implements OnInit {
   closeResult: string;
   public dateValue: Date = new Date();
+  public filterOptions: FilterSettingsModel;
+  public data3: { [key: string]: Object; }[] = [
+    { Name: 'Select', Code: 'S' }
+   
+  ];
+  public data4: { [key: string]: Object; }[] = [
+    { Name: 'Preventive Maintenance', Code: 'PM' },
+    { Name: 'Breakdown ', Code: 'PM' }
+   
+  ];
+  // maps the appropriate column to fields property
+  public fields: Object = { text: 'Name', value: 'Code' };
+  // set the height of the popup element
+  public height: string = '220px';
+  // set the placeholder to ComboBox input element
+  public watermark: string = 'Select';
+  public watermark1: string = 'Select Type';
+  // filtering event handler to filter a Country
+  public onFiltering: EmitType<FilteringEventArgs> = (e: FilteringEventArgs) => {
+    let query: Query = new Query();
+    //frame the query based on search string with filter type.
+    query = (e.text !== '') ? query.where('Name', 'startswith', e.text, true) : query;
+    //pass the filter data source, filter query to updateData method.
+    e.updateData(this.data3, query);
+  }
+  
 
-  public items: ItemModel[] = [
-    {
-        text: 'Inst Id'
-    },
-    {
-        text: 'Inst Id'
-    },
-    {
-        text: 'Inst Id'
-    }];
-    public items1: ItemModel[] = [
-      {
-          text: 'Inst Name'
-      },
-      {
-          text: 'Inst Name'
-      },
-      {
-          text: 'Inst Name'
-      }];
       public items2: ItemModel[] = [
+      
         {
-            text: 'AM'
-        },
-        {
-            text: 'PM'
+            text: 'Preventive Maintenance'
         },
         {
             text: 'Breakdown'
@@ -76,6 +85,7 @@ public dropEle: HTMLElement;
                   InstId: 'Gx121345678',
                  InstName: 'HPLC', 
                   TypeOfAction: 'AM',
+                  DueDate: '03/09/2020',
                  PerformedDate: '04/03/2020',
                   NextDueDate: '04/03/2021',
                 // Attachment:, 
@@ -89,7 +99,9 @@ public dropEle: HTMLElement;
               // }
             ];
             this.lines = 'Both';
-
+            this.filterOptions = {
+              type: 'Menu'
+           };
         }
 
 // Start of modal ( add parameter pop up)

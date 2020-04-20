@@ -10,9 +10,9 @@ const routes: Routes = [
       {
         path: '',
         data: {
-          title: 'Eqs Parameter',
+          // title: 'Eqs Parameter',
           urls: [
-            { title: 'Dashboard', url: '/landing' },
+            { title: 'Home', url: '/landing' },
             { title: 'EQS Parameter' }
           ]
         },

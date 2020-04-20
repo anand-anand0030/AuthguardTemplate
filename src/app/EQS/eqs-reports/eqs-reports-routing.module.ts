@@ -11,9 +11,9 @@ const routes: Routes = [
       {
         path: 'equipmentList',
         data: {
-          title: 'Equipment List',
+          // title: 'Equipment List',
           urls: [
-            { title: 'Dashboard', url: '/landing' },
+            { title: 'Home', url: '/landing' },
             { title: 'Equipment List' }
           ]
         },
@@ -23,9 +23,9 @@ const routes: Routes = [
         path: 'equipmentHistory',
        component: EquipmentHistoryComponent,
         data: {
-          title: 'Equipment History',
+          // title: 'Equipment History',
           urls: [
-            { title: 'Dashboard', url: '/landing' },
+            { title: 'Home', url: '/landing' },
             { title: 'EQS', url: '/eqshome'  },
             { title: 'Equipment History' }
           ]
@@ -35,9 +35,9 @@ const routes: Routes = [
         path: 'calibrationReport',
        component: EqsCalibrationReportComponent,
         data: {
-          title: 'Calibration Report',
+          // title: 'Calibration Report',
           urls: [
-            { title: 'Dashboard', url: '/landing' },
+            { title: 'Home', url: '/landing' },
             { title: 'EQS', url: '/eqshome'  },
             { title: 'Calibration Report' }
           ]

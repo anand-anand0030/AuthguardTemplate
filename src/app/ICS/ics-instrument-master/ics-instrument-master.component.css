@@ -1,0 +1,23 @@
+.e-grid .e-columnheader .e-headercell { 
+    background-color: #64a0ba;
+    color: white;
+ } 
+ .e-grid .e-gridcontent tr.e-row:nth-child(even) {
+    border-top: 0;
+     background-color:#f2f5f6; 
+    /* background-color:red; */
+}
+ .e-grid .e-gridcontent tr.e-row:nth-child(odd) {
+    border-top: 0;
+    background-color:#e8ebec;
+} 
+.c_header{                              /* style for each menu header */
+    background-color: #3b819f;
+    padding-top:10px; height: 40px;
+
+}
+
+.c_header h4{
+  margin-left:10px;
+  color : white;
+}

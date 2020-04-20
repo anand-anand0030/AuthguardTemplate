@@ -8,6 +8,7 @@ import { PageService, SortService, FilterService, GroupService, GridModule} from
 import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
 import { UploaderModule } from '@syncfusion/ej2-angular-inputs';
 import { DatePickerModule } from '@syncfusion/ej2-angular-calendars';
+import { ComboBoxModule } from '@syncfusion/ej2-angular-dropdowns';
 
 @NgModule({
   declarations: [EqsQualificationComponent],
@@ -15,7 +16,7 @@ import { DatePickerModule } from '@syncfusion/ej2-angular-calendars';
     CommonModule,
     EqsQualificationRoutingModule,
     DropDownButtonModule, GridModule, ButtonModule, DatePickerModule,
-    UploaderModule
+    UploaderModule,ComboBoxModule
   ],
   providers: [PageService, SortService, FilterService, GroupService]
 })
